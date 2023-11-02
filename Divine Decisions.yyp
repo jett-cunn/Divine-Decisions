@@ -34,6 +34,7 @@
   },
   "resources": [
     {"id":{"name":"spr_Test","path":"sprites/spr_Test/spr_Test.yy",},},
+    {"id":{"name":"obg_gameController","path":"objects/obg_gameController/obg_gameController.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
