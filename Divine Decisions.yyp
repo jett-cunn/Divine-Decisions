@@ -33,7 +33,6 @@
     "IDEVersion": "2023.8.2.108",
   },
   "resources": [
-    {"id":{"name":"obj_gameController","path":"objects/obj_gameController/obj_gameController.yy",},},
     {"id":{"name":"spr_Test","path":"sprites/spr_Test/spr_Test.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
