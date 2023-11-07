@@ -34,7 +34,9 @@
   },
   "resources": [
     {"id":{"name":"spr_Test","path":"sprites/spr_Test/spr_Test.yy",},},
-    {"id":{"name":"obg_gameController","path":"objects/obg_gameController/obg_gameController.yy",},},
+    {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
+    {"id":{"name":"obj_gameController","path":"objects/obj_gameController/obj_gameController.yy",},},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
