@@ -13,5 +13,6 @@ global.enemyDefenseRoll = 0;
 global.enemySpeedRoll = 0;
 
 global.enemyDamageRoll = 0;
+global.enemyType = 0; //1 = goblin, 2 = wolf, 3 = cultist, 4 = bandit
 
 

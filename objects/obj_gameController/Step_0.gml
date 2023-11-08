@@ -19,11 +19,11 @@ if global.gameState == 100 { //Waiting for controller reset
 
 if global.gameState == 101 { //Choosing encounters
 	
-	global.encounterValue = random_range(1,6);
+	global.encounterValue = random_range(1,11);
 	global.encounter1 = global.encounterValue;
-	global.encounterValue = random_range(1,6);
+	global.encounterValue = random_range(1,11);
 	global.encounter2 = global.encounterValue;
-	global.encounterValue = random_range(1,6);
+	global.encounterValue = random_range(1,11);
 	global.encounter3 = global.encounterValue;
 	
 	global.gameState = 102;
@@ -59,7 +59,7 @@ if global.gameState == 103 { //Selection
 
 if global.gameState == 104 { //Encounter setup
 	global.currentEncounter = global.encounter1;
-	//set reward value
+	
 	//hide buttons
 	//move player sprite
 	
@@ -69,7 +69,7 @@ if global.gameState == 104 { //Encounter setup
 
 if global.gameState == 105 { //Encounter setup
 	global.currentEncounter = global.encounter2;
-	//set reward value
+	
 	//hide buttons
 	//move player sprite
 	
@@ -79,7 +79,7 @@ if global.gameState == 105 { //Encounter setup
 
 if global.gameState == 106 { //Encounter setup
 	global.currentEncounter = global.encounter3;
-	//set reward value
+	
 	//hide buttons
 	//move player sprite
 	
@@ -108,6 +108,96 @@ if global.gameState == 130 { //Setup
 	}
 	
 	//Set enemy stats
+	if global.currentEncounter == 1 { //Goblin1
+		obj_enemy.enemyMaxHealth = 6;
+		obj_enemy.enemyAttack = 1;
+		obj_enemy.enemyDefense = 3;
+		obj_enemy.enemySpeed = 2;
+		global.encounterValue = 0;
+		obj_enemy.enemyType = 1;
+	}
+	else if global.currentEncounter == 2 { //Goblin2
+		obj_enemy.enemyMaxHealth = 6;
+		obj_enemy.enemyAttack = 1;
+		obj_enemy.enemyDefense = 3;
+		obj_enemy.enemySpeed = 2;
+		global.encounterValue = 1;
+		obj_enemy.enemyType = 1;
+	}
+	else if global.currentEncounter == 3 { //Wolf1
+		obj_enemy.enemyMaxHealth = 10;
+		obj_enemy.enemyAttack = 3;
+		obj_enemy.enemyDefense = 4;
+		obj_enemy.enemySpeed = 3;
+		global.encounterValue = 0;
+		obj_enemy.enemyType = 2;
+	}
+	else if global.currentEncounter == 4 { //Wolf2
+		obj_enemy.enemyMaxHealth = 10;
+		obj_enemy.enemyAttack = 3;
+		obj_enemy.enemyDefense = 4;
+		obj_enemy.enemySpeed = 3;
+		global.encounterValue = 1;
+		obj_enemy.enemyType = 2;
+	}
+	else if global.currentEncounter == 5 { //Wolf3
+		obj_enemy.enemyMaxHealth = 10;
+		obj_enemy.enemyAttack = 3;
+		obj_enemy.enemyDefense = 4;
+		obj_enemy.enemySpeed = 3;
+		global.encounterValue = 2;
+		obj_enemy.enemyType = 2;
+	}
+	else if global.currentEncounter == 6 { //Cultist1
+		obj_enemy.enemyMaxHealth = 14;
+		obj_enemy.enemyAttack = 5;
+		obj_enemy.enemyDefense = 4;
+		obj_enemy.enemySpeed = 6;
+		global.encounterValue = 1;
+		obj_enemy.enemyType = 3;
+	}
+	else if global.currentEncounter == 7 { //Cultist2
+		obj_enemy.enemyMaxHealth = 14;
+		obj_enemy.enemyAttack = 5;
+		obj_enemy.enemyDefense = 4;
+		obj_enemy.enemySpeed = 6;
+		global.encounterValue = 2;
+		obj_enemy.enemyType = 3;
+	}
+	else if global.currentEncounter == 8 { //Cultist3
+		obj_enemy.enemyMaxHealth = 14;
+		obj_enemy.enemyAttack = 5;
+		obj_enemy.enemyDefense = 4;
+		obj_enemy.enemySpeed = 6;
+		global.encounterValue = 3;
+		obj_enemy.enemyType = 3;
+	}
+	else if global.currentEncounter == 9 { //Bandit1
+		obj_enemy.enemyMaxHealth = 16;
+		obj_enemy.enemyAttack = 6;
+		obj_enemy.enemyDefense = 4;
+		obj_enemy.enemySpeed = 7;
+		global.encounterValue = 2;
+		obj_enemy.enemyType = 4;
+	}
+	else if global.currentEncounter == 10 { //Bandit2
+		obj_enemy.enemyMaxHealth = 16;
+		obj_enemy.enemyAttack = 6;
+		obj_enemy.enemyDefense = 4;
+		obj_enemy.enemySpeed = 7;
+		global.encounterValue = 3;
+		obj_enemy.enemyType = 4;
+	}
+	else if global.currentEncounter == 11 { //Bandit3
+		obj_enemy.enemyMaxHealth = 16;
+		obj_enemy.enemyAttack = 6;
+		obj_enemy.enemyDefense = 4;
+		obj_enemy.enemySpeed = 7;
+		global.encounterValue = 4;
+		obj_enemy.enemyType = 4;
+	}
+	
+	obj_enemy.enemyCurrentHealth = obj_enemy.enemyMaxHealth;
 	
 	//Set health bars
 	
@@ -247,7 +337,12 @@ if global.gameState == 151 { //Victory
 	//Check encounter reward value
 	
 	//Set gameState to 190 to receive rewards or 100 to move on
-	
+	if global.encounterValue == 0 {
+		global.gameState = 100;
+	}
+	else {
+		global.gameState = 190;
+	}
 }
 
 if global.gameState == 152 { //Defeat
@@ -261,22 +356,66 @@ if global.gameState == 152 { //Defeat
 
 //Rewards
 if global.gameState == 190 { //Calculate rewards
+	global.itemType = random_range(1,6); //1 = charm, 2 = armor, 3 = boots, 4 = str weapon, 5 = int weapon, 6 = comp weapon
+	global.rewardID = (global.itemType*10)+global.encounterValue;
+	//Item ID is a two-digit number; the first digit indicates the type of item, the second indicates the strength of that item's bonus
 	
+	//Check global.rewardID and display appropriate item sprite and stats, along with the player's currently equipped item
+	
+	//Display Take and Leave buttons
+	
+	global.gameState = 191;
 }
 
 if global.gameState == 191 { //Waiting for controller reset
-	
+	if global.buttonLeft + global.buttonRight == 0 {
+		global.gameState = 192;
+	}
 }
 
 if global.gameState == 192 { //Selection
 	
-}
-
-if global.gameState == 193 { //Leave item
+	if global.buttonLeft + global.buttonRight > 1 {
+		global.gameState = 191;
+	}
+	else if global.buttonLeft + global.buttonRight = 1 {
+		if buttonLeft = 1 {
+			global.gameState = 193;
+		}
+		else if buttonRight = 1 {
+			global.gameState = 194;
+		}
+	}
 	
 }
 
+if global.gameState == 193 { //Leave item
+	global.gameState = 100;
+}
+
 if global.gameState == 194 { //Take item
+	
+	if global.itemType == 1 {
+		obj_player.playerCharmBonus = global.encounterValue;
+	}
+	else if global.itemType == 2 {
+		obj_player.playerArmorBonus = global.encounterValue;
+	}
+	else if global.itemType == 3 {
+		obj_player.playerBootBonus = global.encounterValue;
+	}
+	else if global.itemType >= 4 {
+		obj_player.playerWeaponBonus = global.encounterValue;
+		if global.itemType == 4 {
+			obj_player.playerWeaponStat = 1;
+		}
+		else if global.itemType == 5 {
+			obj_player.playerWeaponStat = 2;
+		}
+		else if global.itemType == 6 {
+			obj_player.playerWeaponStat = 3;
+		}
+	}
 	
 }
 

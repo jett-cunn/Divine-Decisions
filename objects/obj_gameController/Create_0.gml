@@ -12,3 +12,4 @@ global.encounterValue = 0;
 global.currentEncounter = 0;
 
 
+
