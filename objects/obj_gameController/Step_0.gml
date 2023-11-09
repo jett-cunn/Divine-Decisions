@@ -5,6 +5,154 @@
 
 //Character Creation
 
+if global.gameState == 000 { //Start screen
+	//Display start screen
+	if global.buttonLeft + global.buttonMiddle + global.buttonRight > 0 {
+		//Transition to character selection screen
+		global.gameState = 001;
+	}
+}
+
+if global.gameState == 001 { //Waiting for controller reset
+	
+	if (global.buttonLeft + global.buttonMiddle + global.buttonRight) == 0 {
+		global.gameState = 002;
+	}
+	
+}
+
+if global.gameState == 002 { //Character Selection
+	
+	//Display character graphics & statistics
+	
+	if (global.buttonLeft + global.buttonMiddle + global.buttonRight) > 1 {
+		global.gameState = 001;
+	}
+	else if (global.buttonLeft + global.buttonMiddle + global.buttonRight) == 1 && global.buttonLeft == 1 { //Select Mercy
+		global.gameState = 003;
+	}
+	else if (global.buttonLeft + global.buttonMiddle + global.buttonRight) == 1 && global.buttonMiddle == 1 { //Select Wisdom
+		global.gameState = 004;
+	}
+	else if (global.buttonLeft + global.buttonMiddle + global.buttonRight) == 1 && global.buttonRight == 1 { //Select Valor
+		global.gameState = 005;
+	}
+	
+}
+
+if global.gameState == 003 { //Mercy
+	//Hide other characters
+	//Center chosen character and stats
+	//Display Confirm/Deny buttons
+	global.gameState = 006;
+}
+
+if global.gameState == 004 { //Wisdom
+	//Hide other characters
+	//Center chosen character and stats
+	//Display Confirm/Deny buttons
+	global.gameState = 007;
+}
+
+if global.gameState == 005 { //Valor
+	//Hide other characters
+	//Center chosen character and stats
+	//Display Confirm/Deny buttons
+	global.gameState = 008;
+}
+
+if global.gameState == 006 {
+	
+	if global.buttonLeft + global.buttonRight > 1 {
+		global.gameState = 003;
+	}
+	else if global.buttonLeft == 1 {
+		global.gameState = 002;
+	}
+	else if global.buttonRight == 1 {
+		//Mercy Stats
+		obj_player.playerVitalityBase = 2;
+		obj_player.playerEnduranceBase = 1;
+		obj_player.playerAgilityBase = 3;
+		obj_player.playerStrengthBase = 2;
+		obj_player.playerIntelligenceBase = 2;
+		obj_player.playerCompassionBase = 3;
+		
+		obj_player.playerCharmBonus = 1;
+		obj_player.playerArmorBonus = 1;
+		obj_player.playerBootBonus = 2;
+		obj_player.playerWeaponBonus = 2;
+		obj_player.playerWeaponStat = 3;
+		
+		global.gameState = 009;
+	}
+	
+}
+
+if global.gameState == 007 {
+	
+	if global.buttonLeft + global.buttonRight > 1 {
+		global.gameState = 004;
+	}
+	else if global.buttonLeft == 1 {
+		global.gameState = 002;
+	}
+	else if global.buttonRight == 1 {
+		//Wisdom stats
+		
+		obj_player.playerVitalityBase = 1;
+		obj_player.playerEnduranceBase = 3;
+		obj_player.playerAgilityBase = 2;
+		obj_player.playerStrengthBase = 2;
+		obj_player.playerIntelligenceBase = 3;
+		obj_player.playerCompassionBase = 2;
+		
+		obj_player.playerCharmBonus = 1;
+		obj_player.playerArmorBonus = 2;
+		obj_player.playerBootBonus = 1;
+		obj_player.playerWeaponBonus = 2;
+		obj_player.playerWeaponStat = 2;
+		
+		global.gameState = 009;
+	}
+	
+}
+
+if global.gameState == 008 {
+	
+	if global.buttonLeft + global.buttonRight > 1 {
+		global.gameState = 005;
+	}
+	else if global.buttonLeft == 1 {
+		global.gameState = 002;
+	}
+	else if global.buttonRight == 1 {
+		//Valor stats
+		
+		obj_player.playerVitalityBase = 3;
+		obj_player.playerEnduranceBase = 2;
+		obj_player.playerAgilityBase = 1;
+		obj_player.playerStrengthBase = 3;
+		obj_player.playerIntelligenceBase = 2;
+		obj_player.playerCompassionBase = 2;
+		
+		obj_player.playerCharmBonus = 2;
+		obj_player.playerArmorBonus = 1;
+		obj_player.playerBootBonus = 1;
+		obj_player.playerWeaponBonus = 2;
+		obj_player.playerWeaponStat = 3;
+		
+		global.gameState = 009;
+	}
+	
+}
+
+if global.gameState == 009 {
+	
+	//Transition to gameplay
+	global.gameState = 100
+	
+}
 
 //Gameplay
 
