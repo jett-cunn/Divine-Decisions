@@ -258,89 +258,89 @@ if global.gameState == 130 { //Setup
 	//Set enemy stats
 	if global.currentEncounter == 1 { //Goblin1
 		obj_enemy.enemyMaxHealth = 6;
-		obj_enemy.enemyAttack = 1;
-		obj_enemy.enemyDefense = 3;
-		obj_enemy.enemySpeed = 2;
+		obj_enemy.enemyAttack = 2;
+		obj_enemy.enemyDefense = 1;
+		obj_enemy.enemySpeed = 3;
 		global.encounterValue = 0;
 		obj_enemy.enemyType = 1;
 	}
 	else if global.currentEncounter == 2 { //Goblin2
 		obj_enemy.enemyMaxHealth = 6;
-		obj_enemy.enemyAttack = 1;
-		obj_enemy.enemyDefense = 3;
-		obj_enemy.enemySpeed = 2;
+		obj_enemy.enemyAttack = 2;
+		obj_enemy.enemyDefense = 1;
+		obj_enemy.enemySpeed = 3;
 		global.encounterValue = 1;
 		obj_enemy.enemyType = 1;
 	}
 	else if global.currentEncounter == 3 { //Wolf1
-		obj_enemy.enemyMaxHealth = 10;
+		obj_enemy.enemyMaxHealth = 6;
 		obj_enemy.enemyAttack = 3;
-		obj_enemy.enemyDefense = 4;
-		obj_enemy.enemySpeed = 3;
+		obj_enemy.enemyDefense = 1;
+		obj_enemy.enemySpeed = 4;
 		global.encounterValue = 0;
 		obj_enemy.enemyType = 2;
 	}
 	else if global.currentEncounter == 4 { //Wolf2
-		obj_enemy.enemyMaxHealth = 10;
+		obj_enemy.enemyMaxHealth = 6;
 		obj_enemy.enemyAttack = 3;
-		obj_enemy.enemyDefense = 4;
-		obj_enemy.enemySpeed = 3;
+		obj_enemy.enemyDefense = 1;
+		obj_enemy.enemySpeed = 4;
 		global.encounterValue = 1;
 		obj_enemy.enemyType = 2;
 	}
 	else if global.currentEncounter == 5 { //Wolf3
-		obj_enemy.enemyMaxHealth = 10;
+		obj_enemy.enemyMaxHealth = 6;
 		obj_enemy.enemyAttack = 3;
-		obj_enemy.enemyDefense = 4;
-		obj_enemy.enemySpeed = 3;
+		obj_enemy.enemyDefense = 1;
+		obj_enemy.enemySpeed = 4;
 		global.encounterValue = 2;
 		obj_enemy.enemyType = 2;
 	}
 	else if global.currentEncounter == 6 { //Cultist1
-		obj_enemy.enemyMaxHealth = 14;
-		obj_enemy.enemyAttack = 5;
-		obj_enemy.enemyDefense = 4;
-		obj_enemy.enemySpeed = 6;
+		obj_enemy.enemyMaxHealth = 3;
+		obj_enemy.enemyAttack = 3;
+		obj_enemy.enemyDefense = 2;
+		obj_enemy.enemySpeed = 1;
 		global.encounterValue = 1;
 		obj_enemy.enemyType = 3;
 	}
 	else if global.currentEncounter == 7 { //Cultist2
-		obj_enemy.enemyMaxHealth = 14;
-		obj_enemy.enemyAttack = 5;
-		obj_enemy.enemyDefense = 4;
-		obj_enemy.enemySpeed = 6;
+		obj_enemy.enemyMaxHealth = 3;
+		obj_enemy.enemyAttack = 3;
+		obj_enemy.enemyDefense = 2;
+		obj_enemy.enemySpeed = 1;
 		global.encounterValue = 2;
 		obj_enemy.enemyType = 3;
 	}
 	else if global.currentEncounter == 8 { //Cultist3
-		obj_enemy.enemyMaxHealth = 14;
-		obj_enemy.enemyAttack = 5;
-		obj_enemy.enemyDefense = 4;
-		obj_enemy.enemySpeed = 6;
+		obj_enemy.enemyMaxHealth = 3;
+		obj_enemy.enemyAttack = 3;
+		obj_enemy.enemyDefense = 2;
+		obj_enemy.enemySpeed = 1;
 		global.encounterValue = 3;
 		obj_enemy.enemyType = 3;
 	}
 	else if global.currentEncounter == 9 { //Bandit1
-		obj_enemy.enemyMaxHealth = 16;
-		obj_enemy.enemyAttack = 6;
-		obj_enemy.enemyDefense = 4;
-		obj_enemy.enemySpeed = 7;
+		obj_enemy.enemyMaxHealth = 10;
+		obj_enemy.enemyAttack = 4;
+		obj_enemy.enemyDefense = 3;
+		obj_enemy.enemySpeed = 4;
 		global.encounterValue = 2;
 		obj_enemy.enemyType = 4;
 	}
 	else if global.currentEncounter == 10 { //Bandit2
-		obj_enemy.enemyMaxHealth = 16;
-		obj_enemy.enemyAttack = 6;
-		obj_enemy.enemyDefense = 4;
-		obj_enemy.enemySpeed = 7;
+		obj_enemy.enemyMaxHealth = 10;
+		obj_enemy.enemyAttack = 4;
+		obj_enemy.enemyDefense = 3;
+		obj_enemy.enemySpeed = 4;
 		global.encounterValue = 3;
 		obj_enemy.enemyType = 4;
 	}
 	else if global.currentEncounter == 11 { //Bandit3
-		obj_enemy.enemyMaxHealth = 16;
-		obj_enemy.enemyAttack = 6;
-		obj_enemy.enemyDefense = 4;
-		obj_enemy.enemySpeed = 7;
+		obj_enemy.enemyMaxHealth = 10;
+		obj_enemy.enemyAttack = 4;
+		obj_enemy.enemyDefense = 3;
+		obj_enemy.enemySpeed = 4;
 		global.encounterValue = 4;
 		obj_enemy.enemyType = 4;
 	}
