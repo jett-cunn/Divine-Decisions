@@ -1,26 +1,26 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_Test",
-  "bbox_bottom": 63,
+  "name": "spr_gameMenu",
+  "bbox_bottom": 1079,
   "bbox_left": 0,
-  "bbox_right": 63,
+  "bbox_right": 1919,
   "bbox_top": 0,
   "bboxMode": 0,
-  "collisionKind": 0,
+  "collisionKind": 1,
   "collisionTolerance": 0,
   "DynamicTexturePage": false,
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3a54f7da-4762-47ed-86e5-f6ab22f7ea4d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d6e2da67-611f-47e4-b58c-337b0f09fc52",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 64,
+  "height": 1080,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e62a6c8b-b6c3-4122-87d0-e893cf55bded","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"42894801-c3bc-4050-a857-970a711890e9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_Test",
+    "name": "spr_gameMenu",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3a54f7da-4762-47ed-86e5-f6ab22f7ea4d","path":"sprites/spr_Test/spr_Test.yy",},},},"Disabled":false,"id":"1ef5aa8d-d4a7-4dae-964d-bfdc4091e1b9","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d6e2da67-611f-47e4-b58c-337b0f09fc52","path":"sprites/spr_gameMenu/spr_gameMenu.yy",},},},"Disabled":false,"id":"6863c83b-cf3c-47c8-be1b-397bf9a7d066","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 64,
+  "width": 1920,
 }

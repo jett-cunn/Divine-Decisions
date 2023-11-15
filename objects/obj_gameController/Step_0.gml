@@ -6,9 +6,13 @@
 //Character Creation
 
 if global.gameState == 000 { //Start screen
-	//Display start screen
+	
+	obj_gameMenu.visible = true;
+	
 	if global.buttonLeft + global.buttonMiddle + global.buttonRight > 0 {
-		//Transition to character selection screen
+		
+		obj_gameMenu.visible = false;
+		obj_characterSelection.visible = true;
 		global.gameState = 001;
 	}
 }

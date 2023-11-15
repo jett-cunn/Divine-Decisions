@@ -1,7 +1,12 @@
 {
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
+    {"name":"buttonTest","order":5,"path":"objects/buttonTest/buttonTest.yy",},
+    {"name":"spr_characterSelection","order":1,"path":"sprites/spr_characterSelection/spr_characterSelection.yy",},
+    {"name":"obj_characterSelection","order":4,"path":"objects/obj_characterSelection/obj_characterSelection.yy",},
     {"name":"obj_enemy","order":2,"path":"objects/obj_enemy/obj_enemy.yy",},
+    {"name":"spr_gameMenu","order":2,"path":"sprites/spr_gameMenu/spr_gameMenu.yy",},
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},
+    {"name":"obj_gameMenu","order":3,"path":"objects/obj_gameMenu/obj_gameMenu.yy",},
   ],
 }
