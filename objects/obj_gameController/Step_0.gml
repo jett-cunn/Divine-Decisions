@@ -7,12 +7,10 @@
 
 if global.gameState == 000 { //Start screen
 	
-	obj_gameMenu.visible = true;
 	
 	if global.buttonLeft + global.buttonMiddle + global.buttonRight > 0 {
 		
-		obj_gameMenu.visible = false;
-		obj_characterSelection.visible = true;
+		room_goto(rm_character);
 		global.gameState = 001;
 	}
 }

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-buttonMiddle = 1
+global.buttonMiddle = 1
 
 

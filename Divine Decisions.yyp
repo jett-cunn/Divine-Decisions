@@ -34,6 +34,7 @@
   },
   "resources": [
     {"id":{"name":"buttonTest","path":"objects/buttonTest/buttonTest.yy",},},
+    {"id":{"name":"rm_character","path":"rooms/rm_character/rm_character.yy",},},
     {"id":{"name":"spr_characterSelection","path":"sprites/spr_characterSelection/spr_characterSelection.yy",},},
     {"id":{"name":"obj_characterSelection","path":"objects/obj_characterSelection/obj_characterSelection.yy",},},
     {"id":{"name":"spr_Test","path":"sprites/spr_Test/spr_Test.yy",},},
@@ -42,10 +43,11 @@
     {"id":{"name":"spr_gameMenu","path":"sprites/spr_gameMenu/spr_gameMenu.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_gameMenu","path":"objects/obj_gameMenu/obj_gameMenu.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
+    {"roomId":{"name":"rm_character","path":"rooms/rm_character/rm_character.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

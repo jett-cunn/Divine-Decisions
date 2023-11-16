@@ -2,6 +2,7 @@
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
     {"name":"buttonTest","order":5,"path":"objects/buttonTest/buttonTest.yy",},
+    {"name":"rm_character","order":1,"path":"rooms/rm_character/rm_character.yy",},
     {"name":"spr_characterSelection","order":1,"path":"sprites/spr_characterSelection/spr_characterSelection.yy",},
     {"name":"obj_characterSelection","order":4,"path":"objects/obj_characterSelection/obj_characterSelection.yy",},
     {"name":"obj_enemy","order":2,"path":"objects/obj_enemy/obj_enemy.yy",},

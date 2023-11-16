@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-buttonLeft = 0;
+global.buttonLeft = 0;
 
 
