@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-if !alarm_get(0) > 0 {
-	global.buttonLeft = 1;
-}
+draw_set_color(c_white);
+draw_text(0, 0, string(global.gameState));
+
+
 
 

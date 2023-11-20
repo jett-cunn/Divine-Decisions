@@ -11,6 +11,8 @@ global.playerStrengthBase = 0;
 global.playerIntelligenceBase = 0;
 global.playerCompassionBase  = 0;
 
+/*
+
 //Effect Modifiers
 global.playerVitalityEffect = 0;
 global.playerEnduranceEffect = 0;
@@ -26,6 +28,8 @@ global.playerAgilityBoon = 0;
 global.playerStrengthBoon = 0;
 global.playerIntelligenceBoon = 0;
 global.playerCompassionBoon = 0;
+
+*/
 
 //Equipped Items
 global.playerWeaponBonus = 0;

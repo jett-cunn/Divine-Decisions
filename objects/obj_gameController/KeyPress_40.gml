@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-global.buttonMiddle = 1
-
+if !alarm_get(0) > 0 {
+	global.buttonMiddle = 1
+}
 

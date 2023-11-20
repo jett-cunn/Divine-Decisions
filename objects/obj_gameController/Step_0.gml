@@ -10,7 +10,7 @@ if global.gameState == 000 { //Start screen
 	
 	if global.buttonLeft + global.buttonMiddle + global.buttonRight > 0 {
 		
-		room_goto(rm_character);
+		
 		global.gameState = 001;
 	}
 }
@@ -18,6 +18,7 @@ if global.gameState == 000 { //Start screen
 if global.gameState == 001 { //Waiting for controller reset
 	
 	if (global.buttonLeft + global.buttonMiddle + global.buttonRight) == 0 {
+		room_goto(rm_character);
 		global.gameState = 002;
 	}
 	
@@ -30,13 +31,19 @@ if global.gameState == 002 { //Character Selection
 	if (global.buttonLeft + global.buttonMiddle + global.buttonRight) > 1 {
 		global.gameState = 001;
 	}
-	else if (global.buttonLeft + global.buttonMiddle + global.buttonRight) == 1 && global.buttonLeft == 1 { //Select Mercy
+	else if global.buttonLeft == 1 { //Select Mercy
+		global.buttonLeft = 0;
+		alarm[0] = 60;
 		global.gameState = 003;
 	}
-	else if (global.buttonLeft + global.buttonMiddle + global.buttonRight) == 1 && global.buttonMiddle == 1 { //Select Wisdom
+	else if global.buttonMiddle == 1 { //Select Wisdom
+		global.buttonMiddle = 0;
+		alarm[0] = 60;
 		global.gameState = 004;
 	}
-	else if (global.buttonLeft + global.buttonMiddle + global.buttonRight) == 1 && global.buttonRight == 1 { //Select Valor
+	else if global.buttonRight == 1 { //Select Valor
+		global.buttonRight = 0;
+		alarm[0] = 60;
 		global.gameState = 005;
 	}
 	
@@ -66,9 +73,13 @@ if global.gameState == 006 {
 		global.gameState = 003;
 	}
 	else if global.buttonLeft == 1 {
+		global.buttonLeft = 0;
+		alarm[0] = 60;
 		global.gameState = 002;
 	}
 	else if global.buttonRight == 1 {
+		global.buttonRight = 0;
+		alarm[0] = 60;
 		//Mercy Stats
 		obj_player.playerVitalityBase = 2;
 		obj_player.playerEnduranceBase = 1;
@@ -94,9 +105,13 @@ if global.gameState == 007 {
 		global.gameState = 004;
 	}
 	else if global.buttonLeft == 1 {
+		global.buttonLeft = 0;
+		alarm[0] = 60;
 		global.gameState = 002;
 	}
 	else if global.buttonRight == 1 {
+		global.buttonRight = 0;
+		alarm[0] = 60;
 		//Wisdom stats
 		
 		obj_player.playerVitalityBase = 1;
@@ -123,9 +138,13 @@ if global.gameState == 008 {
 		global.gameState = 005;
 	}
 	else if global.buttonLeft == 1 {
+		global.buttonLeft = 0;
+		alarm[0] = 60;
 		global.gameState = 002;
 	}
 	else if global.buttonRight == 1 {
+		global.buttonRight = 0;
+		alarm[0] = 60;
 		//Valor stats
 		
 		obj_player.playerVitalityBase = 3;
@@ -145,6 +164,7 @@ if global.gameState == 008 {
 	}
 	
 }
+
 
 if global.gameState == 009 {
 	
@@ -238,18 +258,18 @@ if global.gameState == 106 { //Encounter setup
 if global.gameState == 130 { //Setup
 	
 	//Calculate player stats
-	obj_player.playerVitalityTotal = obj_player.playerVitalityBase + obj_player.playerVitalityEffect + obj_player.playerVitalityBoon + obj_player.playerCharmBonus;
-	obj_player.playerEnduranceTotal = obj_player.playerEnduranceBase + obj_player.playerEnduranceEffect + obj_player.playerEnduranceBoon + obj_player.playerArmorBonus;
-	obj_player.playerAgilityTotal = obj_player.playerAgilityBase + obj_player.playerAgilityEffect + obj_player.playerAgilityBoon + obj_player.playerBootBonus;
-	obj_player.playerStrengthTotal = obj_player.playerStrengthBase + obj_player.playerStrengthEffect + obj_player.playerStrengthBoon;
+	obj_player.playerVitalityTotal = obj_player.playerVitalityBase + obj_player.playerCharmBonus;
+	obj_player.playerEnduranceTotal = obj_player.playerEnduranceBase + obj_player.playerArmorBonus;
+	obj_player.playerAgilityTotal = obj_player.playerAgilityBase + obj_player.playerBootBonus;
+	obj_player.playerStrengthTotal = obj_player.playerStrengthBase;
 	if obj_player.playerWeaponStat == 1 {
 		obj_player.playerStrengthTotal += obj_player.playerWeaponBonus;
 	}
-	obj_player.playerIntelligenceTotal = obj_player.playerIntelligenceBase + obj_player.playerIntelligenceEffect + obj_player.playerIntelligenceBoon;
+	obj_player.playerIntelligenceTotal = obj_player.playerIntelligenceBase;
 	if obj_player.playerWeaponStat == 2 {
 		obj_player.playerIntelligenceTotal += obj_player.playerWeaponBonus;
 	}
-	obj_player.playerCompassionTotal = obj_player.playerCompassionBase + obj_player.playerCompassionEffect + obj_player.playerCompassionBoon;
+	obj_player.playerCompassionTotal = obj_player.playerCompassionBase;
 	if obj_player.playerWeaponStat == 3 {
 		obj_player.playerCompassionTotal += obj_player.playerWeaponBonus;
 	}
