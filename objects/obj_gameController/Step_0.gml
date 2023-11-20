@@ -25,7 +25,7 @@ if global.gameState == 001 { //Waiting for controller reset
 
 if global.gameState == 002 { //Character Selection
 	
-	//Display character graphics & statistics
+	//Display character graphics
 	
 	if (global.buttonLeft + global.buttonMiddle + global.buttonRight) > 1 {
 		global.gameState = 001;
@@ -43,22 +43,19 @@ if global.gameState == 002 { //Character Selection
 }
 
 if global.gameState == 003 { //Mercy
-	//Hide other characters
-	//Center chosen character and stats
+	//Display stats
 	//Display Confirm/Deny buttons
 	global.gameState = 006;
 }
 
 if global.gameState == 004 { //Wisdom
-	//Hide other characters
-	//Center chosen character and stats
+	//Display stats
 	//Display Confirm/Deny buttons
 	global.gameState = 007;
 }
 
 if global.gameState == 005 { //Valor
-	//Hide other characters
-	//Center chosen character and stats
+	//Display stats
 	//Display Confirm/Deny buttons
 	global.gameState = 008;
 }
