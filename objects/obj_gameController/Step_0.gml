@@ -170,6 +170,7 @@ if global.gameState == 009 {
 	
 	//Transition to gameplay
 	global.gameState = 100
+	room_goto(rm_choice);
 	
 }
 

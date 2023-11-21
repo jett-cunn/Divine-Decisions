@@ -26,7 +26,9 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"BuGothicHybrid-xyd5.ttf","CopyToMask":-1,"filePath":"datafiles",},
+  ],
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
@@ -38,9 +40,11 @@
     {"id":{"name":"obj_buttonRight","path":"objects/obj_buttonRight/obj_buttonRight.yy",},},
     {"id":{"name":"rm_character","path":"rooms/rm_character/rm_character.yy",},},
     {"id":{"name":"spr_characterSelection","path":"sprites/spr_characterSelection/spr_characterSelection.yy",},},
+    {"id":{"name":"Font1","path":"fonts/Font1/Font1.yy",},},
     {"id":{"name":"obj_characterSelection","path":"objects/obj_characterSelection/obj_characterSelection.yy",},},
     {"id":{"name":"spr_selectWisdom","path":"sprites/spr_selectWisdom/spr_selectWisdom.yy",},},
     {"id":{"name":"spr_Test","path":"sprites/spr_Test/spr_Test.yy",},},
+    {"id":{"name":"rm_choice","path":"rooms/rm_choice/rm_choice.yy",},},
     {"id":{"name":"spr_buttonRight","path":"sprites/spr_buttonRight/spr_buttonRight.yy",},},
     {"id":{"name":"obj_selectWisdom","path":"objects/obj_selectWisdom/obj_selectWisdom.yy",},},
     {"id":{"name":"spr_selectMercy","path":"sprites/spr_selectMercy/spr_selectMercy.yy",},},
@@ -61,6 +65,7 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"roomId":{"name":"rm_character","path":"rooms/rm_character/rm_character.yy",},},
+    {"roomId":{"name":"rm_choice","path":"rooms/rm_choice/rm_choice.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
