@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-global.gameState = 0;
+gameState = 0;
 
 global.buttonLeft = 0;
 global.buttonMiddle = 0;

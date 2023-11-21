@@ -1,7 +1,7 @@
 {
   "resourceType": "GMFont",
   "resourceVersion": "1.0",
-  "name": "fnt_gothic",
+  "name": "fnt_gothicLarge",
   "AntiAlias": 1,
   "applyKerning": 0,
   "ascender": 10,
