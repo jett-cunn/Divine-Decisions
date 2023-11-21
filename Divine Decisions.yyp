@@ -40,7 +40,7 @@
     {"id":{"name":"obj_buttonRight","path":"objects/obj_buttonRight/obj_buttonRight.yy",},},
     {"id":{"name":"rm_character","path":"rooms/rm_character/rm_character.yy",},},
     {"id":{"name":"spr_characterSelection","path":"sprites/spr_characterSelection/spr_characterSelection.yy",},},
-    {"id":{"name":"Font1","path":"fonts/Font1/Font1.yy",},},
+    {"id":{"name":"fnt_gothic","path":"fonts/fnt_gothic/fnt_gothic.yy",},},
     {"id":{"name":"obj_characterSelection","path":"objects/obj_characterSelection/obj_characterSelection.yy",},},
     {"id":{"name":"spr_selectWisdom","path":"sprites/spr_selectWisdom/spr_selectWisdom.yy",},},
     {"id":{"name":"spr_Test","path":"sprites/spr_Test/spr_Test.yy",},},
