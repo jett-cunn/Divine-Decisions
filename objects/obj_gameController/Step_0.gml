@@ -28,15 +28,26 @@ if gameState == 000 { //Start screen
 if gameState == 001 { //Waiting for controller reset
 	
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
-		room_goto(rm_character);
 		gameState = 002;
+		room_goto(rm_character);
 	}
 	
 }
 
 if gameState == 002 { //Character Selection
 	
-	//Display character graphics
+	
+	
+	
+	buttonLeftVisible = true;
+	buttonMiddleVisible = true;
+	buttonRightVisible = true;
+	
+	buttonLeftText = "Choose Mercy"
+	buttonMiddleText = "Choose Wisdom"
+	buttonRightText = "Choose Valor"
+	
+	
 	
 	if (buttonLeft + buttonMiddle + buttonRight) > 1 {
 		gameState = 001;
@@ -60,20 +71,32 @@ if gameState == 002 { //Character Selection
 }
 
 if gameState == 003 { //Mercy
-	//Display stats
-	//Display Confirm/Deny buttons
+	
+	buttonMiddleVisible = false;
+	
+	buttonLeftText = "Deny"
+	buttonRightText = "Confirm"
+	
 	gameState = 006;
 }
 
 if gameState == 004 { //Wisdom
-	//Display stats
-	//Display Confirm/Deny buttons
+	
+	buttonMiddleVisible = false;
+	
+	buttonLeftText = "Deny"
+	buttonRightText = "Confirm"
+	
 	gameState = 007;
 }
 
 if gameState == 005 { //Valor
-	//Display stats
-	//Display Confirm/Deny buttons
+	
+	buttonMiddleVisible = false;
+	
+	buttonLeftText = "Deny"
+	buttonRightText = "Confirm"
+	
 	gameState = 008;
 }
 

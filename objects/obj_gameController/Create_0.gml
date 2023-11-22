@@ -8,6 +8,14 @@ buttonLeft = 0;
 buttonMiddle = 0;
 buttonRight = 0;
 
+buttonLeftVisible = false;
+buttonMiddleVisible = false;
+buttonRightVisible = false;
+
+buttonLeftText = ""
+buttonMiddleText = ""
+buttonRightText = ""
+
 encounterValue = 0;
 currentEncounter = 0;
 
