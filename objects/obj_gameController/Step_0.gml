@@ -265,7 +265,7 @@ if gameState == 104 { //Encounter setup
 	//move player sprite
 	
 	gameState = 130;
-	//if encounter is a challenge, set state to 160
+	//if encounter is a challenge, set state to 160 (not needed in prototype)
 }
 
 if gameState == 105 { //Encounter setup
@@ -275,7 +275,7 @@ if gameState == 105 { //Encounter setup
 	//move player sprite
 	
 	gameState = 130;
-	//if encounter is a challenge, set state to 160
+	//if encounter is a challenge, set state to 160 (not needed in prototype)
 }
 
 if gameState == 106 { //Encounter setup
@@ -285,7 +285,7 @@ if gameState == 106 { //Encounter setup
 	//move player sprite
 	
 	gameState = 130;
-	//if encounter is a challenge, set state to 160
+	//if encounter is a challenge, set state to 160 (not needed in prototype)
 }
 
 //Combat
@@ -561,7 +561,7 @@ if gameState == 190 { //Calculate rewards
 	rewardID = (itemType*10)+encounterValue;
 	//Item ID is a two-digit number; the first digit indicates the type of item, the second indicates the strength of that item's bonus
 	
-	//Check rewardID and display appropriate item sprite and stats, along with the player's currently equipped item
+	//Check rewardID and display appropriate item name and stats, along with the player's currently equipped item
 	
 	//Display Take and Leave buttons
 	
