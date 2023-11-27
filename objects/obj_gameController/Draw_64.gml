@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 draw_set_font(fnt_debug);
+draw_set_halign(fa_left);
 
 draw_text(10,15,"Base Vitality; " + string(playerVitalityBase));
 draw_text(10,30,"Base Endurance; " + string(playerEnduranceBase));
