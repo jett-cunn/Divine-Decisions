@@ -34,3 +34,7 @@ draw_text(10,390,buttonMiddleTextA);
 draw_text(10,405,buttonMiddleTextB);
 draw_text(10,420,buttonRightTextA);
 draw_text(10,435,buttonRightTextB);
+
+draw_text(10,465,"Encounter 1 Value; " + string(encounterRoll1));
+draw_text(10,480,"Encounter 2 Value; " + string(encounterRoll2));
+draw_text(10,495,"Encounter 3 Value; " + string(encounterRoll3));

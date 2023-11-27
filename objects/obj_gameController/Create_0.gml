@@ -25,6 +25,9 @@ encounter2 = 0;
 encounter3 = 0;
 
 encounterValue = 0;
+encounterRoll1 = 0;
+encounterRoll2 = 0;
+encounterRoll3 = 0;
 currentEncounter = 0;
 
 encounterText1A = "A snivelling goblin hides in the shadows";

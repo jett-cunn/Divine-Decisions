@@ -223,12 +223,12 @@ if gameState == 100 { //Waiting for controller reset
 
 if gameState == 101 { //Choosing encounters
 	
-	encounterValue = random_range(1,11);
-	encounter1 = encounterValue;
-	encounterValue = random_range(1,11);
-	encounter2 = encounterValue;
-	encounterValue = random_range(1,11);
-	encounter3 = encounterValue;
+	encounterRoll1 = irandom(10)+1;
+	encounter1 = encounterRoll1;
+	encounterRoll2 = irandom(10)+1;
+	encounter2 = encounterRoll2;
+	encounterRoll3 = irandom(10)+1;
+	encounter3 = encounterRoll3;
 	
 	gameState = 102;
 }
