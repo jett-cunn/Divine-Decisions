@@ -242,140 +242,140 @@ if gameState == 102 { //Presenting options
 	
 	//Set text for each button based on encounter
 	if encounter1 == 1 {
-		buttonLeftTextA = encounterText1A
-		buttonLeftTextB = encounterText1B
+		buttonLeftTextA = encounterText1A;
+		buttonLeftTextB = encounterText1B;
 	}
 	else if encounter1 == 2 {
-		buttonLeftTextA = encounterText2A
-		buttonLeftTextB = encounterText2B
+		buttonLeftTextA = encounterText2A;
+		buttonLeftTextB = encounterText2B;
 	}
 	else if encounter1 == 3 {
-		buttonLeftTextA = encounterText3A
-		buttonLeftTextB = encounterText3B
+		buttonLeftTextA = encounterText3A;
+		buttonLeftTextB = encounterText3B;
 	}
 	else if encounter1 == 4 {
-		buttonLeftTextA = encounterText4A
-		buttonLeftTextB = encounterText4B
+		buttonLeftTextA = encounterText4A;
+		buttonLeftTextB = encounterText4B;
 	}
 	else if encounter1 == 5 {
-		buttonLeftTextA = encounterText5A
-		buttonLeftTextB = encounterText5B
+		buttonLeftTextA = encounterText5A;
+		buttonLeftTextB = encounterText5B;
 	}
 	else if encounter1 == 6 {
-		buttonLeftTextA = encounterText6A
-		buttonLeftTextB = encounterText6B
+		buttonLeftTextA = encounterText6A;
+		buttonLeftTextB = encounterText6B;
 	}
 	else if encounter1 == 7 {
-		buttonLeftTextA = encounterText7A
-		buttonLeftTextB = encounterText7B
+		buttonLeftTextA = encounterText7A;
+		buttonLeftTextB = encounterText7B;
 	}
 	else if encounter1 == 8 {
-		buttonLeftTextA = encounterText8A
-		buttonLeftTextB = encounterText8B
+		buttonLeftTextA = encounterText8A;
+		buttonLeftTextB = encounterText8B;
 	}
 	else if encounter1 == 9 {
-		buttonLeftTextA = encounterText9A
-		buttonLeftTextB = encounterText9B
+		buttonLeftTextA = encounterText9A;
+		buttonLeftTextB = encounterText9B;
 	}
 	else if encounter1 == 10 {
-		buttonLeftTextA = encounterText10A
-		buttonLeftTextB = encounterText10B
+		buttonLeftTextA = encounterText10A;
+		buttonLeftTextB = encounterText10B;
 	}
 	else if encounter1 == 11 {
-		buttonLeftTextA = encounterText11A
-		buttonLeftTextB = encounterText11B
+		buttonLeftTextA = encounterText11A;
+		buttonLeftTextB = encounterText11B;
 	}
 	
 	
 	if encounter2 == 1 {
-		buttonMiddleTextA = encounterText1A
-		buttonMiddleTextB = encounterText1B
+		buttonMiddleTextA = encounterText1A;
+		buttonMiddleTextB = encounterText1B;
 	}
 	else if encounter2 == 2 {
-		buttonMiddleTextA = encounterText2A
-		buttonMiddleTextB = encounterText2B
+		buttonMiddleTextA = encounterText2A;
+		buttonMiddleTextB = encounterText2B;
 	}
 	else if encounter2 == 3 {
-		buttonMiddleTextA = encounterText3A
-		buttonMiddleTextB = encounterText3B
+		buttonMiddleTextA = encounterText3A;
+		buttonMiddleTextB = encounterText3B;
 	}
 	else if encounter2 == 4 {
-		buttonMiddleTextA = encounterText4A
-		buttonMiddleTextB = encounterText4B
+		buttonMiddleTextA = encounterText4A;
+		buttonMiddleTextB = encounterText4B;
 	}
 	else if encounter2 == 5 {
-		buttonMiddleTextA = encounterText5A
-		buttonMiddleTextB = encounterText5B
+		buttonMiddleTextA = encounterText5A;
+		buttonMiddleTextB = encounterText5B;
 	}
 	else if encounter2 == 6 {
-		buttonMiddleTextA = encounterText6A
-		buttonMiddleTextB = encounterText6B
+		buttonMiddleTextA = encounterText6A;
+		buttonMiddleTextB = encounterText6B;
 	}
 	else if encounter2 == 7 {
-		buttonMiddleTextA = encounterText7A
-		buttonMiddleTextB = encounterText7B
+		buttonMiddleTextA = encounterText7A;
+		buttonMiddleTextB = encounterText7B;
 	}
 	else if encounter2 == 8 {
-		buttonMiddleTextA = encounterText8A
-		buttonMiddleTextB = encounterText8B
+		buttonMiddleTextA = encounterText8A;
+		buttonMiddleTextB = encounterText8B;
 	}
 	else if encounter2 == 9 {
-		buttonMiddleTextA = encounterText9A
-		buttonMiddleTextB = encounterText9B
+		buttonMiddleTextA = encounterText9A;
+		buttonMiddleTextB = encounterText9B;
 	}
 	else if encounter2 == 10 {
-		buttonMiddleTextA = encounterText10A
-		buttonMiddleTextB = encounterText10B
+		buttonMiddleTextA = encounterText10A;
+		buttonMiddleTextB = encounterText10B;
 	}
 	else if encounter2 == 11 {
-		buttonMiddleTextA = encounterText11A
-		buttonMiddleTextB = encounterText11B
+		buttonMiddleTextA = encounterText11A;
+		buttonMiddleTextB = encounterText11B;
 	}
 	
 	
 	if encounter3 == 1 {
-		buttonRightTextA = encounterText1A
-		buttonRightTextB = encounterText1B
+		buttonRightTextA = encounterText1A;
+		buttonRightTextB = encounterText1B;
 	}
 	else if encounter3 == 2 {
-		buttonRightTextA = encounterText2A
-		buttonRightTextB = encounterText2B
+		buttonRightTextA = encounterText2A;
+		buttonRightTextB = encounterText2B;
 	}
 	else if encounter3 == 3 {
-		buttonRightTextA = encounterText3A
-		buttonRightTextB = encounterText3B
+		buttonRightTextA = encounterText3A;
+		buttonRightTextB = encounterText3B;
 	}
 	else if encounter3 == 4 {
-		buttonRightTextA = encounterText4A
-		buttonRightTextB = encounterText4B
+		buttonRightTextA = encounterText4A;
+		buttonRightTextB = encounterText4B;
 	}
 	else if encounter3 == 5 {
-		buttonRightTextA = encounterText5A
-		buttonRightTextB = encounterText5B
+		buttonRightTextA = encounterText5A;
+		buttonRightTextB = encounterText5B;
 	}
 	else if encounter3 == 6 {
-		buttonRightTextA = encounterText6A
-		buttonRightTextB = encounterText6B
+		buttonRightTextA = encounterText6A;
+		buttonRightTextB = encounterText6B;
 	}
 	else if encounter3 == 7 {
-		buttonRightTextA = encounterText7A
-		buttonRightTextB = encounterText7B
+		buttonRightTextA = encounterText7A;
+		buttonRightTextB = encounterText7B;
 	}
 	else if encounter3 == 8 {
-		buttonRightTextA = encounterText8A
-		buttonRightTextB = encounterText8B
+		buttonRightTextA = encounterText8A;
+		buttonRightTextB = encounterText8B;
 	}
 	else if encounter3 == 9 {
-		buttonRightTextA = encounterText9A
-		buttonRightTextB = encounterText9B
+		buttonRightTextA = encounterText9A;
+		buttonRightTextB = encounterText9B;
 	}
 	else if encounter3 == 10 {
-		buttonRightTextA = encounterText10A
-		buttonRightTextB = encounterText10B
+		buttonRightTextA = encounterText10A;
+		buttonRightTextB = encounterText10B;
 	}
 	else if encounter3 == 11 {
-		buttonRightTextA = encounterText11A
-		buttonRightTextB = encounterText11B
+		buttonRightTextA = encounterText11A;
+		buttonRightTextB = encounterText11B;
 	}
 	
 	

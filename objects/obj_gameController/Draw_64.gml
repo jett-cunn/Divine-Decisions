@@ -23,7 +23,13 @@ draw_text(10,255,"Total Strength; " + string(playerStrengthTotal));
 draw_text(10,270,"Total Intelligence; " + string(playerIntelligenceTotal));
 draw_text(10,285,"Total Compassion; " + string(playerCompassionTotal));
 
-draw_text(10,300,string(buttonLeftVisible))
-draw_text(10,315,string(buttonMiddleVisible))
-draw_text(10,330,string(buttonRightVisible))
+draw_text(10,300,string(buttonLeftVisible));
+draw_text(10,315,string(buttonMiddleVisible));
+draw_text(10,330,string(buttonRightVisible));
 
+draw_text(10,360,buttonLeftTextA);
+draw_text(10,375,buttonLeftTextB);
+draw_text(10,390,buttonMiddleTextA);
+draw_text(10,405,buttonMiddleTextB);
+draw_text(10,420,buttonRightTextA);
+draw_text(10,435,buttonRightTextB);
