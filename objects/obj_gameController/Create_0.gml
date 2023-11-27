@@ -12,14 +12,43 @@ buttonLeftVisible = false;
 buttonMiddleVisible = false;
 buttonRightVisible = false;
 
-buttonLeftText = ""
-buttonMiddleText = ""
-buttonRightText = ""
+buttonLeftTextA = "";
+buttonLeftTextB = "";
+buttonMiddleTextA = "";
+buttonMiddleTextB = "";
+buttonRightTextA = "";
+buttonRightTextB = "";
+
+
+encounter1 = 0;
+encounter2 = 0;
+encounter3 = 0;
 
 encounterValue = 0;
 currentEncounter = 0;
 
-
+encounterText1A = "A snivelling goblin hides in the shadows";
+encounterText1B = "";
+encounterText2A = "A snivelling goblin hides in the shadows,";
+encounterText2B = "clutching a victim's trinket";
+encounterText3A = "A ravenous wolf stalks its' prey";
+encounterText3B = "";
+encounterText4A = "A ravenous wolf stalks its' prey,";
+encounterText4B = "a victim's trinket dropped beyond it";
+encounterText5A = "A ravenous wolf stalks its' prey,";
+encounterText5B = "a fallen adventurer's loot in its' burrow";
+encounterText6A = "A conniving cultist flees from battle,";
+encounterText6B = "a victim's trinket on their belt";
+encounterText7A = "A conniving cultist flees from battle,";
+encounterText7B = "a fallen adventurer's prize in hand";
+encounterText8A = "A conniving cultist flees from battle,";
+encounterText8B = "a great treasure in their bag";
+encounterText9A = "A notorious bandit captain stands ahead,";
+encounterText9B = "a fallen adventurer's prize before them";
+encounterText10A = "A notorious bandit captain stands ahead,";
+encounterText10B = "a great treasure in their bag";
+encounterText11A = "A notorious bandit captain stands ahead,";
+encounterText11B = "a mighty relic in their sack";
 
 ///Player Stats
 
