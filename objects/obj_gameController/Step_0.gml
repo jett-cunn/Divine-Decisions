@@ -130,6 +130,10 @@ if gameState == 006 {
 		playerWeaponBonus = 2;
 		playerWeaponStat = 3;
 		
+		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
+		playerMaxHealth = (2 * playerVitalityTotal) + 2;
+		playerCurrentHealth = playerMaxHealth;
+		
 		gameState = 009;
 	}
 	
@@ -162,6 +166,10 @@ if gameState == 007 {
 		playerBootBonus = 1;
 		playerWeaponBonus = 2;
 		playerWeaponStat = 2;
+		
+		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
+		playerMaxHealth = (2 * playerVitalityTotal) + 2;
+		playerCurrentHealth = playerMaxHealth;
 		
 		gameState = 009;
 	}
@@ -196,8 +204,14 @@ if gameState == 008 {
 		playerWeaponBonus = 2;
 		playerWeaponStat = 3;
 		
+		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
+		playerMaxHealth = (2 * playerVitalityTotal) + 2;
+		playerCurrentHealth = playerMaxHealth;
+		
 		gameState = 009;
 	}
+	
+	
 	
 }
 
@@ -454,7 +468,9 @@ if gameState == 130 { //Setup
 		playerCompassionTotal += playerWeaponBonus;
 	}
 	
-	playerHealthPercentage = (playerCurrentHealth / playerVitalityTotal) * 100;
+	playerMaxHealth = (2 * playerVitalityTotal) + 2;
+	
+	playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100;
 	
 	//Set enemy stats
 	if currentEncounter == 1 { //Goblin1
@@ -498,7 +514,7 @@ if gameState == 130 { //Setup
 		enemyType = 2;
 	}
 	else if currentEncounter == 6 { //Cultist1
-		enemyMaxHealth = 3;
+		enemyMaxHealth = 8;
 		enemyAttack = 3;
 		enemyDefense = 2;
 		enemySpeed = 1;
@@ -506,7 +522,7 @@ if gameState == 130 { //Setup
 		enemyType = 3;
 	}
 	else if currentEncounter == 7 { //Cultist2
-		enemyMaxHealth = 3;
+		enemyMaxHealth = 8;
 		enemyAttack = 3;
 		enemyDefense = 2;
 		enemySpeed = 1;
@@ -514,7 +530,7 @@ if gameState == 130 { //Setup
 		enemyType = 3;
 	}
 	else if currentEncounter == 8 { //Cultist3
-		enemyMaxHealth = 3;
+		enemyMaxHealth = 8;
 		enemyAttack = 3;
 		enemyDefense = 2;
 		enemySpeed = 1;
@@ -666,7 +682,7 @@ if gameState == 136 { //Enemy Turn
 	
 	playerCurrentHealth -= enemyDamageRoll;
 	
-	playerHealthPercentage = (playerCurrentHealth / playerVitalityTotal) * 100;
+	playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100;
 	
 	if playerCurrentHealth <= 0 {
 		gameState = 152;
@@ -682,6 +698,7 @@ if gameState == 150 { //Successful Escape
 	//Play escape animation
 	
 	gameState = 100
+	room_goto(rm_choice);
 	
 }
 
@@ -694,6 +711,7 @@ if gameState == 151 { //Victory
 	//Set gameState to 190 to receive rewards or 100 to move on
 	if encounterValue == 0 {
 		gameState = 100;
+		room_goto(rm_choice)
 	}
 	else {
 		gameState = 190;
@@ -702,10 +720,18 @@ if gameState == 151 { //Victory
 
 if gameState == 152 { //Defeat
 	
-	//Play defeat animation
+	room_goto(rm_die);
+	gameState = 153;
 	
-	//end game
+}
+
+if gameState == 153 { //Waiting for restart
 	
+	if buttonLeft + buttonMiddle + buttonRight > 0 {
+		
+		
+		gameState = 001;
+	}
 }
 
 
@@ -746,6 +772,7 @@ if gameState == 192 { //Selection
 
 if gameState == 193 { //Leave item
 	gameState = 100;
+	room_goto(rm_choice);
 }
 
 if gameState == 194 { //Take item
@@ -771,6 +798,9 @@ if gameState == 194 { //Take item
 			playerWeaponStat = 3;
 		}
 	}
+	
+	gameState = 100;
+	room_goto(rm_choice);
 	
 }
 

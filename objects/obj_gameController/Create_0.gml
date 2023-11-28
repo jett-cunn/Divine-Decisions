@@ -99,6 +99,7 @@ playerIntelligenceTotal = 0;
 playerCompassionTotal = 0;
 
 //Changing Values
+playerMaxHealth = 0;
 playerCurrentHealth = 0;
 playerHealthPercentage = 0;
 divineInfluence = 0;
