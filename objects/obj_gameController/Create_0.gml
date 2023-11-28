@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+randomize();
 
 gameState = 0;
 
@@ -100,6 +100,7 @@ playerCompassionTotal = 0;
 
 //Changing Values
 playerCurrentHealth = 0;
+playerHealthPercentage = 0;
 divineInfluence = 0;
 
 playerEnduranceRoll = 0;
@@ -125,6 +126,7 @@ enemyDefense = 0;
 enemySpeed = 0;
 
 enemyCurrentHealth = 0;
+enemyHealthPercentage = 0;
 
 enemyAttackRoll = 0;
 enemyDefenseRoll = 0;

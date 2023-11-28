@@ -2,7 +2,9 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_healthBarEnemy",
-  "eventList": [],
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,},
+  ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -26,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_healthBar",
-    "path": "sprites/spr_healthBar/spr_healthBar.yy",
+    "name": "spr_healthBarEnemy",
+    "path": "sprites/spr_healthBarEnemy/spr_healthBarEnemy.yy",
   },
   "spriteMaskId": null,
   "visible": true,

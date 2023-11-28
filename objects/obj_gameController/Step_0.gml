@@ -454,6 +454,8 @@ if gameState == 130 { //Setup
 		playerCompassionTotal += playerWeaponBonus;
 	}
 	
+	playerHealthPercentage = (playerCurrentHealth / playerVitalityTotal) * 100;
+	
 	//Set enemy stats
 	if currentEncounter == 1 { //Goblin1
 		enemyMaxHealth = 6;
@@ -546,6 +548,8 @@ if gameState == 130 { //Setup
 	
 	enemyCurrentHealth = enemyMaxHealth;
 	
+	enemyHealthPercentage = (enemyCurrentHealth / enemyMaxHealth) * 100;
+	
 	//Set health bars
 	
 	gameState = 131;
@@ -624,6 +628,8 @@ if gameState == 135 { //Attack
 	
 	enemyCurrentHealth -= playerDamageValue;
 	
+	enemyHealthPercentage = (enemyCurrentHealth / enemyMaxHealth) * 100;
+	
 	if enemyCurrentHealth <= 0 {
 		gameState = 151;
 	}
@@ -659,6 +665,8 @@ if gameState == 136 { //Enemy Turn
 	}
 	
 	playerCurrentHealth -= enemyDamageRoll;
+	
+	playerHealthPercentage = (playerCurrentHealth / playerVitalityTotal) * 100;
 	
 	if playerCurrentHealth <= 0 {
 		gameState = 152;
