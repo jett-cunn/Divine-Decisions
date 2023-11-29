@@ -30,12 +30,12 @@ encounterRoll2 = 0;
 encounterRoll3 = 0;
 currentEncounter = 0;
 
-encounterText1A = "A snivelling goblin hides in the shadows";
-encounterText1B = "";
-encounterText2A = "A snivelling goblin hides in the shadows,";
-encounterText2B = "clutching a victim's trinket";
-encounterText3A = "A ravenous wolf stalks its' prey";
-encounterText3B = "";
+encounterText1A = "A snivelling goblin";
+encounterText1B = "hides in the shadows";
+encounterText2A = "A snivelling goblin hides in the";
+encounterText2B = "shadows,clutching a victim's trinket";
+encounterText3A = "A ravenous wolf";
+encounterText3B = "stalks its' prey";
 encounterText4A = "A ravenous wolf stalks its' prey,";
 encounterText4B = "a victim's trinket dropped beyond it";
 encounterText5A = "A ravenous wolf stalks its' prey,";
@@ -50,8 +50,8 @@ encounterText9A = "A notorious bandit captain stands ahead,";
 encounterText9B = "a fallen adventurer's prize before them";
 encounterText10A = "A notorious bandit captain stands ahead,";
 encounterText10B = "a great treasure in their bag";
-encounterText11A = "A notorious bandit captain stands ahead,";
-encounterText11B = "a mighty relic in their sack";
+encounterText11A = "A notorious bandit captain stands";
+encounterText11B = "head, a mighty relic in their sack";
 
 ///Player Stats
 

@@ -46,6 +46,7 @@
     {"id":{"name":"fnt_gothic","path":"fonts/fnt_gothic/fnt_gothic.yy",},},
     {"id":{"name":"obj_fightBackground","path":"objects/obj_fightBackground/obj_fightBackground.yy",},},
     {"id":{"name":"obj_characterSelection","path":"objects/obj_characterSelection/obj_characterSelection.yy",},},
+    {"id":{"name":"fnt_gothicMedium","path":"fonts/fnt_gothicMedium/fnt_gothicMedium.yy",},},
     {"id":{"name":"spr_selectWisdom","path":"sprites/spr_selectWisdom/spr_selectWisdom.yy",},},
     {"id":{"name":"rm_fight","path":"rooms/rm_fight/rm_fight.yy",},},
     {"id":{"name":"rm_choice","path":"rooms/rm_choice/rm_choice.yy",},},

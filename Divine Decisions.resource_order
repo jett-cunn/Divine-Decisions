@@ -11,6 +11,7 @@
     {"name":"fnt_gothicLarge","order":2,"path":"fonts/fnt_gothicLarge/fnt_gothicLarge.yy",},
     {"name":"obj_fightBackground","order":15,"path":"objects/obj_fightBackground/obj_fightBackground.yy",},
     {"name":"obj_characterSelection","order":4,"path":"objects/obj_characterSelection/obj_characterSelection.yy",},
+    {"name":"fnt_gothicMedium","order":3,"path":"fonts/fnt_gothicMedium/fnt_gothicMedium.yy",},
     {"name":"spr_selectWisdom","order":3,"path":"sprites/spr_selectWisdom/spr_selectWisdom.yy",},
     {"name":"rm_fight","order":3,"path":"rooms/rm_fight/rm_fight.yy",},
     {"name":"rm_choice","order":2,"path":"rooms/rm_choice/rm_choice.yy",},
