@@ -3,6 +3,7 @@
 
 draw_set_font(fnt_debug);
 draw_set_halign(fa_left);
+draw_set_color(c_blue);
 
 draw_text(10,15,"Base Vitality; " + string(playerVitalityBase));
 draw_text(10,30,"Base Endurance; " + string(playerEnduranceBase));
@@ -44,3 +45,6 @@ draw_text(10,540,"Enemy Attack; " + string(enemyAttack));
 draw_text(10,555,"Enemy Defense; " + string(enemyDefense));
 draw_text(10,570,"Enemy Speed; " + string(enemySpeed));
 draw_text(10,585,"Enemy Type; " + string(enemyType));
+
+draw_text(10,615,"Item ID; " + string(rewardID));
+draw_text(10,630,"Reward Value; " + string(rewardID % 10));
