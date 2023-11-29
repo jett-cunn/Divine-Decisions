@@ -103,6 +103,7 @@ playerMaxHealth = 0;
 playerCurrentHealth = 0;
 playerHealthPercentage = 0;
 divineInfluence = 0;
+rewardID = 0;
 
 playerEnduranceRoll = 0;
 playerAgilityRoll = 0;

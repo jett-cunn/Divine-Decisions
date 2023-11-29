@@ -785,13 +785,22 @@ if gameState == 153 { //Waiting for restart
 
 //Rewards
 if gameState == 190 { //Calculate rewards
-	itemType = random_range(1,6); //1 = charm, 2 = armor, 3 = boots, 4 = str weapon, 5 = int weapon, 6 = comp weapon
+	
+	room_goto(rm_reward);
+	
+	itemType = irandom(5)+1; //1 = charm, 2 = armor, 3 = boots, 4 = str weapon, 5 = int weapon, 6 = comp weapon
 	rewardID = (itemType*10)+encounterValue;
-	//Item ID is a two-digit number; the first digit indicates the type of item, the second indicates the strength of that item's bonus
+	//rewardID is a two-digit number; the first digit indicates the type of item, the second indicates the strength of that item's bonus
 	
 	//Check rewardID and display appropriate item name and stats, along with the player's currently equipped item
 	
-	//Display Take and Leave buttons
+	buttonMiddleVisible = false;
+	
+	buttonLeftTextA = "Keep your old";
+	buttonLeftTextB = "equipment";
+	
+	buttonRightTextA = "Claim your";
+	buttonRightTextB = "new prize";
 	
 	gameState = 191;
 }
