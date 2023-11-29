@@ -577,6 +577,8 @@ if gameState == 130 { //Setup
 	
 	enemyHealthPercentage = (enemyCurrentHealth / enemyMaxHealth) * 100;
 	
+	
+	
 	room_goto(rm_fight);
 	
 	gameState = 131;
@@ -599,20 +601,23 @@ if gameState == 131 { //Waiting for controller reset
 	
 }
 
-if gameState == 132 { //Waiting for controller input
+if gameState == 132 { //Waiting for controller input (Player Action)
 	
-	if (buttonLeft + buttonMiddle + buttonRight) > 1 {
-		gameState = 131;
-	}
-	else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonLeft == 1 {
-		gameState = 133;
-	}
-	else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
-		gameState = 134;
-	}
-	else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
-		gameState = 135;
-	}
+	
+	
+		if (buttonLeft + buttonMiddle + buttonRight) > 1 {
+			gameState = 131;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonLeft == 1 {
+			gameState = 133;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
+			gameState = 134;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
+			gameState = 135;
+		}
+	
 	
 }
 
@@ -621,94 +626,113 @@ if gameState == 133 { //Escape
 	playerAgilityRoll = random_range(1,(2+(2*playerAgilityTotal)));
 	enemySpeedRoll = random_range(1,(2+(2*enemySpeed)));
 	
-	if playerAgilityRoll > enemySpeedRoll {
-		//Escaped successfully
-		gameState = 150;
-	}
-	else {
-		//Escape failed
-		//Play animation
-		playerGuarded = 0;
-		gameState = 136;
-	}
+	
+		if playerAgilityRoll > enemySpeedRoll {
+			//Escaped successfully
+			gameState = 150;
+		}
+		else {
+			//Escape failed
+			//Play animation
+			playerGuarded = 0;
+			gameState = 136;
+		}
+		
+		alarm[1] = 90;
+	
 }
 
 if gameState == 134 { //Defend
 	
-	//play guard animation
-	playerGuarded = 1;
-	gameState = 136
+	
+		//play guard animation
+		playerGuarded = 1;
+		gameState = 136
+		
+		
+		alarm[1] = 90
+	
 	
 }
 
 if gameState == 135 { //Attack
 	
-	if playerWeaponStat == 1 {
-		playerAttackRoll = random_range(1,(2+(2*playerStrengthTotal)));
-	}
-	else if playerWeaponStat == 2 {
-		playerAttackRoll = random_range(1,(2+(2*playerIntelligenceTotal)));
-	}
-	else if playerWeaponStat == 3 {
-		playerAttackRoll = random_range(1,(2+(2*playerCompassionTotal)));
-	}
 	
-	enemyDefenseRoll = random_range(1,(2+(2*enemyDefense)));
 	
-	playerDamageValue = playerAttackRoll - enemyDefenseRoll
-	if playerDamageValue < 0 {
-		playerDamageValue = 0;
-	}
+		if playerWeaponStat == 1 {
+			playerAttackRoll = random_range(1,(2+(2*playerStrengthTotal)));
+		}
+		else if playerWeaponStat == 2 {
+			playerAttackRoll = random_range(1,(2+(2*playerIntelligenceTotal)));
+		}
+		else if playerWeaponStat == 3 {
+			playerAttackRoll = random_range(1,(2+(2*playerCompassionTotal)));
+		}
+		
+		enemyDefenseRoll = random_range(1,(2+(2*enemyDefense)));
 	
-	//play attack animation
-	
-	enemyCurrentHealth -= playerDamageValue;
-	
-	enemyHealthPercentage = (enemyCurrentHealth / enemyMaxHealth) * 100;
-	
-	if enemyCurrentHealth <= 0 {
-		gameState = 151;
-	}
-	else {
-		gameState = 136;
-	}
-	
+		playerDamageValue = playerAttackRoll - enemyDefenseRoll
+		if playerDamageValue < 0 {
+			playerDamageValue = 0;
+		}
+		
+		//play attack animation
+		
+		enemyCurrentHealth -= playerDamageValue;
+		
+		enemyHealthPercentage = (enemyCurrentHealth / enemyMaxHealth) * 100;
+		
+		if enemyCurrentHealth <= 0 {
+			gameState = 151;
+		}
+		else {
+			gameState = 136;
+		}
+		
+		alarm[1] = 90
+		
 }
 
 if gameState == 136 { //Enemy Turn
 	
-	enemyAttackRoll = random_range(1,(2+(2*enemyAttack)));
-	playerEnduranceRoll = random_range(1,(2+(2*playerEnduranceTotal)));
-	if playerWeaponStat == 1 {
-		playerAttackRoll = random_range(1,(2+(2*playerStrengthTotal)));
-	}
-	else if playerWeaponStat == 2 {
-		playerAttackRoll = random_range(1,(2+(2*playerIntelligenceTotal)));
-	}
-	else if playerWeaponStat == 3 {
-		playerAttackRoll = random_range(1,(2+(2*playerCompassionTotal)));
-	}
+	if alarm[1] == 0 {
 	
-	if playerGuarded == 0 {
-		enemyDamageRoll = enemyAttackRoll - playerEnduranceRoll;
-	}
-	else if playerGuarded == 1 {
-		enemyDamageRoll = enemyAttackRoll - playerEnduranceRoll - playerAttackRoll;
-	}
+		enemyAttackRoll = random_range(1,(2+(2*enemyAttack)));
+		playerEnduranceRoll = random_range(1,(2+(2*playerEnduranceTotal)));
+		if playerWeaponStat == 1 {
+			playerAttackRoll = random_range(1,(2+(2*playerStrengthTotal)));
+		}
+		else if playerWeaponStat == 2 {
+			playerAttackRoll = random_range(1,(2+(2*playerIntelligenceTotal)));
+		}
+		else if playerWeaponStat == 3 {
+			playerAttackRoll = random_range(1,(2+(2*playerCompassionTotal)));
+		}
+		
+		if playerGuarded == 0 {
+			enemyDamageRoll = enemyAttackRoll - playerEnduranceRoll;
+		}
+		else if playerGuarded == 1 {
+			enemyDamageRoll = enemyAttackRoll - playerEnduranceRoll - playerAttackRoll;
+		}
+		
+		if enemyDamageRoll < 0 {
+			enemyDamageRoll = 0;
+		}
+		
+		playerCurrentHealth -= enemyDamageRoll;
+		
+		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100;
+		
+		if playerCurrentHealth <= 0 {
+			gameState = 152;
+		}
+		else {
+			gameState = 131;
+		}
+		
+		alarm[1] = 90;
 	
-	if enemyDamageRoll < 0 {
-		enemyDamageRoll = 0;
-	}
-	
-	playerCurrentHealth -= enemyDamageRoll;
-	
-	playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100;
-	
-	if playerCurrentHealth <= 0 {
-		gameState = 152;
-	}
-	else {
-		gameState = 131;
 	}
 	
 }
@@ -747,6 +771,10 @@ if gameState == 152 { //Defeat
 
 if gameState == 153 { //Waiting for restart
 	
+	
+	buttonLeftVisible = false;
+	buttonMiddleVisible = false;
+	buttonRightVisible = false;
 	if buttonLeft + buttonMiddle + buttonRight > 0 {
 		
 		
