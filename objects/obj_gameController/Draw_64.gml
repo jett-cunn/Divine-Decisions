@@ -38,3 +38,9 @@ draw_text(10,435,buttonRightTextB);
 draw_text(10,465,"Encounter 1 Value; " + string(encounterRoll1));
 draw_text(10,480,"Encounter 2 Value; " + string(encounterRoll2));
 draw_text(10,495,"Encounter 3 Value; " + string(encounterRoll3));
+
+draw_text(10,525,"Enemy Max Health; " + string(enemyMaxHealth));
+draw_text(10,540,"Enemy Attack; " + string(enemyAttack));
+draw_text(10,555,"Enemy Defense; " + string(enemyDefense));
+draw_text(10,570,"Enemy Speed; " + string(enemySpeed));
+draw_text(10,585,"Enemy Type; " + string(enemyType));
