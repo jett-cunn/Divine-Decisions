@@ -4,7 +4,7 @@
 if obj_gameController.buttonMiddleVisible == true {
 	draw_set_halign(fa_center)
 	draw_set_font(fnt_gothic)
-	draw_set_color(c_dkgray)
+	draw_set_color(c_ltgray)
 	if(obj_gameController.buttonLeftTextB == ""){
 		draw_set_font(fnt_gothicMedium);
 	}
