@@ -12,70 +12,126 @@ if obj_gameController.gameState >= 190 {
 	if obj_gameController.rewardID < 20 { //Charms
 		
 		if obj_gameController.playerCharmBonus == 1 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+			draw_text(500,300,"Symbolic Ink");
+			draw_text(500,330,"Vitality + 1");
 		}
 		else if obj_gameController.playerCharmBonus == 2 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+			draw_text(500,300,"Shrine Charm");
+			draw_text(500,330,"Vitality + 2");
 		}
 		else 
 		if obj_gameController.playerCharmBonus == 3 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+			draw_text(500,300,"Talisman");
+			draw_text(500,330,"Vitality + 3");
 		}
 		else 
 		if obj_gameController.playerCharmBonus == 4 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+			draw_text(500,300,"Enchanted Symbolic Ink");
+			draw_text(500,330,"Vitality + 4");
 		}
 		
 	}
 	else if obj_gameController.rewardID < 30 { //Armor
 		
-		if obj_gameController.playerCharmBonus == 1 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+		if obj_gameController.playerArmorBonus == 1 {
+			draw_text(500,300,"Cuirass");
+			draw_text(500,330,"Endurance + 1");
 		}
-		else if obj_gameController.playerCharmBonus == 2 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+		else if obj_gameController.playerArmorBonus == 2 {
+			draw_text(500,300,"Chain Mail");
+			draw_text(500,330,"Endurance + 2");
 		}
-		else 
-		if obj_gameController.playerCharmBonus == 3 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+		else if obj_gameController.playerArmorBonus == 3 {
+			draw_text(500,300,"Plate Mail");
+			draw_text(500,330,"Endurance + 3");
 		}
-		else 
-		if obj_gameController.playerCharmBonus == 4 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+		else if obj_gameController.playerArmorBonus == 4 {
+			draw_text(500,300,"Enchanted Cuirass");
+			draw_text(500,330,"Endurance + 4");
 		}
 		
 	}
 	else if obj_gameController.rewardID < 40 { //Boots
 		
-		if obj_gameController.playerCharmBonus == 1 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+		if obj_gameController.playerBootBonus == 1 {
+			draw_text(500,300,"Turnsole Shoes");
+			draw_text(500,330,"Agility + 1");
 		}
-		else if obj_gameController.playerCharmBonus == 2 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
-		}
-		else 
-		if obj_gameController.playerCharmBonus == 3 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+		else if obj_gameController.playerBootBonus == 2 {
+			draw_text(500,300,"Short Boots");
+			draw_text(500,330,"Agility + 2");
 		}
 		else 
-		if obj_gameController.playerCharmBonus == 4 {
-			draw_text(500,300,"Item Name");
-			draw_text(500,300,"Item Bonus");
+		if obj_gameController.playerBootBonus == 3 {
+			draw_text(500,300,"Warrior Boots");
+			draw_text(500,330,"Agility + 3");
+		}
+		else 
+		if obj_gameController.playerBootBonus == 4 {
+			draw_text(500,300,"Enchanted Turnsole Shoes");
+			draw_text(500,330,"Agility + 4");
 		}
 		
 	}
 	else if obj_gameController.rewardID < 70 { //Weapons
+		
+		if obj_gameController.playerWeaponStat == 1 { //Strength Weapons
+			if obj_gameController.playerWeaponBonus == 1 {
+				draw_text(500,300,"Dagger");
+				draw_text(500,330,"Strength + 1");
+			}
+			else if obj_gameController.playerWeaponBonus == 2 {
+				draw_text(500,300,"Sword");
+				draw_text(500,330,"Strength + 2");
+			}
+			else if obj_gameController.playerWeaponBonus == 3 {
+				draw_text(500,300,"Greataxe");
+				draw_text(500,330,"Strength + 3");
+			}
+			else if obj_gameController.playerWeaponBonus == 4 {
+				draw_text(500,300,"Enchanted Dagger");
+				draw_text(500,330,"Strength + 4");
+			}
+			
+		}
+		else if obj_gameController.playerWeaponStat == 2 { // Intelligence Weapons
+			if obj_gameController.playerWeaponBonus == 1 {
+				draw_text(500,300,"Tome");
+				draw_text(500,330,"Intelligence + 1");
+			}
+			else if obj_gameController.playerWeaponBonus == 2 {
+				draw_text(500,300,"Wand");
+				draw_text(500,330,"Intelligence + 2");
+			}
+			else if obj_gameController.playerWeaponBonus == 3 {
+				draw_text(500,300,"Staff");
+				draw_text(500,330,"Intelligence + 3");
+			}
+			else if obj_gameController.playerWeaponBonus == 4 {
+				draw_text(500,300,"Enchanted Tome");
+				draw_text(500,330,"Intelligence + 4");
+			}
+			
+		}
+		else if obj_gameController.playerWeaponStat == 3 { // Compassion Weapons
+			if obj_gameController.playerWeaponBonus == 1 {
+				draw_text(500,300,"Flute");
+				draw_text(500,330,"Compassion + 1");
+			}
+			else if obj_gameController.playerWeaponBonus == 2 {
+				draw_text(500,300,"Lute");
+				draw_text(500,330,"Compassion + 2");
+			}
+			else if obj_gameController.playerWeaponBonus == 3 {
+				draw_text(500,300,"Harp");
+				draw_text(500,330,"Compassion + 3");
+			}
+			else if obj_gameController.playerWeaponBonus == 4 {
+				draw_text(500,300,"Enchanted Flute");
+				draw_text(500,330,"Compassion + 4");
+			}
+			
+		}
 		
 	}
 	
