@@ -931,16 +931,47 @@ if gameState == 191 { //Waiting for controller reset
 
 if gameState == 192 { //Selection
 	
-	if buttonLeft + buttonRight > 1 {
-		gameState = 191;
+	
+	if playerWaiting == false {
+		alarm[2] = 300;
+		playerWaiting = true;
 	}
-	else if buttonLeft + buttonRight = 1 {
-		if buttonLeft = 1 {
+	
+	if alarm[2] > 0 && playerWaiting == true {
+	
+		if buttonLeft + buttonRight > 1 {
+			gameState = 191;
+		}
+		else if buttonLeft + buttonRight = 1 {
+			if buttonLeft = 1 {
+				gameState = 193;
+				divineInfluence -= 1;
+				playerWaiting = false;
+				alarm[2] = 0;
+			}
+			else if buttonRight = 1 {
+				gameState = 194;
+				divineInfluence -= 1;
+				playerWaiting = false;
+				alarm[2] = 0;
+			}
+		}
+		
+	}
+	
+	if alarm[2] == 0 && playerWaiting == true {
+		
+		var randomSelection = irandom(1)+1;
+		
+		if randomSelection == 1 {
 			gameState = 193;
+			playerWaiting = false;
 		}
-		else if buttonRight = 1 {
+		else if randomSelection == 2 {
 			gameState = 194;
+			playerWaiting = false;
 		}
+				
 	}
 	
 }
