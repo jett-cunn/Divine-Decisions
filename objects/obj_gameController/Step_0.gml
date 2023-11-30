@@ -897,6 +897,7 @@ if gameState == 153 { //Waiting for restart
 		
 		
 		gameState = 001;
+		divineInfluence = 15;
 	}
 }
 
