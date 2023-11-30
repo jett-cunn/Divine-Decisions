@@ -55,24 +55,27 @@ if gameState == 002 { //Character Selection
 	
 	
 	
-	if (buttonLeft + buttonMiddle + buttonRight) > 1 {
-		gameState = 001;
-	}
-	else if buttonLeft == 1 { //Select Mercy
-		buttonLeft = 0;
-		alarm[0] = 60;
-		gameState = 003;
-	}
-	else if buttonMiddle == 1 { //Select Wisdom
-		buttonMiddle = 0;
-		alarm[0] = 60;
-		gameState = 004;
-	}
-	else if buttonRight == 1 { //Select Valor
-		buttonRight = 0;
-		alarm[0] = 60;
-		gameState = 005;
-	}
+		
+		if (buttonLeft + buttonMiddle + buttonRight) > 1 {
+			gameState = 001;
+		}
+		else if buttonLeft == 1 { //Select Mercy
+			buttonLeft = 0;
+			alarm[0] = 60;
+			gameState = 003;
+		}
+		else if buttonMiddle == 1 { //Select Wisdom
+			buttonMiddle = 0;
+			alarm[0] = 60;
+			gameState = 004;
+		}
+		else if buttonRight == 1 { //Select Valor
+			buttonRight = 0;
+			alarm[0] = 60;
+			gameState = 005;
+		}
+	
+	
 	
 }
 
@@ -239,6 +242,8 @@ if gameState == 100 { //Waiting for controller reset
 }
 
 if gameState == 101 { //Choosing encounters
+	
+	
 	
 	encounterRoll1 = irandom(10)+1;
 	encounter1 = encounterRoll1;
@@ -437,17 +442,56 @@ if gameState == 102 { //Presenting options
 
 if gameState == 103 { //Selection
 	
-	if (buttonLeft + buttonMiddle + buttonRight) > 1 {
-		gameState = 102;
+	
+	if playerWaiting == false {
+		alarm[2] = 300;
+		playerWaiting = true
 	}
-	else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonLeft == 1 {
-		gameState = 104;
+	
+	if alarm[2] > 0 && divineInfluence > 0 {
+		if (buttonLeft + buttonMiddle + buttonRight) > 1 {
+			gameState = 102;
+			playerWaiting = false;
+			alarm[2] = 0;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonLeft == 1 {
+			gameState = 104;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
+			gameState = 105;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
+			gameState = 106;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
+		}
+		
 	}
-	else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
-		gameState = 105;
-	}
-	else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
-		gameState = 106;
+	
+	if alarm[2] == 0 && playerWaiting == true {
+		
+		var randomSelection = irandom(2)+1;
+		
+		if randomSelection == 1 {
+			gameState = 104;
+			playerWaiting = false;
+		}
+		else if randomSelection == 2 {
+			gameState = 105;
+			playerWaiting = false;
+		}
+		else if randomSelection == 3 {
+			gameState = 106;
+			playerWaiting = false;
+		}
+		
 	}
 	
 }
@@ -644,22 +688,55 @@ if gameState == 131 { //Waiting for controller reset
 
 if gameState == 132 { //Waiting for controller input (Player Action)
 	
+	if playerWaiting == false {
+		alarm[2] = 300;
+		playerWaiting = true;
+	}
 	
-	
+	if alarm[2] > 0 && divineInfluence > 0 {
 		if (buttonLeft + buttonMiddle + buttonRight) > 1 {
 			gameState = 131;
+			playerWaiting = false;
+			alarm[2] = 0;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonLeft == 1 {
 			gameState = 133;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
 			gameState = 134;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
 			gameState = 135;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
 		}
+	}
 	
-	
+	if alarm[2] == 0 && playerWaiting == true {
+		
+		var randomSelection = irandom(2)+1;
+		
+		if randomSelection == 1 {
+			gameState = 133;
+			playerWaiting = false;
+		}
+		else if randomSelection == 2 {
+			gameState = 134;
+			playerWaiting = false;
+		}
+		else if randomSelection == 3 {
+			gameState = 135;
+			playerWaiting = false;
+		}
+		
+	}
 }
 
 if gameState == 133 { //Escape

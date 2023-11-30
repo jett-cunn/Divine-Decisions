@@ -116,7 +116,12 @@ playerCompassionTotal = 0;
 playerMaxHealth = 0;
 playerCurrentHealth = 0;
 playerHealthPercentage = 0;
-divineInfluence = 0;
+
+divineInfluence = 15;
+maxInfluence = 15;
+percentInfluence = 50;
+playerWaiting = false;
+
 rewardID = 0;
 
 playerEnduranceRoll = 0;

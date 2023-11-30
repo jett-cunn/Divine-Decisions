@@ -37,6 +37,7 @@
   "resources": [
     {"id":{"name":"spr_selectValor","path":"sprites/spr_selectValor/spr_selectValor.yy",},},
     {"id":{"name":"rm_reward","path":"rooms/rm_reward/rm_reward.yy",},},
+    {"id":{"name":"spr_buttonPanel","path":"sprites/spr_buttonPanel/spr_buttonPanel.yy",},},
     {"id":{"name":"obj_buttonRight","path":"objects/obj_buttonRight/obj_buttonRight.yy",},},
     {"id":{"name":"fnt_debug","path":"fonts/fnt_debug/fnt_debug.yy",},},
     {"id":{"name":"spr_enemyWolf","path":"sprites/spr_enemyWolf/spr_enemyWolf.yy",},},
@@ -74,6 +75,7 @@
     {"id":{"name":"spr_gameMenu","path":"sprites/spr_gameMenu/spr_gameMenu.yy",},},
     {"id":{"name":"obj_buttonMiddle","path":"objects/obj_buttonMiddle/obj_buttonMiddle.yy",},},
     {"id":{"name":"obj_charStatVisualizer","path":"objects/obj_charStatVisualizer/obj_charStatVisualizer.yy",},},
+    {"id":{"name":"obj_buttonPanel","path":"objects/obj_buttonPanel/obj_buttonPanel.yy",},},
     {"id":{"name":"spr_buttonLeft","path":"sprites/spr_buttonLeft/spr_buttonLeft.yy",},},
     {"id":{"name":"spr_deathMenu","path":"sprites/spr_deathMenu/spr_deathMenu.yy",},},
     {"id":{"name":"spr_healthBarEnemy","path":"sprites/spr_healthBarEnemy/spr_healthBarEnemy.yy",},},
