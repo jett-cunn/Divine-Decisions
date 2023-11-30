@@ -202,7 +202,7 @@ if gameState == 008 {
 		playerArmorBonus = 1;
 		playerBootBonus = 1;
 		playerWeaponBonus = 2;
-		playerWeaponStat = 3;
+		playerWeaponStat = 1;
 		
 		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
 		playerMaxHealth = (2 * playerVitalityTotal) + 2;
@@ -456,6 +456,8 @@ if gameState == 130 { //Setup
 	playerEnduranceTotal = playerEnduranceBase + playerArmorBonus;
 	playerAgilityTotal = playerAgilityBase + playerBootBonus;
 	playerStrengthTotal = playerStrengthBase;
+	playerIntelligenceTotal = playerIntelligenceBase;
+	playerCompassionTotal = playerCompassionBase;
 	if playerWeaponStat == 1 {
 		playerStrengthTotal += playerWeaponBonus;
 	}
