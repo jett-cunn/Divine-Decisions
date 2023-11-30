@@ -977,6 +977,17 @@ if gameState == 192 { //Selection
 }
 
 if gameState == 193 { //Leave item
+	
+	divineInfluence += encounterValue;
+	if divineInfluence > maxInfluence {
+		divineInfluence = maxInfluence;
+	}
+	
+	playerCurrentHealth += 2*encounterValue
+	if playerCurrentHealth > playerMaxHealth {
+		playerCurrentHealth = playerMaxHealth;
+	}
+	
 	gameState = 100;
 	room_goto(rm_choice);
 }
@@ -1003,6 +1014,16 @@ if gameState == 194 { //Take item
 		else if itemType == 6 {
 			playerWeaponStat = 3;
 		}
+	}
+	
+	divineInfluence += encounterValue;
+	if divineInfluence > maxInfluence {
+		divineInfluence = maxInfluence;
+	}
+	
+	playerCurrentHealth += 2*encounterValue
+	if playerCurrentHealth > playerMaxHealth {
+		playerCurrentHealth = playerMaxHealth;
 	}
 	
 	gameState = 100;
