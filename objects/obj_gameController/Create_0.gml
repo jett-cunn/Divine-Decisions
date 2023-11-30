@@ -15,6 +15,12 @@ buttonLeftVisible = false;
 buttonMiddleVisible = false;
 buttonRightVisible = false;
 
+
+buttonLeftPressed = false;
+buttonMiddlePressed = false;
+buttonRightPressed = false;
+
+
 buttonLeftTextA = "";
 buttonLeftTextB = "";
 buttonLeftTextC = "";

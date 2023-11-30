@@ -36,7 +36,7 @@ if gameState == 001 { //Waiting for controller reset
 
 if gameState == 002 { //Character Selection
 	
-	
+	score = 0;
 	
 	
 	buttonLeftVisible = true;
@@ -61,16 +61,19 @@ if gameState == 002 { //Character Selection
 		}
 		else if buttonLeft == 1 { //Select Mercy
 			buttonLeft = 0;
+			buttonLeftPressed = true;
 			alarm[0] = 60;
 			gameState = 003;
 		}
 		else if buttonMiddle == 1 { //Select Wisdom
 			buttonMiddle = 0;
+			buttonMiddlePressed = true;
 			alarm[0] = 60;
 			gameState = 004;
 		}
 		else if buttonRight == 1 { //Select Valor
 			buttonRight = 0;
+			buttonRightPressed = true;
 			alarm[0] = 60;
 			gameState = 005;
 		}
@@ -116,11 +119,13 @@ if gameState == 006 {
 	}
 	else if buttonLeft == 1 {
 		buttonLeft = 0;
+		buttonLeftPressed = true;
 		alarm[0] = 60;
 		gameState = 002;
 	}
 	else if buttonRight == 1 {
 		buttonRight = 0;
+		buttonRightPressed = true;
 		alarm[0] = 60;
 		//Mercy Stats
 		playerVitalityBase = 2;
@@ -152,11 +157,13 @@ if gameState == 007 {
 	}
 	else if buttonLeft == 1 {
 		buttonLeft = 0;
+		buttonLeftPressed = true;
 		alarm[0] = 60;
 		gameState = 002;
 	}
 	else if buttonRight == 1 {
 		buttonRight = 0;
+		buttonRightPressed = true;
 		alarm[0] = 60;
 		//Wisdom stats
 		
@@ -189,11 +196,13 @@ if gameState == 008 {
 	}
 	else if buttonLeft == 1 {
 		buttonLeft = 0;
+		buttonLeftPressed = true;
 		alarm[0] = 60;
 		gameState = 002;
 	}
 	else if buttonRight == 1 {
 		buttonRight = 0;
+		buttonRightPressed = true;
 		alarm[0] = 60;
 		//Valor stats
 		
