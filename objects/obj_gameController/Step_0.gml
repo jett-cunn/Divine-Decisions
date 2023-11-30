@@ -444,7 +444,7 @@ if gameState == 103 { //Selection
 	
 	
 	if playerWaiting == false {
-		alarm[2] = 300;
+		alarm[2] = 900;
 		playerWaiting = true
 	}
 	
@@ -689,7 +689,7 @@ if gameState == 131 { //Waiting for controller reset
 if gameState == 132 { //Waiting for controller input (Player Action)
 	
 	if playerWaiting == false {
-		alarm[2] = 300;
+		alarm[2] = 900;
 		playerWaiting = true;
 	}
 	
@@ -934,7 +934,7 @@ if gameState == 192 { //Selection
 	
 	
 	if playerWaiting == false {
-		alarm[2] = 300;
+		alarm[2] = 900;
 		playerWaiting = true;
 	}
 	

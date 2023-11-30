@@ -12,7 +12,7 @@ obj_gameController.percentInfluence = (obj_gameController.divineInfluence / obj_
 
 draw_healthbar(1275,690,1655,720,obj_gameController.percentInfluence,c_olive,c_yellow,c_yellow,1,true,true);
 
-var timerPercent = (obj_gameController.alarm[2] / 300) * 100;
+var timerPercent = (obj_gameController.alarm[2] / 900) * 100;
 
 draw_healthbar(750,675,1250,750,timerPercent,c_black,c_red,c_green,1,false,false);
 
