@@ -2,6 +2,9 @@
 // You can write your code in this editor
 randomize();
 
+
+score = 0;
+
 gameState = 0;
 
 buttonLeft = 0;

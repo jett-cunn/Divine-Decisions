@@ -858,7 +858,7 @@ if gameState == 136 { //Enemy Turn
 if gameState == 150 { //Successful Escape
 	
 	//Play escape animation
-	
+	score += 1;
 	gameState = 100
 	room_goto(rm_choice);
 	
@@ -871,6 +871,7 @@ if gameState == 151 { //Victory
 	//Check encounter reward value
 	
 	//Set gameState to 190 to receive rewards or 100 to move on
+	score += 1;
 	if encounterValue == 0 {
 		gameState = 100;
 		room_goto(rm_choice)

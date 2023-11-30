@@ -2,6 +2,16 @@
 // You can write your code in this editor
 
 
+draw_set_font(fnt_gothicLarge);
+
+draw_set_halign(fa_left);
+
+draw_set_color(c_aqua);
+
+draw_text(15,15,score);
+
+
+
 /*
 draw_set_font(fnt_debug);
 draw_set_halign(fa_left);
