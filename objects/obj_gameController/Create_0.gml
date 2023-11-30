@@ -14,10 +14,13 @@ buttonRightVisible = false;
 
 buttonLeftTextA = "";
 buttonLeftTextB = "";
+buttonLeftTextC = "";
 buttonMiddleTextA = "";
 buttonMiddleTextB = "";
+buttonMiddleTextC = "";
 buttonRightTextA = "";
 buttonRightTextB = "";
+buttonRightTextC = "";
 
 
 encounter1 = 0;
@@ -32,26 +35,37 @@ currentEncounter = 0;
 
 encounterText1A = "A snivelling goblin";
 encounterText1B = "hides in the shadows";
-encounterText2A = "A snivelling goblin hides in the";
-encounterText2B = "shadows, clutching a victim's trinket";
+encounterText1C = "";
+encounterText2A = "A snivelling goblin hides";
+encounterText2B = "in the shadows, clutching";
+encounterText2C = "a victim's trinket";
 encounterText3A = "A ravenous wolf";
 encounterText3B = "stalks its' prey";
-encounterText4A = "A ravenous wolf stalks its' prey,";
-encounterText4B = "a victim's trinket dropped beyond it";
-encounterText5A = "A ravenous wolf stalks its' prey, a";
-encounterText5B = "fallen adventurer's loot in its' burrow";
-encounterText6A = "A conniving cultist flees from battle,";
-encounterText6B = "a victim's trinket on their belt";
-encounterText7A = "A conniving cultist flees from battle,";
-encounterText7B = "a fallen adventurer's prize in hand";
-encounterText8A = "A conniving cultist flees from";
-encounterText8B = "battle, a great treasure in their bag";
-encounterText9A = "A notorious bandit captain stands ahead,";
-encounterText9B = "a fallen adventurer's prize before them";
-encounterText10A = "A notorious bandit captain stands";
-encounterText10B = "ahead, a great treasure in their bag";
-encounterText11A = "A notorious bandit captain stands";
-encounterText11B = "head, a mighty relic in their sack";
+encounterText3C = "";
+encounterText4A = "A ravenous wolf stalks its'";
+encounterText4B = "prey, a victim's trinket ";
+encounterText4C = "dropped beyond it";
+encounterText5A = "A ravenous wolf stalks its'";
+encounterText5B = "prey, a fallen adventurer's";
+encounterText5C = "loot in its' burrow";
+encounterText6A = "A conniving cultist flees";
+encounterText6B = "from battle, a victim's";
+encounterText6C = "trinket on their belt";
+encounterText7A = "A conniving cultist flees";
+encounterText7B = "from battle, a fallen";
+encounterText7C = "adventurer's prize in hand";
+encounterText8A = "A conniving cultist flees";
+encounterText8B = "from battle, a great";
+encounterText8C = "treasure in their bag";
+encounterText9A = "A notorious bandit captain";
+encounterText9B = "stands ahead, a fallen";
+encounterText9C = "adventurer's prize before them";
+encounterText10A = "A notorious bandit captain";
+encounterText10B = "stands ahead, a great";
+encounterText10C = "treasure in their bag";
+encounterText11A = "A notorious bandit captain";
+encounterText11B = "stands ahead, wielding";
+encounterText11C = "a mighty relic";
 
 ///Player Stats
 

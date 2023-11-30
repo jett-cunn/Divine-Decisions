@@ -10,6 +10,7 @@ if obj_gameController.buttonLeftVisible == true {
 	}
 	draw_text(525,925,obj_gameController.buttonLeftTextA)
 	draw_text(525,945,obj_gameController.buttonLeftTextB)
+	draw_text(525,965,obj_gameController.buttonLeftTextC)
 }
 
 
