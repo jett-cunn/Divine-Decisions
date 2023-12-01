@@ -10,6 +10,10 @@ draw_set_color(c_aqua);
 
 draw_text(15,15,score);
 
+
+
+
+/*
 draw_set_font(fnt_debug);
 
 if gameState >= 2 {

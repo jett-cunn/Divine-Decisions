@@ -14,5 +14,5 @@ draw_healthbar(1275,690,1655,720,obj_gameController.percentInfluence,c_olive,c_y
 
 var timerPercent = (obj_gameController.alarm[2] / 900) * 100;
 
-draw_healthbar(750,675,1250,750,timerPercent,c_black,c_red,c_green,1,false,false);
+draw_healthbar(750,675,1250,726,timerPercent,c_black,c_red,c_green,1,false,false);
 

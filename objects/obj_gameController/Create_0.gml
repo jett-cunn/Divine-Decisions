@@ -126,9 +126,9 @@ playerMaxHealth = 0;
 playerCurrentHealth = 0;
 playerHealthPercentage = 0;
 
-divineInfluence = 15;
-maxInfluence = 15;
-percentInfluence = 50;
+divineInfluence = 20;
+maxInfluence = 20;
+percentInfluence = 100;
 playerWaiting = false;
 
 rewardID = 0;
