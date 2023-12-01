@@ -35,7 +35,7 @@ if obj_gameController.gameState == 132 && obj_gameController.fightTurn1 == false
 		draw_text(x+180, y+40, "- " + string(obj_gameController.playerEnduranceRoll));
 		
 		draw_set_color(c_green)
-		draw_text(x+220, y+40, "= " + string(obj_gameController.playerDamageValue) + " Damage");
+		draw_text(x+220, y+40, "= " + string(obj_gameController.enemyDamageRoll) + " Damage");
 
 	}
 	else if obj_gameController.playerGuarded == 1 {
