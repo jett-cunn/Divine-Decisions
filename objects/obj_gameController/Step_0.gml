@@ -454,7 +454,7 @@ if gameState == 103 { //Selection
 	
 	
 	if playerWaiting == false {
-		alarm[2] = 900;
+		alarm[2] = 600;
 		playerWaiting = true
 	}
 	
@@ -706,7 +706,7 @@ if gameState == 131 { //Waiting for controller reset
 if gameState == 132 { //Waiting for controller input (Player Action)
 	
 	if playerWaiting == false {
-		alarm[2] = 900;
+		alarm[2] = 600;
 		playerWaiting = true;
 	}
 	
@@ -970,8 +970,10 @@ if gameState == 191 { //Waiting for controller reset
 if gameState == 192 { //Selection
 	
 	
+	
+	
 	if playerWaiting == false {
-		alarm[2] = 900;
+		alarm[2] = 600;
 		playerWaiting = true;
 	}
 	
@@ -1018,25 +1020,30 @@ if gameState == 192 { //Selection
 				
 	}
 	
+	alarm[1] = 90;
+	
 }
 
 if gameState == 193 { //Leave item
+	if alarm[1] == 0 {
+		divineInfluence += encounterValue;
+		if divineInfluence > maxInfluence {
+			divineInfluence = maxInfluence;
+		}
+		
+		playerCurrentHealth += 2*encounterValue
+		if playerCurrentHealth > playerMaxHealth {
+			playerCurrentHealth = playerMaxHealth;
+		}
 	
-	divineInfluence += encounterValue;
-	if divineInfluence > maxInfluence {
-		divineInfluence = maxInfluence;
+		gameState = 100;
+		room_goto(rm_choice);
 	}
-	
-	playerCurrentHealth += 2*encounterValue
-	if playerCurrentHealth > playerMaxHealth {
-		playerCurrentHealth = playerMaxHealth;
-	}
-	
-	gameState = 100;
-	room_goto(rm_choice);
 }
 
 if gameState == 194 { //Take item
+	
+	if alarm[1] == 0 {
 	
 	if itemType == 1 {
 		playerCharmBonus = encounterValue;
@@ -1072,6 +1079,8 @@ if gameState == 194 { //Take item
 	
 	gameState = 100;
 	room_goto(rm_choice);
+	
+	}
 	
 }
 
