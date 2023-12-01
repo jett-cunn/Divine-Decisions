@@ -10,6 +10,17 @@ draw_set_color(c_aqua);
 
 draw_text(15,15,score);
 
+draw_set_font(fnt_debug);
+
+if gameState >= 2 {
+	draw_text(15,60,"Button Left Active; " + string(buttonLeftPressed));
+	draw_text(15,75,string(obj_buttonLeft.alarm[0]));
+	draw_text(15,90,"Button Middle Active; " + string(buttonMiddlePressed));
+	draw_text(15,105,string(obj_buttonMiddle.alarm[0]));
+	draw_text(15,120,"Button Right Active; " + string(buttonRightPressed));
+	draw_text(15,135,string(obj_buttonRight.alarm[0]));
+}
+
 
 
 /*

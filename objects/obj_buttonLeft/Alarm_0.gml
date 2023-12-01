@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-object_set_sprite(obj_buttonLeft,spr_buttonLeft);
+sprite_index = spr_buttonLeft;
 
-
+obj_gameController.buttonLeftPressed = false;
 
 

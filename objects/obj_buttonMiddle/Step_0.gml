@@ -8,9 +8,9 @@ else {
 	visible = false
 }
 
-if obj_gameController.buttonMiddlePressed == true {
+if obj_gameController.buttonMiddlePressed == true && alarm[0] == -1 {
 	
-	object_set_sprite(obj_buttonMiddle,spr_buttonMiddleLit)
+	sprite_index = spr_buttonMiddleLit
 	alarm[0] = 30
 	
 }

@@ -8,9 +8,9 @@ else {
 	visible = false
 }
 
-if obj_gameController.buttonRightPressed == true {
+if obj_gameController.buttonRightPressed == true && alarm[0] == -1 {
 	
-	object_set_sprite(obj_buttonRight,spr_buttonRightLit)
+	sprite_index = spr_buttonRightLit
 	alarm[0] = 30
 	
 }
