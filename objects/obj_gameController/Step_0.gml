@@ -676,6 +676,7 @@ if gameState == 130 { //Setup
 	enemyHealthPercentage = (enemyCurrentHealth / enemyMaxHealth) * 100;
 	
 	
+	fightTurn1 = true;
 	
 	room_goto(rm_fight);
 	
@@ -721,6 +722,7 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonLeftPressed = true;
+			playerActionChoice = 1;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
 			gameState = 134;
@@ -728,6 +730,7 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonMiddlePressed = true;
+			playerActionChoice = 2;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
 			gameState = 135;
@@ -735,6 +738,7 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonRightPressed = true;
+			playerActionChoice = 3;
 		}
 	}
 	
@@ -746,16 +750,19 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 			gameState = 133;
 			playerWaiting = false;
 			buttonLeftPressed = true;
+			playerActionChoice = 1;
 		}
 		else if randomSelection == 2 {
 			gameState = 134;
 			playerWaiting = false;
 			buttonMiddlePressed = true;
+			playerActionChoice = 2;
 		}
 		else if randomSelection == 3 {
 			gameState = 135;
 			playerWaiting = false;
 			buttonRightPressed = true;
+			playerActionChoice = 3;
 		}
 		
 	}
@@ -763,8 +770,8 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 
 if gameState == 133 { //Escape
 	
-	playerAgilityRoll = random_range(1,(2+(2*playerAgilityTotal)));
-	enemySpeedRoll = random_range(1,(2+(2*enemySpeed)));
+	playerAgilityRoll = irandom((1+(2*playerAgilityTotal)))+1;
+	enemySpeedRoll = irandom((1+(2*enemySpeed)))+1;
 	
 	
 		if playerAgilityRoll > enemySpeedRoll {
@@ -800,16 +807,16 @@ if gameState == 135 { //Attack
 	
 	
 		if playerWeaponStat == 1 {
-			playerAttackRoll = random_range(1,(2+(2*playerStrengthTotal)));
+			playerAttackRoll = irandom((1+(2*playerStrengthTotal)))+1;
 		}
 		else if playerWeaponStat == 2 {
-			playerAttackRoll = random_range(1,(2+(2*playerIntelligenceTotal)));
+			playerAttackRoll = irandom((1+(2*playerIntelligenceTotal)))+1;
 		}
 		else if playerWeaponStat == 3 {
-			playerAttackRoll = random_range(1,(2+(2*playerCompassionTotal)));
+			playerAttackRoll = irandom((1+(2*playerCompassionTotal)))+1;
 		}
 		
-		enemyDefenseRoll = random_range(1,(2+(2*enemyDefense)));
+		enemyDefenseRoll = irandom((1+(2*enemyDefense)))+1;
 	
 		playerDamageValue = playerAttackRoll - enemyDefenseRoll
 		if playerDamageValue < 0 {
@@ -829,6 +836,7 @@ if gameState == 135 { //Attack
 			gameState = 136;
 		}
 		
+		playerGuarded = 0;
 		alarm[1] = 90
 		
 }
@@ -837,16 +845,16 @@ if gameState == 136 { //Enemy Turn
 	
 	if alarm[1] == 0 {
 	
-		enemyAttackRoll = random_range(1,(2+(2*enemyAttack)));
-		playerEnduranceRoll = random_range(1,(2+(2*playerEnduranceTotal)));
+		enemyAttackRoll = irandom((1+(2*enemyAttack)))+1;
+		playerEnduranceRoll = irandom((1+(2*playerEnduranceTotal)))+1;
 		if playerWeaponStat == 1 {
-			playerAttackRoll = random_range(1,(2+(2*playerStrengthTotal)));
+			playerAttackRoll = irandom((1+(2*playerStrengthTotal)))+1;
 		}
 		else if playerWeaponStat == 2 {
-			playerAttackRoll = random_range(1,(2+(2*playerIntelligenceTotal)));
+			playerAttackRoll = irandom((1+(2*playerIntelligenceTotal)))+1;
 		}
 		else if playerWeaponStat == 3 {
-			playerAttackRoll = random_range(1,(2+(2*playerCompassionTotal)));
+			playerAttackRoll = irandom((1+(2*playerCompassionTotal)))+1;
 		}
 		
 		if playerGuarded == 0 {
@@ -872,6 +880,7 @@ if gameState == 136 { //Enemy Turn
 		}
 		
 		alarm[1] = 90;
+		fightTurn1 = false;
 	
 	}
 	
@@ -880,10 +889,11 @@ if gameState == 136 { //Enemy Turn
 if gameState == 150 { //Successful Escape
 	
 	//Play escape animation
-	score += 1;
-	gameState = 100
-	room_goto(rm_choice);
-	
+	if alarm[1] == 0 {
+		score += 1;
+		gameState = 100
+		room_goto(rm_choice);
+	}
 }
 
 if gameState == 151 { //Victory

@@ -12,7 +12,6 @@ draw_text(15,15,score);
 
 
 
-
 /*
 draw_set_font(fnt_debug);
 

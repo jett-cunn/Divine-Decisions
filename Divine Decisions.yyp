@@ -86,6 +86,7 @@
     {"id":{"name":"obj_deathMenu","path":"objects/obj_deathMenu/obj_deathMenu.yy",},},
     {"id":{"name":"obj_pathSelection","path":"objects/obj_pathSelection/obj_pathSelection.yy",},},
     {"id":{"name":"spr_buttonMiddle","path":"sprites/spr_buttonMiddle/spr_buttonMiddle.yy",},},
+    {"id":{"name":"fnt_plain","path":"fonts/fnt_plain/fnt_plain.yy",},},
     {"id":{"name":"obj_gameMenu","path":"objects/obj_gameMenu/obj_gameMenu.yy",},},
     {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
   ],

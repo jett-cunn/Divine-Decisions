@@ -50,6 +50,7 @@
     {"name":"obj_deathMenu","order":20,"path":"objects/obj_deathMenu/obj_deathMenu.yy",},
     {"name":"obj_pathSelection","order":14,"path":"objects/obj_pathSelection/obj_pathSelection.yy",},
     {"name":"spr_buttonMiddle","order":6,"path":"sprites/spr_buttonMiddle/spr_buttonMiddle.yy",},
+    {"name":"fnt_plain","order":4,"path":"fonts/fnt_plain/fnt_plain.yy",},
     {"name":"obj_gameMenu","order":3,"path":"objects/obj_gameMenu/obj_gameMenu.yy",},
   ],
 }

@@ -126,6 +126,9 @@ playerMaxHealth = 0;
 playerCurrentHealth = 0;
 playerHealthPercentage = 0;
 
+playerActionChoice = 0;
+fightTurn1 = false;
+
 divineInfluence = 20;
 maxInfluence = 20;
 percentInfluence = 100;
