@@ -18,9 +18,14 @@ Reference values;
 if gameState == 000 { //Start screen
 	
 	
-	if buttonLeft + buttonMiddle + buttonRight > 0 {
+	if buttonLeft + buttonRight == 1 {
 		
-		
+		if buttonLeft == 1 { // Endless Mode
+			storyActive = 0;
+		}
+		else if buttonRight == 1 { // Story Mode
+			storyActive = 1;
+		}
 		gameState = 001;
 	}
 }
@@ -906,13 +911,32 @@ if gameState == 151 { //Victory
 	
 	if alarm[1] == 0 {
 		score += 1;
-		if encounterValue == 0 {
-			gameState = 100;
-			room_goto(rm_choice)
+		
+		if storyActive == 1{
+			if score == winTotal{
+				gameState = 001;
+				divineInfluence = 20;
+				room_goto(rm_start);
+			}
+			else {
+				if encounterValue == 0 {
+					gameState = 100;
+					room_goto(rm_choice)
+				}
+				else {
+					gameState = 190;
+				}
+			}
 		}
 		else {
-			gameState = 190;
-		}
+				if encounterValue == 0 {
+					gameState = 100;
+					room_goto(rm_choice)
+				}
+				else {
+					gameState = 190;
+				}
+			}
 	}
 }
 

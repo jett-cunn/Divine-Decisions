@@ -7,6 +7,10 @@ score = 0;
 
 gameState = 0;
 
+storyActive = 0;
+
+winTotal = 10;
+
 buttonLeft = 0;
 buttonMiddle = 0;
 buttonRight = 0;
