@@ -172,5 +172,11 @@ enemySpeedRoll = 0;
 enemyDamageRoll = 0;
 enemyType = 0; //1 = goblin, 2 = wolf, 3 = cultist, 4 = bandit
 
-
+enemyStatDatabase = [ //HP, Attack, Defense, Speed, Sprite
+	[0], //Null
+	[6, 2, 1, 3, spr_enemyGoblin], //Goblin (ID 1)
+	[6, 3, 1, 4, spr_enemyWolf], //Wolf (ID 2)
+	[8, 3, 2, 1, spr_enemyCultist], //Cultist (ID 3)
+	[10, 4, 3, 4, spr_enemyBandit] //Bandit Leader (ID 4)
+];
 

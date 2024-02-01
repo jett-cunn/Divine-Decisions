@@ -574,104 +574,56 @@ if gameState == 130 { //Setup
 	
 	//Set enemy stats
 	if currentEncounter == 1 { //Goblin1
-		enemyMaxHealth = 6;
-		enemyAttack = 2;
-		enemyDefense = 1;
-		enemySpeed = 3;
 		encounterValue = 0;
 		enemyType = 1;
-		object_set_sprite(obj_enemy,spr_enemyGoblin);
 	}
 	else if currentEncounter == 2 { //Goblin2
-		enemyMaxHealth = 6;
-		enemyAttack = 2;
-		enemyDefense = 1;
-		enemySpeed = 3;
 		encounterValue = 1;
 		enemyType = 1;
-		object_set_sprite(obj_enemy,spr_enemyGoblin);
 	}
 	else if currentEncounter == 3 { //Wolf1
-		enemyMaxHealth = 6;
-		enemyAttack = 3;
-		enemyDefense = 1;
-		enemySpeed = 4;
 		encounterValue = 0;
 		enemyType = 2;
-		object_set_sprite(obj_enemy,spr_enemyWolf);
 	}
 	else if currentEncounter == 4 { //Wolf2
-		enemyMaxHealth = 6;
-		enemyAttack = 3;
-		enemyDefense = 1;
-		enemySpeed = 4;
 		encounterValue = 1;
 		enemyType = 2;
-		object_set_sprite(obj_enemy,spr_enemyWolf);
 	}
 	else if currentEncounter == 5 { //Wolf3
-		enemyMaxHealth = 6;
-		enemyAttack = 3;
-		enemyDefense = 1;
-		enemySpeed = 4;
 		encounterValue = 2;
 		enemyType = 2;
-		object_set_sprite(obj_enemy,spr_enemyWolf);
 	}
 	else if currentEncounter == 6 { //Cultist1
-		enemyMaxHealth = 8;
-		enemyAttack = 3;
-		enemyDefense = 2;
-		enemySpeed = 1;
 		encounterValue = 1;
 		enemyType = 3;
-		object_set_sprite(obj_enemy,spr_enemyCultist);
 	}
 	else if currentEncounter == 7 { //Cultist2
-		enemyMaxHealth = 8;
-		enemyAttack = 3;
-		enemyDefense = 2;
-		enemySpeed = 1;
 		encounterValue = 2;
 		enemyType = 3;
-		object_set_sprite(obj_enemy,spr_enemyCultist);
 	}
 	else if currentEncounter == 8 { //Cultist3
-		enemyMaxHealth = 8;
-		enemyAttack = 3;
-		enemyDefense = 2;
-		enemySpeed = 1;
 		encounterValue = 3;
 		enemyType = 3;
-		object_set_sprite(obj_enemy,spr_enemyCultist);
 	}
 	else if currentEncounter == 9 { //Bandit1
-		enemyMaxHealth = 10;
-		enemyAttack = 4;
-		enemyDefense = 3;
-		enemySpeed = 4;
 		encounterValue = 2;
 		enemyType = 4;
-		object_set_sprite(obj_enemy,spr_enemyBandit);
 	}
 	else if currentEncounter == 10 { //Bandit2
-		enemyMaxHealth = 10;
-		enemyAttack = 4;
-		enemyDefense = 3;
-		enemySpeed = 4;
 		encounterValue = 3;
 		enemyType = 4;
-		object_set_sprite(obj_enemy,spr_enemyBandit);
 	}
 	else if currentEncounter == 11 { //Bandit3
-		enemyMaxHealth = 10;
-		enemyAttack = 4;
-		enemyDefense = 3;
-		enemySpeed = 4;
 		encounterValue = 4;
 		enemyType = 4;
-		object_set_sprite(obj_enemy,spr_enemyBandit);
 	}
+	
+	
+	enemyMaxHealth = enemyStatDatabase[enemyType][0]
+	enemyAttack = enemyStatDatabase[enemyType][1]
+	enemyDefense = enemyStatDatabase[enemyType][2]
+	enemySpeed = enemyStatDatabase[enemyType][3]
+	object_set_sprite(obj_enemy, enemyStatDatabase[enemyType][4])
 	
 	enemyCurrentHealth = enemyMaxHealth;
 	
