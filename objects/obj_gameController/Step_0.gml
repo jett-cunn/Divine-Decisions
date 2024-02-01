@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 ///The following code comprises the game's state machine. Refer to the reference document for gameState values.
 
 
