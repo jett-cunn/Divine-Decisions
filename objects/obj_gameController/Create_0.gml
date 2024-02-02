@@ -180,3 +180,9 @@ enemyStatDatabase = [ //HP, Attack, Defense, Speed, Sprite
 	[10, 4, 3, 4, spr_enemyBandit] //Bandit Leader (ID 4)
 ];
 
+areaListPrototype = [001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011]
+
+database = 0
+encounterData = ""
+encounterDataParsed = []
+

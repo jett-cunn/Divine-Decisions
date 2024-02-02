@@ -257,11 +257,11 @@ if gameState == 101 { //Choosing encounters
 	
 	
 	
-	encounterRoll1 = irandom(10)+1;
+	encounterRoll1 = irandom(array_length(areaListPrototype))+1;
 	encounter1 = encounterRoll1;
-	encounterRoll2 = irandom(10)+1;
+	encounterRoll2 = irandom(array_length(areaListPrototype))+1;
 	encounter2 = encounterRoll2;
-	encounterRoll3 = irandom(10)+1;
+	encounterRoll3 = irandom(array_length(areaListPrototype))+1;
 	encounter3 = encounterRoll3;
 	
 	gameState = 102;
@@ -573,6 +573,20 @@ if gameState == 130 { //Setup
 	playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100;
 	
 	//Set enemy stats
+	
+	/*
+	database = file_text_open_read(working_directory + "encounterDatabase.txt")
+	
+	repeat(currentEncounter-1){
+		file_read_readln(database)
+	}
+	encounterData = file_text_read_string(database)
+	encounterDataParsed = string_split(encounterData,".")
+	
+	enemyType = encounterDataParsed[2]
+	encounterValue = encounterDataParsed[3]
+	*/
+	
 	if currentEncounter == 1 { //Goblin1
 		encounterValue = 0;
 		enemyType = 1;
@@ -617,6 +631,7 @@ if gameState == 130 { //Setup
 		encounterValue = 4;
 		enemyType = 4;
 	}
+	
 	
 	
 	enemyMaxHealth = enemyStatDatabase[enemyType][0]
