@@ -180,9 +180,22 @@ enemyStatDatabase = [ //HP, Attack, Defense, Speed, Sprite
 	[10, 4, 3, 4, spr_enemyBandit] //Bandit Leader (ID 4)
 ];
 
-areaListPrototype = [001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011]
+areaListPrototype = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
-database = 0
 encounterData = ""
 encounterDataParsed = []
+
+encounterDatabase = []
+
+
+database = file_text_open_read("encounterDatabase.txt")
+	
+if (file_exists("encounterDatabase.txt")){
+	for (var i = 0; i < 11; i ++) {
+		encounterDatabase[i] = file_text_read_string(database)
+		file_text_readln(database)
+	}
+	file_text_close(database)
+}
+
 

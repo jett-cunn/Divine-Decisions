@@ -257,11 +257,11 @@ if gameState == 101 { //Choosing encounters
 	
 	
 	
-	encounterRoll1 = irandom(array_length(areaListPrototype))+1;
+	encounterRoll1 = irandom_range(1, array_length(areaListPrototype));
 	encounter1 = encounterRoll1;
-	encounterRoll2 = irandom(array_length(areaListPrototype))+1;
+	encounterRoll2 = irandom_range(1, array_length(areaListPrototype));
 	encounter2 = encounterRoll2;
-	encounterRoll3 = irandom(array_length(areaListPrototype))+1;
+	encounterRoll3 = irandom_range(1, array_length(areaListPrototype));
 	encounter3 = encounterRoll3;
 	
 	gameState = 102;
@@ -515,7 +515,7 @@ if gameState == 103 { //Selection
 }
 
 if gameState == 104 { //Encounter setup
-	currentEncounter = encounter1;
+	currentEncounter = encounter1 - 1;
 	
 	//hide buttons
 	//move player sprite
@@ -525,7 +525,7 @@ if gameState == 104 { //Encounter setup
 }
 
 if gameState == 105 { //Encounter setup
-	currentEncounter = encounter2;
+	currentEncounter = encounter2 - 1;
 	
 	//hide buttons
 	//move player sprite
@@ -535,7 +535,7 @@ if gameState == 105 { //Encounter setup
 }
 
 if gameState == 106 { //Encounter setup
-	currentEncounter = encounter3;
+	currentEncounter = encounter3 - 1;
 	
 	//hide buttons
 	//move player sprite
@@ -574,19 +574,20 @@ if gameState == 130 { //Setup
 	
 	//Set enemy stats
 	
-	/*
-	database = file_text_open_read(working_directory + "encounterDatabase.txt")
 	
-	repeat(currentEncounter-1){
-		file_read_readln(database)
-	}
-	encounterData = file_text_read_string(database)
-	encounterDataParsed = string_split(encounterData,".")
+	encounterData = encounterDatabase[currentEncounter]
+	
+	show_debug_message(currentEncounter)
+	show_debug_message(encounterData)
+	
+	encounterDataParsed = string_split(encounterData, ".")
+	
+	
 	
 	enemyType = encounterDataParsed[2]
 	encounterValue = encounterDataParsed[3]
-	*/
 	
+	/*
 	if currentEncounter == 1 { //Goblin1
 		encounterValue = 0;
 		enemyType = 1;
@@ -631,7 +632,7 @@ if gameState == 130 { //Setup
 		encounterValue = 4;
 		enemyType = 4;
 	}
-	
+	*/
 	
 	
 	enemyMaxHealth = enemyStatDatabase[enemyType][0]
