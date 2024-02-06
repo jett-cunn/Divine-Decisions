@@ -184,12 +184,9 @@ areaListPrototype = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
 encounterData = ""
 encounterDataParsed = []
-
 encounterDatabase = []
 
-
-database = file_text_open_read("encounterDatabase.txt")
-	
+database = file_text_open_read("encounterDatabase.txt")	
 if (file_exists("encounterDatabase.txt")){
 	for (var i = 0; i < 11; i ++) {
 		encounterDatabase[i] = file_text_read_string(database)

@@ -574,65 +574,10 @@ if gameState == 130 { //Setup
 	
 	//Set enemy stats
 	
-	
-	encounterData = encounterDatabase[currentEncounter]
-	
-	show_debug_message(currentEncounter)
-	show_debug_message(encounterData)
-	
+	encounterData = encounterDatabase[currentEncounter]	
 	encounterDataParsed = string_split(encounterData, ".")
-	
-	
-	
 	enemyType = encounterDataParsed[2]
 	encounterValue = encounterDataParsed[3]
-	
-	/*
-	if currentEncounter == 1 { //Goblin1
-		encounterValue = 0;
-		enemyType = 1;
-	}
-	else if currentEncounter == 2 { //Goblin2
-		encounterValue = 1;
-		enemyType = 1;
-	}
-	else if currentEncounter == 3 { //Wolf1
-		encounterValue = 0;
-		enemyType = 2;
-	}
-	else if currentEncounter == 4 { //Wolf2
-		encounterValue = 1;
-		enemyType = 2;
-	}
-	else if currentEncounter == 5 { //Wolf3
-		encounterValue = 2;
-		enemyType = 2;
-	}
-	else if currentEncounter == 6 { //Cultist1
-		encounterValue = 1;
-		enemyType = 3;
-	}
-	else if currentEncounter == 7 { //Cultist2
-		encounterValue = 2;
-		enemyType = 3;
-	}
-	else if currentEncounter == 8 { //Cultist3
-		encounterValue = 3;
-		enemyType = 3;
-	}
-	else if currentEncounter == 9 { //Bandit1
-		encounterValue = 2;
-		enemyType = 4;
-	}
-	else if currentEncounter == 10 { //Bandit2
-		encounterValue = 3;
-		enemyType = 4;
-	}
-	else if currentEncounter == 11 { //Bandit3
-		encounterValue = 4;
-		enemyType = 4;
-	}
-	*/
 	
 	
 	enemyMaxHealth = enemyStatDatabase[enemyType][0]
@@ -644,7 +589,6 @@ if gameState == 130 { //Setup
 	enemyCurrentHealth = enemyMaxHealth;
 	
 	enemyHealthPercentage = (enemyCurrentHealth / enemyMaxHealth) * 100;
-	
 	
 	fightTurn1 = true;
 	
