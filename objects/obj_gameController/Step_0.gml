@@ -275,6 +275,28 @@ if gameState == 102 { //Presenting options
 	buttonRightVisible = true
 	
 	//Set text for each button based on encounter
+	
+	encounterData = encounterDatabase[encounter1-1]	
+	encounterDataParsed = string_split(encounterData, ".")
+	
+	buttonLeftTextA = encounterDataParsed[4]
+	buttonLeftTextB = encounterDataParsed[5]
+	buttonLeftTextC = encounterDataParsed[6]
+	
+	encounterData = encounterDatabase[encounter2-1]	
+	encounterDataParsed = string_split(encounterData, ".")
+	
+	buttonMiddleTextA = encounterDataParsed[4]
+	buttonMiddleTextB = encounterDataParsed[5]
+	buttonMiddleTextC = encounterDataParsed[6]
+	
+	encounterData = encounterDatabase[encounter3-1]	
+	encounterDataParsed = string_split(encounterData, ".")
+	
+	buttonRightTextA = encounterDataParsed[4]
+	buttonRightTextB = encounterDataParsed[5]
+	buttonRightTextC = encounterDataParsed[6]
+	/*
 	if encounter1 == 1 {
 		buttonLeftTextA = encounterText1A;
 		buttonLeftTextB = encounterText1B;
@@ -444,7 +466,7 @@ if gameState == 102 { //Presenting options
 		buttonRightTextB = encounterText11B;
 		buttonRightTextC = encounterText11C;
 	}
-	
+	*/
 	
 	
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
