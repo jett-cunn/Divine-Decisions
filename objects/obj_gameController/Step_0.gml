@@ -370,9 +370,18 @@ if gameState == 104 { //Encounter setup
 	
 	//hide buttons
 	//move player sprite
+	encounterData = encounterDatabase[encounter1-1]	;
+	encounterDataParsed = string_split(encounterData, ".");
 	
-	gameState = 130;
-	//if encounter is a challenge, set state to 160 (not needed in prototype)
+	if encounterDataParsed[1] == 1 {
+		gameState = 130; //Combat
+	}
+	else if encounterDataParsed[1] == 2 {
+		gameState = 160; //Challenge
+	}
+	else if encounterDataParsed[1] == 3 {
+		gameState = 180; //Shrine
+	}
 }
 
 if gameState == 105 { //Encounter setup
@@ -381,8 +390,18 @@ if gameState == 105 { //Encounter setup
 	//hide buttons
 	//move player sprite
 	
-	gameState = 130;
-	//if encounter is a challenge, set state to 160 (not needed in prototype)
+	encounterData = encounterDatabase[encounter2-1];
+	encounterDataParsed = string_split(encounterData, ".");
+	
+	if encounterDataParsed[1] == 1 {
+		gameState = 130; //Combat
+	}
+	else if encounterDataParsed[1] == 2 {
+		gameState = 160; //Challenge
+	}
+	else if encounterDataParsed[1] == 3 {
+		gameState = 180; //Shrine
+	}
 }
 
 if gameState == 106 { //Encounter setup
@@ -391,8 +410,18 @@ if gameState == 106 { //Encounter setup
 	//hide buttons
 	//move player sprite
 	
-	gameState = 130;
-	//if encounter is a challenge, set state to 160 (not needed in prototype)
+	encounterData = encounterDatabase[encounter3-1];
+	encounterDataParsed = string_split(encounterData, ".");
+	
+	if encounterDataParsed[1] == 1 {
+		gameState = 130; //Combat
+	}
+	else if encounterDataParsed[1] == 2 {
+		gameState = 160; //Challenge
+	}
+	else if encounterDataParsed[1] == 3 {
+		gameState = 180; //Shrine
+	}
 }
 
 //Combat
