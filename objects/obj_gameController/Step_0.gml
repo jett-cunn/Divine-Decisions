@@ -373,13 +373,13 @@ if gameState == 104 { //Encounter setup
 	encounterData = encounterDatabase[encounter1-1]	;
 	encounterDataParsed = string_split(encounterData, ".");
 	
-	if encounterDataParsed[1] == 1 {
+	if real(encounterDataParsed[1]) == 1 {
 		gameState = 130; //Combat
 	}
-	else if encounterDataParsed[1] == 2 {
+	else if real(encounterDataParsed[1]) == 2 {
 		gameState = 160; //Challenge
 	}
-	else if encounterDataParsed[1] == 3 {
+	else if real(encounterDataParsed[1]) == 3 {
 		gameState = 180; //Shrine
 	}
 }
@@ -393,13 +393,13 @@ if gameState == 105 { //Encounter setup
 	encounterData = encounterDatabase[encounter2-1];
 	encounterDataParsed = string_split(encounterData, ".");
 	
-	if encounterDataParsed[1] == 1 {
+	if real(encounterDataParsed[1]) == 1 {
 		gameState = 130; //Combat
 	}
-	else if encounterDataParsed[1] == 2 {
+	else if real(encounterDataParsed[1]) == 2 {
 		gameState = 160; //Challenge
 	}
-	else if encounterDataParsed[1] == 3 {
+	else if real(encounterDataParsed[1]) == 3 {
 		gameState = 180; //Shrine
 	}
 }
@@ -413,13 +413,13 @@ if gameState == 106 { //Encounter setup
 	encounterData = encounterDatabase[encounter3-1];
 	encounterDataParsed = string_split(encounterData, ".");
 	
-	if encounterDataParsed[1] == 1 {
+	if real(encounterDataParsed[1]) == 1 {
 		gameState = 130; //Combat
 	}
-	else if encounterDataParsed[1] == 2 {
+	else if real(encounterDataParsed[1]) == 2 {
 		gameState = 160; //Challenge
 	}
-	else if encounterDataParsed[1] == 3 {
+	else if real(encounterDataParsed[1]) == 3 {
 		gameState = 180; //Shrine
 	}
 }
