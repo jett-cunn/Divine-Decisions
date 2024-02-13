@@ -279,23 +279,23 @@ if gameState == 102 { //Presenting options
 	encounterData = encounterDatabase[encounter1-1]	
 	encounterDataParsed = string_split(encounterData, ".")
 	
-	buttonLeftTextA = encounterDataParsed[4]
-	buttonLeftTextB = encounterDataParsed[5]
-	buttonLeftTextC = encounterDataParsed[6]
+	buttonLeftTextA = encounterDataParsed[array_length(encounterDataParsed)-3]
+	buttonLeftTextB = encounterDataParsed[array_length(encounterDataParsed)-2]
+	buttonLeftTextC = encounterDataParsed[array_length(encounterDataParsed)-1]
 	
 	encounterData = encounterDatabase[encounter2-1]	
 	encounterDataParsed = string_split(encounterData, ".")
 	
-	buttonMiddleTextA = encounterDataParsed[4]
-	buttonMiddleTextB = encounterDataParsed[5]
-	buttonMiddleTextC = encounterDataParsed[6]
+	buttonMiddleTextA = encounterDataParsed[array_length(encounterDataParsed)-3]
+	buttonMiddleTextB = encounterDataParsed[array_length(encounterDataParsed)-2]
+	buttonMiddleTextC = encounterDataParsed[array_length(encounterDataParsed)-1]
 	
 	encounterData = encounterDatabase[encounter3-1]	
 	encounterDataParsed = string_split(encounterData, ".")
 	
-	buttonRightTextA = encounterDataParsed[4]
-	buttonRightTextB = encounterDataParsed[5]
-	buttonRightTextC = encounterDataParsed[6]
+	buttonRightTextA = encounterDataParsed[array_length(encounterDataParsed)-3]
+	buttonRightTextB = encounterDataParsed[array_length(encounterDataParsed)-2]
+	buttonRightTextC = encounterDataParsed[array_length(encounterDataParsed)-1]
 	
 	
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
