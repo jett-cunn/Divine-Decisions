@@ -257,11 +257,11 @@ if gameState == 101 { //Choosing encounters
 	
 	
 	
-	encounterRoll1 = irandom_range(1, array_length(areaListPrototype));
+	encounterRoll1 = areaListPrototype[irandom_range(1, array_length(areaListPrototype))-1];
 	encounter1 = encounterRoll1;
-	encounterRoll2 = irandom_range(1, array_length(areaListPrototype));
+	encounterRoll2 = areaListPrototype[irandom_range(1, array_length(areaListPrototype))-1];
 	encounter2 = encounterRoll2;
-	encounterRoll3 = irandom_range(1, array_length(areaListPrototype));
+	encounterRoll3 = areaListPrototype[irandom_range(1, array_length(areaListPrototype))-1];
 	encounter3 = encounterRoll3;
 	
 	gameState = 102;
@@ -276,7 +276,7 @@ if gameState == 102 { //Presenting options
 	
 	//Set text for each button based on encounter
 	
-	encounterData = encounterDatabase[encounter1-1]	
+	encounterData = encounterDatabase[encounter1-1]
 	encounterDataParsed = string_split(encounterData, ".")
 	
 	buttonLeftTextA = encounterDataParsed[array_length(encounterDataParsed)-3]
@@ -290,7 +290,7 @@ if gameState == 102 { //Presenting options
 	buttonMiddleTextB = encounterDataParsed[array_length(encounterDataParsed)-2]
 	buttonMiddleTextC = encounterDataParsed[array_length(encounterDataParsed)-1]
 	
-	encounterData = encounterDatabase[encounter3-1]	
+	encounterData = encounterDatabase[encounter3-1]	 
 	encounterDataParsed = string_split(encounterData, ".")
 	
 	buttonRightTextA = encounterDataParsed[array_length(encounterDataParsed)-3]
@@ -748,6 +748,280 @@ if gameState == 153 { //Waiting for restart
 		
 		gameState = 001;
 		divineInfluence = 20;
+	}
+}
+
+
+//Attribute Challenges
+if gameState == 160 { //Setup
+	
+	//Calculate player stats
+	playerVitalityTotal = playerVitalityBase + playerCharmBonus + playerVitalityEffect;
+	playerEnduranceTotal = playerEnduranceBase + playerArmorBonus + playerEnduranceEffect;
+	playerAgilityTotal = playerAgilityBase + playerBootBonus + playerAgilityEffect;
+	playerStrengthTotal = playerStrengthBase + playerStrengthEffect;
+	playerIntelligenceTotal = playerIntelligenceBase + playerIntelligenceEffect;
+	playerCompassionTotal = playerCompassionBase + playerCompassionEffect;
+	if playerWeaponStat == 1 {
+		playerStrengthTotal += playerWeaponBonus;
+	}
+	playerIntelligenceTotal = playerIntelligenceBase;
+	if playerWeaponStat == 2 {
+		playerIntelligenceTotal += playerWeaponBonus;
+	}
+	playerCompassionTotal = playerCompassionBase;
+	if playerWeaponStat == 3 {
+		playerCompassionTotal += playerWeaponBonus;
+	}
+	
+	playerMaxHealth = (2 * playerVitalityTotal) + 2;
+	
+	playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100;
+	
+	
+	//Set encounter stats
+	encounterData = encounterDatabase[currentEncounter]	
+	encounterDataParsed = string_split(encounterData, ".")
+	
+	challenge1Text = encounterDataParsed[2]
+	challenge1Stat = encounterDataParsed[3]
+	challenge1DC = encounterDataParsed[4]
+	
+	challenge2Text = encounterDataParsed[5]
+	challenge2Stat = encounterDataParsed[6]
+	challenge2DC = encounterDataParsed[7]
+	
+	challenge3Text = encounterDataParsed[8]
+	challenge3Stat = encounterDataParsed[9]
+	challenge3DC = encounterDataParsed[10]
+	
+	encounterValue = encounterDataParsed[11]
+	challengeRewardType = encounterDataParsed[12]
+	
+	challengeFailCost = encounterDataParsed[13]
+	challengeFailType = encounterDataParsed[14]
+	
+	room_goto(rm_challenge)
+	
+	gameState = 161
+}
+
+if gameState == 161 { //Waiting for controller reset
+	
+	buttonLeftTextA = "";
+	buttonLeftTextB = challenge1Text;
+	buttonLeftTextC = "";
+	
+	buttonMiddleTextA = "";
+	buttonMiddleTextB = challenge2Text;
+	buttonMiddleTextC = "";
+	
+	buttonRightTextA = "";
+	buttonRightTextB = challenge3Text;
+	buttonRightTextC = "";
+	
+	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
+		gameState = 162;
+	}
+	
+}
+
+if gameState == 162 { //Waiting for controller input (Player Action)
+	
+	if playerWaiting == false {
+		alarm[2] = 600;
+		playerWaiting = true;
+	}
+	
+	if alarm[2] > 0 && divineInfluence > 0 {
+		if (buttonLeft + buttonMiddle + buttonRight) > 1 {
+			gameState = 161;
+			playerWaiting = false;
+			alarm[2] = 0;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonLeft == 1 {
+			gameState = 163;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
+			buttonLeftPressed = true;
+			playerActionChoice = 1;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
+			gameState = 164;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
+			buttonMiddlePressed = true;
+			playerActionChoice = 2;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
+			gameState = 165;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
+			buttonRightPressed = true;
+			playerActionChoice = 3;
+		}
+	}
+	
+	if alarm[2] == 0 && playerWaiting == true {
+		
+		var randomSelection = irandom(2)+1;
+		
+		if randomSelection == 1 {
+			gameState = 163;
+			playerWaiting = false;
+			buttonLeftPressed = true;
+			playerActionChoice = 1;
+		}
+		else if randomSelection == 2 {
+			gameState = 164;
+			playerWaiting = false;
+			buttonMiddlePressed = true;
+			playerActionChoice = 2;
+		}
+		else if randomSelection == 3 {
+			gameState = 165;
+			playerWaiting = false;
+			buttonRightPressed = true;
+			playerActionChoice = 3;
+		}
+		
+	}
+}
+
+if gameState == 163 { //Left option selected
+	if challenge1Stat == 1 { //compassion
+		playerChallengeRoll = irandom((1+(2*playerCompassionTotal)))+1;
+	}
+	else if challenge1Stat == 2 { //intelligence
+		playerChallengeRoll = irandom((1+(2*playerIntelligenceTotal)))+1;
+	}
+	else if challenge1Stat == 3 { //strength
+		playerChallengeRoll = irandom((1+(2*playerStrengthTotal)))+1;
+	}
+	
+	if playerChallengeRoll >= challenge1DC {
+		gameState = 166
+	}
+	else {
+		gameState = 167
+	}
+}
+
+if gameState == 164 { //Middle option selected
+	if challenge2Stat == 1 { //compassion
+		playerChallengeRoll = irandom((1+(2*playerCompassionTotal)))+1;
+	}
+	else if challenge2Stat == 2 { //intelligence
+		playerChallengeRoll = irandom((1+(2*playerIntelligenceTotal)))+1;
+	}
+	else if challenge2Stat == 3 { //strength
+		playerChallengeRoll = irandom((1+(2*playerStrengthTotal)))+1;
+	}
+	
+	if playerChallengeRoll >= challenge2DC {
+		gameState = 166
+	}
+	else {
+		gameState = 167
+	}
+}
+
+if gameState == 165 { //Right option selected
+	if challenge3Stat == 1 { //compassion
+		playerChallengeRoll = irandom((1+(2*playerCompassionTotal)))+1;
+	}
+	else if challenge3Stat == 2 { //intelligence
+		playerChallengeRoll = irandom((1+(2*playerIntelligenceTotal)))+1;
+	}
+	else if challenge3Stat == 3 { //strength
+		playerChallengeRoll = irandom((1+(2*playerStrengthTotal)))+1;
+	}
+	
+	if playerChallengeRoll >= challenge3DC {
+		gameState = 166
+	}
+	else {
+		gameState = 167
+	}
+}
+
+if gameState == 166 { //Success
+	
+	if challengeRewardType = 1 { //item
+		gameState = 190
+	}
+	else if challengeRewardType = 2 { //influence
+		divineInfluence += rewardValue
+		divineInfluence = clamp(0, 20, divineInfluence)
+	}
+	else if challengeRewardType = 3 { //vitality
+		playerVitalityEffect += rewardValue
+		playerVitalityEffect = clamp(-6, 6, playerVitalityEffect)
+	}
+	else if challengeRewardType = 4 { //endurance
+		playerEnduranceEffect += rewardValue
+		playerEnduranceEffect = clamp(-6, 6, playerEnduranceEffect)
+	}
+	else if challengeRewardType = 5 { //agility
+		playerAgilityEffect += rewardValue
+		playerAgilityEffect = clamp(-6, 6, playerAgilityEffect)
+	}
+	else if challengeRewardType = 6 { //strength
+		playerStrengthEffect += rewardValue
+		playerStrengthEffect = clamp(-6, 6, playerStrengthEffect)
+	}
+	else if challengeRewardType = 7 { //intelligence
+		playerIntelligenceEffect += rewardValue
+		playerIntelligenceEffect = clamp(-6, 6, playerIntelligenceEffect)
+	}
+	else if challengeRewardType = 8 { //compassion
+		playerCompassionEffect += rewardValue
+		playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
+	}
+	
+}
+
+if gameState == 167 { //Failure
+	if challengeFailType = 1 { //health
+		playerCurrentHealth -= challengeFailCost
+	}
+	else if challengeFailType = 2 { //influence
+		divineInfluence -= challengeFailCost
+		divineInfluence = clamp(0, 20, divineInfluence)
+	}
+	else if challengeFailType = 3 { //vitality
+		playerVitalityEffect -= challengeFailCost
+		playerVitalityEffect = clamp(-6, 6, playerVitalityEffect)
+	}
+	else if challengeFailType = 4 { //endurance
+		playerEnduranceEffect -= challengeFailCost
+		playerEnduranceEffect = clamp(-6, 6, playerEnduranceEffect)
+	}
+	else if challengeFailType = 5 { //agility
+		playerAgilityEffect -= challengeFailCost
+		playerAgilityEffect = clamp(-6, 6, playerAgilityEffect)
+	}
+	else if challengeFailType = 6 { //strength
+		playerStrengthEffect -= challengeFailCost
+		playerStrengthEffect = clamp(-6, 6, playerStrengthEffect)
+	}
+	else if challengeFailType = 7 { //intelligence
+		playerIntelligenceEffect -= challengeFailCost
+		playerIntelligenceEffect = clamp(-6, 6, playerIntelligenceEffect)
+	}
+	else if challengeFailType = 8 { //compassion
+		playerCompassionEffect -= challengeFailCost
+		playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
+	}
+	
+	if playerCurrentHealth <= 0 {
+		gameState = 152
+	}
+	else {
+		gameState = 100
 	}
 }
 

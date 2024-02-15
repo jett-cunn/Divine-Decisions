@@ -58,16 +58,17 @@ playerStrengthBase = 0;
 playerIntelligenceBase = 0;
 playerCompassionBase  = 0;
 
-/*
+
 
 //Effect Modifiers
-global.playerVitalityEffect = 0;
-global.playerEnduranceEffect = 0;
-global.playerAgilityEffect = 0;
-global.playerStrengthEffect = 0;
-global.playerIntelligenceEffect = 0;
-global.playerCompassionEffect = 0;
+playerVitalityEffect = 0;
+playerEnduranceEffect = 0;
+playerAgilityEffect = 0;
+playerStrengthEffect = 0;
+playerIntelligenceEffect = 0;
+playerCompassionEffect = 0;
 
+/*
 //Boon/Bane Modifiers
 global.playerVitalityBoon = 0;
 global.playerEnduranceBoon = 0;
@@ -148,7 +149,23 @@ enemyStatDatabase = [ //HP, Attack, Defense, Speed, Sprite
 	[10, 4, 3, 4, spr_enemyBandit] //Bandit Leader (ID 4)
 ];
 
-areaListPrototype = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+//Challenge Stats
+challenge1Text = ""
+challenge2Text = ""
+challenge3Text = ""
+challenge1Stat = 0
+challenge2Stat = 0
+challenge3Stat = 0
+challenge1DC = 0
+challenge2DC = 0
+challenge3DC = 0
+challengeRewardType = 0
+challengeFailCost = 0
+challengeFailType = 0
+
+
+areaListPrototype = [1,2,3,4,5,6,7,8,9,10,11,12,12,12,12]
 
 encounterData = ""
 encounterDataParsed = []

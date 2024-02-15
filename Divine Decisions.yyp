@@ -77,6 +77,7 @@
     {"id":{"name":"spr_characterSelection","path":"sprites/spr_characterSelection/spr_characterSelection.yy",},},
     {"id":{"name":"obj_selectWisdom","path":"objects/obj_selectWisdom/obj_selectWisdom.yy",},},
     {"id":{"name":"spr_selectMercy","path":"sprites/spr_selectMercy/spr_selectMercy.yy",},},
+    {"id":{"name":"rm_challenge","path":"rooms/rm_challenge/rm_challenge.yy",},},
     {"id":{"name":"spr_selectMercy30","path":"sprites/spr_selectMercy30/spr_selectMercy30.yy",},},
     {"id":{"name":"obj_gameController","path":"objects/obj_gameController/obj_gameController.yy",},},
     {"id":{"name":"obj_selectMercy","path":"objects/obj_selectMercy/obj_selectMercy.yy",},},
@@ -111,6 +112,7 @@
     {"roomId":{"name":"rm_fight","path":"rooms/rm_fight/rm_fight.yy",},},
     {"roomId":{"name":"rm_die","path":"rooms/rm_die/rm_die.yy",},},
     {"roomId":{"name":"rm_reward","path":"rooms/rm_reward/rm_reward.yy",},},
+    {"roomId":{"name":"rm_challenge","path":"rooms/rm_challenge/rm_challenge.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
