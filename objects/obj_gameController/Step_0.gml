@@ -796,9 +796,15 @@ if gameState == 160 { //Setup
 	challenge3DC = encounterDataParsed[10]
 	
 	encounterValue = encounterDataParsed[11]
+	encounterValueParsed = string_split(encounterValue, "-")
+	encounterValueMin = encounterValueParsed[0]
+	encounterValueMax = encounterValueParsed[1]
 	challengeRewardType = encounterDataParsed[12]
 	
 	challengeFailCost = encounterDataParsed[13]
+	challengeFailCostParsed = string_split(challengeFailCost, "-")
+	challengeFailCostMin = challengeFailCostParsed[0]
+	challengeFailCostMax = challengeFailCostParsed[1]
 	challengeFailType = encounterDataParsed[14]
 	
 	room_goto(rm_challenge)
@@ -954,31 +960,31 @@ if gameState == 166 { //Success
 		gameState = 190
 	}
 	else if challengeRewardType = 2 { //influence
-		divineInfluence += rewardValue
+		divineInfluence += irandom_range(encounterValueMin,encounterValueMax)
 		divineInfluence = clamp(0, 20, divineInfluence)
 	}
 	else if challengeRewardType = 3 { //vitality
-		playerVitalityEffect += rewardValue
+		playerVitalityEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerVitalityEffect = clamp(-6, 6, playerVitalityEffect)
 	}
 	else if challengeRewardType = 4 { //endurance
-		playerEnduranceEffect += rewardValue
+		playerEnduranceEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerEnduranceEffect = clamp(-6, 6, playerEnduranceEffect)
 	}
 	else if challengeRewardType = 5 { //agility
-		playerAgilityEffect += rewardValue
+		playerAgilityEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerAgilityEffect = clamp(-6, 6, playerAgilityEffect)
 	}
 	else if challengeRewardType = 6 { //strength
-		playerStrengthEffect += rewardValue
+		playerStrengthEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerStrengthEffect = clamp(-6, 6, playerStrengthEffect)
 	}
 	else if challengeRewardType = 7 { //intelligence
-		playerIntelligenceEffect += rewardValue
+		playerIntelligenceEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerIntelligenceEffect = clamp(-6, 6, playerIntelligenceEffect)
 	}
 	else if challengeRewardType = 8 { //compassion
-		playerCompassionEffect += rewardValue
+		playerCompassionEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
 	}
 	
@@ -986,34 +992,34 @@ if gameState == 166 { //Success
 
 if gameState == 167 { //Failure
 	if challengeFailType = 1 { //health
-		playerCurrentHealth -= challengeFailCost
+		playerCurrentHealth -= irandom_range(challengeFailCostMin,challengeFailCostMax)
 	}
 	else if challengeFailType = 2 { //influence
-		divineInfluence -= challengeFailCost
+		divineInfluence -= irandom_range(challengeFailCostMin,challengeFailCostMax)
 		divineInfluence = clamp(0, 20, divineInfluence)
 	}
 	else if challengeFailType = 3 { //vitality
-		playerVitalityEffect -= challengeFailCost
+		playerVitalityEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
 		playerVitalityEffect = clamp(-6, 6, playerVitalityEffect)
 	}
 	else if challengeFailType = 4 { //endurance
-		playerEnduranceEffect -= challengeFailCost
+		playerEnduranceEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
 		playerEnduranceEffect = clamp(-6, 6, playerEnduranceEffect)
 	}
 	else if challengeFailType = 5 { //agility
-		playerAgilityEffect -= challengeFailCost
+		playerAgilityEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
 		playerAgilityEffect = clamp(-6, 6, playerAgilityEffect)
 	}
 	else if challengeFailType = 6 { //strength
-		playerStrengthEffect -= challengeFailCost
+		playerStrengthEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
 		playerStrengthEffect = clamp(-6, 6, playerStrengthEffect)
 	}
 	else if challengeFailType = 7 { //intelligence
-		playerIntelligenceEffect -= challengeFailCost
+		playerIntelligenceEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
 		playerIntelligenceEffect = clamp(-6, 6, playerIntelligenceEffect)
 	}
 	else if challengeFailType = 8 { //compassion
-		playerCompassionEffect -= challengeFailCost
+		playerCompassionEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
 		playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
 	}
 	
@@ -1022,6 +1028,7 @@ if gameState == 167 { //Failure
 	}
 	else {
 		gameState = 100
+		room_goto(rm_choice)
 	}
 }
 

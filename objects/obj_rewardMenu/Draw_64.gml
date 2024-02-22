@@ -200,7 +200,7 @@ if obj_gameController.gameState >= 190 {
 			draw_text(1450,330,"Strength + 2");
 		}
 		else if obj_gameController.rewardID % 10 == 3 {
-			draw_text(1450,300,"Battleaxe");
+			draw_text(1450,300,"Greataxe");
 			draw_text(1450,330,"Strength + 3");
 		}
 		else if obj_gameController.rewardID % 10 == 4 {

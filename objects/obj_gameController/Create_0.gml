@@ -161,7 +161,14 @@ challenge1DC = 0
 challenge2DC = 0
 challenge3DC = 0
 challengeRewardType = 0
+encounterValueParsed = []
+encounterValueMin = 0
+encounterValueMax = 0
+
 challengeFailCost = 0
+challengeFailCostParsed = []
+challengeFailCostMin = 0
+challengeFailCostMax = 0
 challengeFailType = 0
 
 

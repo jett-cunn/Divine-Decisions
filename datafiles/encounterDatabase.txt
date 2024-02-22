@@ -9,4 +9,4 @@
 009.1.4.2.A notorious bandit captain.stands ahead, a fallen.adventurer's prize before them
 010.1.4.3.A notorious bandit captain.stands ahead, a great.treasure in their bag
 011.1.4.4.A notorious bandit captain.stands ahead, wielding.a mighty relic
-012.2.Opt1.1.5.Opt2.2.5.Opt3.3.5.3.1.4.1.Test1.Test2.Test3
+012.2.Push your way through.1.10.Weave through the crowd.2.4.Calm the people.3.8.3-3.1.2-5.1..Mob Trample.
