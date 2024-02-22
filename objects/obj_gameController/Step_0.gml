@@ -959,31 +959,35 @@ if gameState == 166 { //Success
 	if challengeRewardType = 1 { //item
 		gameState = 190
 	}
-	else if challengeRewardType = 2 { //influence
+	else if challengeRewardType = 2 { //health
+		playerCurrentHealth += irandom_range(encounterValueMin,encounterValueMax)
+		playerCurrentHealth = clamp(0, playerMaxHealth, playerCurrentHealth)
+	}
+	else if challengeRewardType = 3 { //influence
 		divineInfluence += irandom_range(encounterValueMin,encounterValueMax)
 		divineInfluence = clamp(0, 20, divineInfluence)
 	}
-	else if challengeRewardType = 3 { //vitality
+	else if challengeRewardType = 4 { //vitality
 		playerVitalityEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerVitalityEffect = clamp(-6, 6, playerVitalityEffect)
 	}
-	else if challengeRewardType = 4 { //endurance
+	else if challengeRewardType = 5 { //endurance
 		playerEnduranceEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerEnduranceEffect = clamp(-6, 6, playerEnduranceEffect)
 	}
-	else if challengeRewardType = 5 { //agility
+	else if challengeRewardType = 6 { //agility
 		playerAgilityEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerAgilityEffect = clamp(-6, 6, playerAgilityEffect)
 	}
-	else if challengeRewardType = 6 { //strength
+	else if challengeRewardType = 7 { //strength
 		playerStrengthEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerStrengthEffect = clamp(-6, 6, playerStrengthEffect)
 	}
-	else if challengeRewardType = 7 { //intelligence
+	else if challengeRewardType = 8 { //intelligence
 		playerIntelligenceEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerIntelligenceEffect = clamp(-6, 6, playerIntelligenceEffect)
 	}
-	else if challengeRewardType = 8 { //compassion
+	else if challengeRewardType = 9 { //compassion
 		playerCompassionEffect += irandom_range(encounterValueMin,encounterValueMax)
 		playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
 	}
