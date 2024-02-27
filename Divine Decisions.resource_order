@@ -34,6 +34,7 @@
     {"name":"spr_enemyBandit","order":18,"path":"sprites/spr_enemyBandit/spr_enemyBandit.yy",},
     {"name":"spr_player","order":17,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_buttonRight","order":8,"path":"sprites/spr_buttonRight/spr_buttonRight.yy",},
+    {"name":"rm_shrine","order":7,"path":"rooms/rm_shrine/rm_shrine.yy",},
     {"name":"spr_selectValor31","order":37,"path":"sprites/spr_selectValor31/spr_selectValor31.yy",},
     {"name":"snd_bgForest","order":2,"path":"sounds/snd_bgForest/snd_bgForest.yy",},
     {"name":"spr_enemyWolf25","order":30,"path":"sprites/spr_enemyWolf25/spr_enemyWolf25.yy",},

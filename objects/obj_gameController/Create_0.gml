@@ -172,7 +172,18 @@ challengeFailCostMax = 0
 challengeFailType = 0
 
 
-areaListPrototype = [4,5,6,7,8,9,10,11,12,13,14,15,15,16,16,17,17]
+//Shrine Stats
+reward1 = 0
+reward2 = 0
+reward3 = 0
+rewardListMaster = [0,1,2,3,4,5,6,7]
+rewardListCurrent = []
+rewardTextBuffer = 0
+rewardValueBuffer = 0
+rewardType = 0
+
+
+areaListPrototype = [4,5,6,7,8,9,10,11,12,13,14,15,15,16,16,17,17,18,18,18,18,18]
 
 encounterData = ""
 encounterDataParsed = []

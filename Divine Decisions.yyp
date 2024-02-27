@@ -71,6 +71,7 @@
     {"id":{"name":"spr_enemyBandit","path":"sprites/spr_enemyBandit/spr_enemyBandit.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_buttonRight","path":"sprites/spr_buttonRight/spr_buttonRight.yy",},},
+    {"id":{"name":"rm_shrine","path":"rooms/rm_shrine/rm_shrine.yy",},},
     {"id":{"name":"spr_selectValor31","path":"sprites/spr_selectValor31/spr_selectValor31.yy",},},
     {"id":{"name":"snd_bgForest","path":"sounds/snd_bgForest/snd_bgForest.yy",},},
     {"id":{"name":"spr_enemyWolf25","path":"sprites/spr_enemyWolf25/spr_enemyWolf25.yy",},},
@@ -113,6 +114,7 @@
     {"roomId":{"name":"rm_die","path":"rooms/rm_die/rm_die.yy",},},
     {"roomId":{"name":"rm_reward","path":"rooms/rm_reward/rm_reward.yy",},},
     {"roomId":{"name":"rm_challenge","path":"rooms/rm_challenge/rm_challenge.yy",},},
+    {"roomId":{"name":"rm_shrine","path":"rooms/rm_shrine/rm_shrine.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

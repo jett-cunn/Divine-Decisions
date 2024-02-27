@@ -1036,6 +1036,186 @@ if gameState == 167 { //Failure
 	}
 }
 
+if gameState == 180 { //Shrine Setup
+	
+	//Pull encounter data
+	encounterData = encounterDatabase[currentEncounter]	
+	encounterDataParsed = string_split(encounterData, ".")
+	
+	encounterValue = encounterDataParsed[2]
+	
+	rewardListCurrent = rewardListMaster
+	
+	array_shuffle(rewardListCurrent)
+	reward1 = array_pop(rewardListCurrent)
+	reward2 = array_pop(rewardListCurrent)
+	reward3 = array_pop(rewardListCurrent)
+	
+	buttonLeftTextA = ""
+	buttonLeftTextC = ""
+	buttonMiddleTextA = ""
+	buttonMiddleTextC = ""
+	buttonRightTextA = ""
+	buttonRightTextC = ""
+	
+	rewardValueBuffer = reward1
+	if rewardValueBuffer == 1 {
+		rewardTextBuffer = "Gain " + encounterValue*5 + " Health"
+	}
+	else if rewardValueBuffer == 2 {
+		rewardTextBuffer = "Gain " + encounterValue*2 + " Influence"
+	}
+	else if rewardValueBuffer == 3 {
+		rewardTextBuffer = "Gain " + encounterValue + " Vitality"
+	}
+	else if rewardValueBuffer == 4 {
+		rewardTextBuffer = "Gain " + encounterValue + " Endurance"
+	}
+	else if rewardValueBuffer == 5 {
+		rewardTextBuffer = "Gain " + encounterValue + " Agility"
+	}
+	else if rewardValueBuffer == 6 {
+		rewardTextBuffer = "Gain " + encounterValue + " Strength"
+	}
+	else if rewardValueBuffer == 7 {
+		rewardTextBuffer = "Gain " + encounterValue + " Intelligence"
+	}
+	else if rewardValueBuffer == 8 {
+		rewardTextBuffer = "Gain " + encounterValue + " Compassion"
+	}
+	buttonLeftTextB = rewardTextBuffer
+	
+	rewardValueBuffer = reward2
+	if rewardValueBuffer == 1 {
+		rewardTextBuffer = "Gain " + encounterValue*5 + " Health"
+	}
+	else if rewardValueBuffer == 2 {
+		rewardTextBuffer = "Gain " + encounterValue*2 + " Influence"
+	}
+	else if rewardValueBuffer == 3 {
+		rewardTextBuffer = "Gain " + encounterValue + " Vitality"
+	}
+	else if rewardValueBuffer == 4 {
+		rewardTextBuffer = "Gain " + encounterValue + " Endurance"
+	}
+	else if rewardValueBuffer == 5 {
+		rewardTextBuffer = "Gain " + encounterValue + " Agility"
+	}
+	else if rewardValueBuffer == 6 {
+		rewardTextBuffer = "Gain " + encounterValue + " Strength"
+	}
+	else if rewardValueBuffer == 7 {
+		rewardTextBuffer = "Gain " + encounterValue + " Intelligence"
+	}
+	else if rewardValueBuffer == 8 {
+		rewardTextBuffer = "Gain " + encounterValue + " Compassion"
+	}
+	buttonMiddleTextB = rewardTextBuffer
+	
+	rewardValueBuffer = reward3
+	if rewardValueBuffer == 1 {
+		rewardTextBuffer = "Gain " + encounterValue*5 + " Health"
+	}
+	else if rewardValueBuffer == 2 {
+		rewardTextBuffer = "Gain " + encounterValue*2 + " Influence"
+	}
+	else if rewardValueBuffer == 3 {
+		rewardTextBuffer = "Gain " + encounterValue + " Vitality"
+	}
+	else if rewardValueBuffer == 4 {
+		rewardTextBuffer = "Gain " + encounterValue + " Endurance"
+	}
+	else if rewardValueBuffer == 5 {
+		rewardTextBuffer = "Gain " + encounterValue + " Agility"
+	}
+	else if rewardValueBuffer == 6 {
+		rewardTextBuffer = "Gain " + encounterValue + " Strength"
+	}
+	else if rewardValueBuffer == 7 {
+		rewardTextBuffer = "Gain " + encounterValue + " Intelligence"
+	}
+	else if rewardValueBuffer == 8 {
+		rewardTextBuffer = "Gain " + encounterValue + " Compassion"
+	}
+	buttonRightTextB = rewardTextBuffer
+	
+	room_goto(rm_shrine)
+	
+	gameState = 181
+}
+
+if gameState == 181 { //Waiting for controller reset
+	
+	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
+		gameState = 182;
+	}
+	
+}
+
+if gameState == 182 { //Controller reset, waiting for player input
+	if playerWaiting == false {
+		alarm[2] = 600;
+		playerWaiting = true;
+	}
+	
+	if alarm[2] > 0 && divineInfluence > 0 {
+		if (buttonLeft + buttonMiddle + buttonRight) > 1 {
+			gameState = 181;
+			playerWaiting = false;
+			alarm[2] = 0;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonLeft == 1 {
+			gameState = 183;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
+			buttonLeftPressed = true;
+			playerActionChoice = 1;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
+			gameState = 184;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
+			buttonMiddlePressed = true;
+			playerActionChoice = 2;
+		}
+		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
+			gameState = 185;
+			divineInfluence -= 1;
+			playerWaiting = false;
+			alarm[2] = 0;
+			buttonRightPressed = true;
+			playerActionChoice = 3;
+		}
+	}
+	
+	if alarm[2] == 0 && playerWaiting == true {
+		
+		var randomSelection = irandom(2)+1;
+		
+		if randomSelection == 1 {
+			gameState = 183;
+			playerWaiting = false;
+			buttonLeftPressed = true;
+			playerActionChoice = 1;
+		}
+		else if randomSelection == 2 {
+			gameState = 184;
+			playerWaiting = false;
+			buttonMiddlePressed = true;
+			playerActionChoice = 2;
+		}
+		else if randomSelection == 3 {
+			gameState = 185;
+			playerWaiting = false;
+			buttonRightPressed = true;
+			playerActionChoice = 3;
+		}
+		
+	}
+}
+
 
 //Rewards
 if gameState == 190 { //Calculate rewards
