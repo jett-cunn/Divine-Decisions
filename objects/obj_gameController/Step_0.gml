@@ -914,6 +914,8 @@ if gameState == 163 { //Left option selected
 	else {
 		gameState = 167
 	}
+	
+	alarm[1] = 90
 }
 
 if gameState == 164 { //Middle option selected
@@ -933,6 +935,8 @@ if gameState == 164 { //Middle option selected
 	else {
 		gameState = 167
 	}
+	
+	alarm[1] = 90
 }
 
 if gameState == 165 { //Right option selected
@@ -952,6 +956,8 @@ if gameState == 165 { //Right option selected
 	else {
 		gameState = 167
 	}
+	
+	alarm[1] = 90
 }
 
 if gameState == 166 { //Success
@@ -1042,7 +1048,7 @@ if gameState == 180 { //Shrine Setup
 	encounterData = encounterDatabase[currentEncounter]	
 	encounterDataParsed = string_split(encounterData, ".")
 	
-	encounterValue = encounterDataParsed[2]
+	encounterValue = real(encounterDataParsed[2])
 	
 	rewardListCurrent = rewardListMaster
 	
@@ -1060,82 +1066,82 @@ if gameState == 180 { //Shrine Setup
 	
 	rewardValueBuffer = reward1
 	if rewardValueBuffer == 1 {
-		rewardTextBuffer = "Gain " + encounterValue*5 + " Health"
+		rewardTextBuffer = "Gain " + string(encounterValue*5) + " Health"
 	}
 	else if rewardValueBuffer == 2 {
-		rewardTextBuffer = "Gain " + encounterValue*2 + " Influence"
+		rewardTextBuffer = "Gain " + string(encounterValue*3) + " Influence"
 	}
 	else if rewardValueBuffer == 3 {
-		rewardTextBuffer = "Gain " + encounterValue + " Vitality"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Vitality"
 	}
 	else if rewardValueBuffer == 4 {
-		rewardTextBuffer = "Gain " + encounterValue + " Endurance"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Endurance"
 	}
 	else if rewardValueBuffer == 5 {
-		rewardTextBuffer = "Gain " + encounterValue + " Agility"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Agility"
 	}
 	else if rewardValueBuffer == 6 {
-		rewardTextBuffer = "Gain " + encounterValue + " Strength"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Strength"
 	}
 	else if rewardValueBuffer == 7 {
-		rewardTextBuffer = "Gain " + encounterValue + " Intelligence"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Intelligence"
 	}
 	else if rewardValueBuffer == 8 {
-		rewardTextBuffer = "Gain " + encounterValue + " Compassion"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Compassion"
 	}
 	buttonLeftTextB = rewardTextBuffer
 	
 	rewardValueBuffer = reward2
 	if rewardValueBuffer == 1 {
-		rewardTextBuffer = "Gain " + encounterValue*5 + " Health"
+		rewardTextBuffer = "Gain " + string(encounterValue*5) + " Health"
 	}
 	else if rewardValueBuffer == 2 {
-		rewardTextBuffer = "Gain " + encounterValue*2 + " Influence"
+		rewardTextBuffer = "Gain " + string(encounterValue*3) + " Influence"
 	}
 	else if rewardValueBuffer == 3 {
-		rewardTextBuffer = "Gain " + encounterValue + " Vitality"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Vitality"
 	}
 	else if rewardValueBuffer == 4 {
-		rewardTextBuffer = "Gain " + encounterValue + " Endurance"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Endurance"
 	}
 	else if rewardValueBuffer == 5 {
-		rewardTextBuffer = "Gain " + encounterValue + " Agility"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Agility"
 	}
 	else if rewardValueBuffer == 6 {
-		rewardTextBuffer = "Gain " + encounterValue + " Strength"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Strength"
 	}
 	else if rewardValueBuffer == 7 {
-		rewardTextBuffer = "Gain " + encounterValue + " Intelligence"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Intelligence"
 	}
 	else if rewardValueBuffer == 8 {
-		rewardTextBuffer = "Gain " + encounterValue + " Compassion"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Compassion"
 	}
 	buttonMiddleTextB = rewardTextBuffer
 	
 	rewardValueBuffer = reward3
 	if rewardValueBuffer == 1 {
-		rewardTextBuffer = "Gain " + encounterValue*5 + " Health"
+		rewardTextBuffer = "Gain " + string(encounterValue*5) + " Health"
 	}
 	else if rewardValueBuffer == 2 {
-		rewardTextBuffer = "Gain " + encounterValue*2 + " Influence"
+		rewardTextBuffer = "Gain " + string(encounterValue*3) + " Influence"
 	}
 	else if rewardValueBuffer == 3 {
-		rewardTextBuffer = "Gain " + encounterValue + " Vitality"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Vitality"
 	}
 	else if rewardValueBuffer == 4 {
-		rewardTextBuffer = "Gain " + encounterValue + " Endurance"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Endurance"
 	}
 	else if rewardValueBuffer == 5 {
-		rewardTextBuffer = "Gain " + encounterValue + " Agility"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Agility"
 	}
 	else if rewardValueBuffer == 6 {
-		rewardTextBuffer = "Gain " + encounterValue + " Strength"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Strength"
 	}
 	else if rewardValueBuffer == 7 {
-		rewardTextBuffer = "Gain " + encounterValue + " Intelligence"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Intelligence"
 	}
 	else if rewardValueBuffer == 8 {
-		rewardTextBuffer = "Gain " + encounterValue + " Compassion"
+		rewardTextBuffer = "Gain " + string(encounterValue) + " Compassion"
 	}
 	buttonRightTextB = rewardTextBuffer
 	
@@ -1213,6 +1219,124 @@ if gameState == 182 { //Controller reset, waiting for player input
 			playerActionChoice = 3;
 		}
 		
+	}
+}
+
+if gameState == 183 { //Left prize selected
+	if reward1 == 1 {
+		playerCurrentHealth += encounterValue*5
+		playerCurrentHealth = clamp(playerCurrentHealth, 0, playerMaxHealth)
+	}
+	else if reward1 == 2 {
+		divineInfluence += encounterValue*3
+		divineInfluence = clamp(divineInfluence, 0, 20)
+	}
+	else if reward1 == 3 {
+		playerVitalityEffect += encounterValue
+		playerVitailtyEffect = clamp(playerVitalityEffect, -6, 6)
+	}
+	else if reward1 == 4 {
+		playerEnduranceEffect += encounterValue
+		playerEnduranceEffect = clamp(playerEnduranceEffect, -6, 6)
+	}
+	else if reward1 == 5 {
+		playerAgilityEffect += encounterValue
+		playerAgilityEffect = clamp(playerAgilityEffect, -6, 6)
+	}
+	else if reward1 == 6 {
+		playerStrengthEffect += encounterValue
+		playerStrengthEffect = clamp(playerStrengthEffect, -6, 6)
+	}
+	else if reward1 == 7 {
+		playerIntelligenceEffect += encounterValue
+		playerIntelligenceEffect = clamp(playerIntelligenceEffect, -6, 6)
+	}
+	else if reward1 == 8 {
+		playerCompassionEffect += encounterValue
+		playerCompassionEffect = clamp(playerCompassionEffect, -6, 6)
+	}
+	alarm[1] = 90
+	gameState = 186
+}
+
+if gameState == 184 { //Middle prize selected
+	if reward2 == 1 {
+		playerCurrentHealth += encounterValue*5
+		playerCurrentHealth = clamp(playerCurrentHealth, 0, playerMaxHealth)
+	}
+	else if reward2 == 2 {
+		divineInfluence += encounterValue*3
+		divineInfluence = clamp(divineInfluence, 0, 20)
+	}
+	else if reward2 == 3 {
+		playerVitalityEffect += encounterValue
+		playerVitailtyEffect = clamp(playerVitalityEffect, -6, 6)
+	}
+	else if reward2 == 4 {
+		playerEnduranceEffect += encounterValue
+		playerEnduranceEffect = clamp(playerEnduranceEffect, -6, 6)
+	}
+	else if reward2 == 5 {
+		playerAgilityEffect += encounterValue
+		playerAgilityEffect = clamp(playerAgilityEffect, -6, 6)
+	}
+	else if reward2 == 6 {
+		playerStrengthEffect += encounterValue
+		playerStrengthEffect = clamp(playerStrengthEffect, -6, 6)
+	}
+	else if reward2 == 7 {
+		playerIntelligenceEffect += encounterValue
+		playerIntelligenceEffect = clamp(playerIntelligenceEffect, -6, 6)
+	}
+	else if reward2 == 8 {
+		playerCompassionEffect += encounterValue
+		playerCompassionEffect = clamp(playerCompassionEffect, -6, 6)
+	}
+	alarm[1] = 90
+	gameState = 186
+}
+
+if gameState == 185 { //Right prize selected
+	if reward3 == 1 {
+		playerCurrentHealth += encounterValue*5
+		playerCurrentHealth = clamp(playerCurrentHealth, 0, playerMaxHealth)
+	}
+	else if reward3 == 2 {
+		divineInfluence += encounterValue*3
+		divineInfluence = clamp(divineInfluence, 0, 20)
+	}
+	else if reward3 == 3 {
+		playerVitalityEffect += encounterValue
+		playerVitailtyEffect = clamp(playerVitalityEffect, -6, 6)
+	}
+	else if reward3 == 4 {
+		playerEnduranceEffect += encounterValue
+		playerEnduranceEffect = clamp(playerEnduranceEffect, -6, 6)
+	}
+	else if reward3 == 5 {
+		playerAgilityEffect += encounterValue
+		playerAgilityEffect = clamp(playerAgilityEffect, -6, 6)
+	}
+	else if reward3 == 6 {
+		playerStrengthEffect += encounterValue
+		playerStrengthEffect = clamp(playerStrengthEffect, -6, 6)
+	}
+	else if reward3 == 7 {
+		playerIntelligenceEffect += encounterValue
+		playerIntelligenceEffect = clamp(playerIntelligenceEffect, -6, 6)
+	}
+	else if reward3 == 8 {
+		playerCompassionEffect += encounterValue
+		playerCompassionEffect = clamp(playerCompassionEffect, -6, 6)
+	}
+	alarm[1] = 90
+	gameState = 186
+}
+
+if gameState == 186 { //Return to selection
+	if alarm[1] == 0 {
+		gameState = 100
+		room_goto(rm_choice)
 	}
 }
 
