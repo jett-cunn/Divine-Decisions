@@ -43,6 +43,7 @@
     {"id":{"name":"obj_buttonRight","path":"objects/obj_buttonRight/obj_buttonRight.yy",},},
     {"id":{"name":"fnt_debug","path":"fonts/fnt_debug/fnt_debug.yy",},},
     {"id":{"name":"spr_buttonRightLit","path":"sprites/spr_buttonRightLit/spr_buttonRightLit.yy",},},
+    {"id":{"name":"obj_inventory","path":"objects/obj_inventory/obj_inventory.yy",},},
     {"id":{"name":"obj_soundController","path":"objects/obj_soundController/obj_soundController.yy",},},
     {"id":{"name":"spr_enemyWolf","path":"sprites/spr_enemyWolf/spr_enemyWolf.yy",},},
     {"id":{"name":"rm_character","path":"rooms/rm_character/rm_character.yy",},},

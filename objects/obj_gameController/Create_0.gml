@@ -25,6 +25,9 @@ buttonMiddlePressed = false;
 buttonRightPressed = false;
 
 
+inventoryVisible = true;
+
+
 buttonLeftTextA = "";
 buttonLeftTextB = "";
 buttonLeftTextC = "";

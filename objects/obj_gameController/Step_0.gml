@@ -718,14 +718,14 @@ if gameState == 151 { //Victory
 			}
 		}
 		else {
-				if encounterValue == 0 {
-					gameState = 100;
-					room_goto(rm_choice)
-				}
-				else {
-					gameState = 190;
-				}
+			if encounterValue == 0 {
+				gameState = 100;
+				room_goto(rm_choice)
 			}
+			else {
+				gameState = 190;
+			}
+		}
 	}
 }
 
@@ -968,6 +968,7 @@ if gameState == 166 { //Success
 	else if challengeRewardType = 2 { //health
 		playerCurrentHealth += irandom_range(encounterValueMin,encounterValueMax)
 		playerCurrentHealth = clamp(0, playerMaxHealth, playerCurrentHealth)
+		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 	}
 	else if challengeRewardType = 3 { //influence
 		divineInfluence += irandom_range(encounterValueMin,encounterValueMax)
@@ -1003,6 +1004,7 @@ if gameState == 166 { //Success
 if gameState == 167 { //Failure
 	if challengeFailType = 1 { //health
 		playerCurrentHealth -= irandom_range(challengeFailCostMin,challengeFailCostMax)
+		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 	}
 	else if challengeFailType = 2 { //influence
 		divineInfluence -= irandom_range(challengeFailCostMin,challengeFailCostMax)
@@ -1226,6 +1228,7 @@ if gameState == 183 { //Left prize selected
 	if reward1 == 1 {
 		playerCurrentHealth += encounterValue*5
 		playerCurrentHealth = clamp(playerCurrentHealth, 0, playerMaxHealth)
+		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 	}
 	else if reward1 == 2 {
 		divineInfluence += encounterValue*3
@@ -1263,6 +1266,7 @@ if gameState == 184 { //Middle prize selected
 	if reward2 == 1 {
 		playerCurrentHealth += encounterValue*5
 		playerCurrentHealth = clamp(playerCurrentHealth, 0, playerMaxHealth)
+		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 	}
 	else if reward2 == 2 {
 		divineInfluence += encounterValue*3
@@ -1300,6 +1304,7 @@ if gameState == 185 { //Right prize selected
 	if reward3 == 1 {
 		playerCurrentHealth += encounterValue*5
 		playerCurrentHealth = clamp(playerCurrentHealth, 0, playerMaxHealth)
+		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 	}
 	else if reward3 == 2 {
 		divineInfluence += encounterValue*3
@@ -1335,8 +1340,9 @@ if gameState == 185 { //Right prize selected
 
 if gameState == 186 { //Return to selection
 	if alarm[1] == 0 {
-		gameState = 100
 		room_goto(rm_choice)
+		gameState = 100
+	
 	}
 }
 
@@ -1428,6 +1434,8 @@ if gameState == 192 { //Selection
 
 if gameState == 193 { //Leave item
 	if alarm[1] == 0 {
+		
+		/*
 		divineInfluence += encounterValue;
 		if divineInfluence > maxInfluence {
 			divineInfluence = maxInfluence;
@@ -1437,6 +1445,7 @@ if gameState == 193 { //Leave item
 		if playerCurrentHealth > playerMaxHealth {
 			playerCurrentHealth = playerMaxHealth;
 		}
+		*/
 	
 		gameState = 100;
 		room_goto(rm_choice);

@@ -8,6 +8,7 @@
     {"name":"obj_buttonRight","order":11,"path":"objects/obj_buttonRight/obj_buttonRight.yy",},
     {"name":"fnt_debug","order":1,"path":"fonts/fnt_debug/fnt_debug.yy",},
     {"name":"spr_buttonRightLit","order":28,"path":"sprites/spr_buttonRightLit/spr_buttonRightLit.yy",},
+    {"name":"obj_inventory","order":24,"path":"objects/obj_inventory/obj_inventory.yy",},
     {"name":"obj_soundController","order":23,"path":"objects/obj_soundController/obj_soundController.yy",},
     {"name":"spr_enemyWolf","order":21,"path":"sprites/spr_enemyWolf/spr_enemyWolf.yy",},
     {"name":"rm_character","order":1,"path":"rooms/rm_character/rm_character.yy",},
