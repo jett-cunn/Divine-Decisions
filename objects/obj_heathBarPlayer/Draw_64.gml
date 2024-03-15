@@ -57,3 +57,33 @@ if obj_gameController.gameState == 132 && obj_gameController.fightTurn1 == false
 	
 }
 
+if obj_gameController.gameState > 165 && obj_gameController < 168 {
+	
+	if obj_gameController.playerChallengeStatChosen == 1 {
+		draw_set_color(c_green)
+	}
+	else if obj_gameController.playerChallengeStatChosen == 2 {
+		draw_set_color(c_blue)
+	}
+	else if obj_gameController.playerChallengeStatChosen == 3 {
+		draw_set_color(c_red)
+	}
+	draw_text(x+125, y+40, string(obj_gameController.playerChallengeRoll))
+	
+	
+	if obj_gameController.gameState == 166 {
+		draw_set_color(c_lime)
+		draw_text(x+155, y+40, ">")
+	}
+	else {
+		draw_set_color(c_maroon)
+		draw_text(x+155, y+40, "<")
+	}
+	
+	
+	draw_set_color(c_black)
+	draw_text(x+170,y+40, string(obj_gameController.challengeSelectedDC))
+	
+	
+}
+

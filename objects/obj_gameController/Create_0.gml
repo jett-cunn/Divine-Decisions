@@ -174,6 +174,10 @@ challengeFailCostMin = 0
 challengeFailCostMax = 0
 challengeFailType = 0
 
+playerChallengeStatChosen = 0 //3 = Strength, 2 = Intelligence, 1 = Compassion
+playerChallengeRoll = 0
+challengeSelectedDC = 0
+
 
 //Shrine Stats
 reward1 = 0

@@ -900,15 +900,20 @@ if gameState == 162 { //Waiting for controller input (Player Action)
 if gameState == 163 { //Left option selected
 	if challenge1Stat == 1 { //compassion
 		playerChallengeRoll = irandom((1+(2*playerCompassionTotal)))+1;
+		playerChallengeStatChosen = 1
 	}
 	else if challenge1Stat == 2 { //intelligence
 		playerChallengeRoll = irandom((1+(2*playerIntelligenceTotal)))+1;
+		playerChallengeStatChosen = 2
 	}
 	else if challenge1Stat == 3 { //strength
 		playerChallengeRoll = irandom((1+(2*playerStrengthTotal)))+1;
+		playerChallengeStatChosen = 3
 	}
 	
-	if playerChallengeRoll >= challenge1DC {
+	challengeSelectedDC = challenge1DC
+	
+	if playerChallengeRoll >= challengeSelectedDC {
 		gameState = 166
 	}
 	else {
@@ -921,15 +926,20 @@ if gameState == 163 { //Left option selected
 if gameState == 164 { //Middle option selected
 	if challenge2Stat == 1 { //compassion
 		playerChallengeRoll = irandom((1+(2*playerCompassionTotal)))+1;
+		playerChallengeStatChosen = 1
 	}
 	else if challenge2Stat == 2 { //intelligence
 		playerChallengeRoll = irandom((1+(2*playerIntelligenceTotal)))+1;
+		playerChallengeStatChosen = 2
 	}
 	else if challenge2Stat == 3 { //strength
 		playerChallengeRoll = irandom((1+(2*playerStrengthTotal)))+1;
+		playerChallengeStatChosen = 3
 	}
 	
-	if playerChallengeRoll >= challenge2DC {
+	challengeSelectedDC = challenge2DC
+	
+	if playerChallengeRoll >= challengeSelectedDC {
 		gameState = 166
 	}
 	else {
@@ -942,15 +952,20 @@ if gameState == 164 { //Middle option selected
 if gameState == 165 { //Right option selected
 	if challenge3Stat == 1 { //compassion
 		playerChallengeRoll = irandom((1+(2*playerCompassionTotal)))+1;
+		playerChallengeStatChosen = 1
 	}
 	else if challenge3Stat == 2 { //intelligence
 		playerChallengeRoll = irandom((1+(2*playerIntelligenceTotal)))+1;
+		playerChallengeStatChosen = 2
 	}
 	else if challenge3Stat == 3 { //strength
 		playerChallengeRoll = irandom((1+(2*playerStrengthTotal)))+1;
+		playerChallengeStatChosen = 3
 	}
 	
-	if playerChallengeRoll >= challenge3DC {
+	challengeSelectedDC = challenge3DC
+	
+	if playerChallengeRoll >= challengeSelectedDC {
 		gameState = 166
 	}
 	else {
@@ -962,85 +977,97 @@ if gameState == 165 { //Right option selected
 
 if gameState == 166 { //Success
 	
-	if challengeRewardType = 1 { //item
-		gameState = 190
-	}
-	else if challengeRewardType = 2 { //health
-		playerCurrentHealth += irandom_range(encounterValueMin,encounterValueMax)
-		playerCurrentHealth = clamp(0, playerMaxHealth, playerCurrentHealth)
-		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
-	}
-	else if challengeRewardType = 3 { //influence
-		divineInfluence += irandom_range(encounterValueMin,encounterValueMax)
-		divineInfluence = clamp(0, 20, divineInfluence)
-	}
-	else if challengeRewardType = 4 { //vitality
-		playerVitalityEffect += irandom_range(encounterValueMin,encounterValueMax)
-		playerVitalityEffect = clamp(-6, 6, playerVitalityEffect)
-	}
-	else if challengeRewardType = 5 { //endurance
-		playerEnduranceEffect += irandom_range(encounterValueMin,encounterValueMax)
-		playerEnduranceEffect = clamp(-6, 6, playerEnduranceEffect)
-	}
-	else if challengeRewardType = 6 { //agility
-		playerAgilityEffect += irandom_range(encounterValueMin,encounterValueMax)
-		playerAgilityEffect = clamp(-6, 6, playerAgilityEffect)
-	}
-	else if challengeRewardType = 7 { //strength
-		playerStrengthEffect += irandom_range(encounterValueMin,encounterValueMax)
-		playerStrengthEffect = clamp(-6, 6, playerStrengthEffect)
-	}
-	else if challengeRewardType = 8 { //intelligence
-		playerIntelligenceEffect += irandom_range(encounterValueMin,encounterValueMax)
-		playerIntelligenceEffect = clamp(-6, 6, playerIntelligenceEffect)
-	}
-	else if challengeRewardType = 9 { //compassion
-		playerCompassionEffect += irandom_range(encounterValueMin,encounterValueMax)
-		playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
+	if alarm[1] == 0 {
+		
+		if challengeRewardType = 1 { //item
+			gameState = 190
+		}
+		else if challengeRewardType = 2 { //health
+			playerCurrentHealth += irandom_range(encounterValueMin,encounterValueMax)
+			playerCurrentHealth = clamp(0, playerMaxHealth, playerCurrentHealth)
+			playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
+		}
+		else if challengeRewardType = 3 { //influence
+			divineInfluence += irandom_range(encounterValueMin,encounterValueMax)
+			divineInfluence = clamp(0, 20, divineInfluence)
+		}
+		else if challengeRewardType = 4 { //vitality
+			playerVitalityEffect += irandom_range(encounterValueMin,encounterValueMax)
+			playerVitalityEffect = clamp(-6, 6, playerVitalityEffect)
+		}
+		else if challengeRewardType = 5 { //endurance
+			playerEnduranceEffect += irandom_range(encounterValueMin,encounterValueMax)
+			playerEnduranceEffect = clamp(-6, 6, playerEnduranceEffect)
+		}
+		else if challengeRewardType = 6 { //agility
+			playerAgilityEffect += irandom_range(encounterValueMin,encounterValueMax)
+			playerAgilityEffect = clamp(-6, 6, playerAgilityEffect)
+		}
+		else if challengeRewardType = 7 { //strength
+			playerStrengthEffect += irandom_range(encounterValueMin,encounterValueMax)
+			playerStrengthEffect = clamp(-6, 6, playerStrengthEffect)
+		}
+		else if challengeRewardType = 8 { //intelligence
+			playerIntelligenceEffect += irandom_range(encounterValueMin,encounterValueMax)
+			playerIntelligenceEffect = clamp(-6, 6, playerIntelligenceEffect)
+		}
+		else if challengeRewardType = 9 { //compassion
+			playerCompassionEffect += irandom_range(encounterValueMin,encounterValueMax)
+			playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
+		}
+		
+		gameState = 100
+		room_goto(rm_choice)
+	
 	}
 	
 }
 
 if gameState == 167 { //Failure
-	if challengeFailType = 1 { //health
-		playerCurrentHealth -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
-	}
-	else if challengeFailType = 2 { //influence
-		divineInfluence -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-		divineInfluence = clamp(0, 20, divineInfluence)
-	}
-	else if challengeFailType = 3 { //vitality
-		playerVitalityEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-		playerVitalityEffect = clamp(-6, 6, playerVitalityEffect)
-	}
-	else if challengeFailType = 4 { //endurance
-		playerEnduranceEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-		playerEnduranceEffect = clamp(-6, 6, playerEnduranceEffect)
-	}
-	else if challengeFailType = 5 { //agility
-		playerAgilityEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-		playerAgilityEffect = clamp(-6, 6, playerAgilityEffect)
-	}
-	else if challengeFailType = 6 { //strength
-		playerStrengthEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-		playerStrengthEffect = clamp(-6, 6, playerStrengthEffect)
-	}
-	else if challengeFailType = 7 { //intelligence
-		playerIntelligenceEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-		playerIntelligenceEffect = clamp(-6, 6, playerIntelligenceEffect)
-	}
-	else if challengeFailType = 8 { //compassion
-		playerCompassionEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-		playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
-	}
 	
-	if playerCurrentHealth <= 0 {
-		gameState = 152
-	}
-	else {
-		gameState = 100
-		room_goto(rm_choice)
+	if alarm[1] == 0 {
+		
+		if challengeFailType = 1 { //health
+			playerCurrentHealth -= irandom_range(challengeFailCostMin,challengeFailCostMax)
+			playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
+		}
+		else if challengeFailType = 2 { //influence
+			divineInfluence -= irandom_range(challengeFailCostMin,challengeFailCostMax)
+			divineInfluence = clamp(0, 20, divineInfluence)
+		}
+		else if challengeFailType = 3 { //vitality
+			playerVitalityEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
+			playerVitalityEffect = clamp(-6, 6, playerVitalityEffect)
+		}
+		else if challengeFailType = 4 { //endurance
+			playerEnduranceEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
+			playerEnduranceEffect = clamp(-6, 6, playerEnduranceEffect)
+		}
+		else if challengeFailType = 5 { //agility
+			playerAgilityEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
+			playerAgilityEffect = clamp(-6, 6, playerAgilityEffect)
+		}
+		else if challengeFailType = 6 { //strength
+			playerStrengthEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
+			playerStrengthEffect = clamp(-6, 6, playerStrengthEffect)
+		}
+		else if challengeFailType = 7 { //intelligence
+			playerIntelligenceEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
+			playerIntelligenceEffect = clamp(-6, 6, playerIntelligenceEffect)
+		}
+		else if challengeFailType = 8 { //compassion
+			playerCompassionEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
+			playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
+		}
+		
+		if playerCurrentHealth <= 0 {
+			gameState = 152
+		}
+		else {
+			gameState = 100
+			room_goto(rm_choice)
+		}
+		
 	}
 }
 

@@ -10,7 +10,11 @@ draw_set_color(c_aqua);
 
 draw_text(15,15,score);
 
+draw_text(15,45,gameState)
 
+draw_text(15,75,playerChallengeRoll)
+
+draw_text(15,105,challengeSelectedDC)
 
 /*
 draw_set_font(fnt_debug);
