@@ -88,6 +88,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"snd_bgChar","path":"sounds/snd_bgChar/snd_bgChar.yy",},},
+    {"id":{"name":"obj_hudManager","path":"objects/obj_hudManager/obj_hudManager.yy",},},
     {"id":{"name":"obj_buttonLeft","path":"objects/obj_buttonLeft/obj_buttonLeft.yy",},},
     {"id":{"name":"spr_gameMenu","path":"sprites/spr_gameMenu/spr_gameMenu.yy",},},
     {"id":{"name":"spr_selectWisdom32","path":"sprites/spr_selectWisdom32/spr_selectWisdom32.yy",},},

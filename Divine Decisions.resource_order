@@ -50,6 +50,7 @@
     {"name":"obj_player","order":16,"path":"objects/obj_player/obj_player.yy",},
     {"name":"obj_enemy","order":17,"path":"objects/obj_enemy/obj_enemy.yy",},
     {"name":"snd_bgChar","order":1,"path":"sounds/snd_bgChar/snd_bgChar.yy",},
+    {"name":"obj_hudManager","order":25,"path":"objects/obj_hudManager/obj_hudManager.yy",},
     {"name":"obj_buttonLeft","order":9,"path":"objects/obj_buttonLeft/obj_buttonLeft.yy",},
     {"name":"spr_gameMenu","order":2,"path":"sprites/spr_gameMenu/spr_gameMenu.yy",},
     {"name":"spr_selectWisdom32","order":38,"path":"sprites/spr_selectWisdom32/spr_selectWisdom32.yy",},

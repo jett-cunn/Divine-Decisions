@@ -699,32 +699,28 @@ if gameState == 151 { //Victory
 	//Set gameState to 190 to receive rewards or 100 to move on
 	
 	if alarm[1] == 0 {
-		score += 1;
 		
-		if storyActive == 1{
-			if score == winTotal{
-				gameState = 001;
-				divineInfluence = 20;
-				room_goto(rm_start);
-			}
-			else {
-				if encounterValue == 0 {
-					gameState = 100;
-					room_goto(rm_choice)
+		if encounterValue == 0 {
+			score += 1
+			
+			if storyActive == 1 {
+				if score == winTotal {
+					gameState = 001
+					divineInfluence = 20
+					room_goto(rm_start)
 				}
 				else {
-					gameState = 190;
+					gameState = 100 
+					room_goto(rm_choice)
 				}
+			}
+			else {
+				gameState = 100 
+				room_goto(rm_choice)
 			}
 		}
 		else {
-			if encounterValue == 0 {
-				gameState = 100;
-				room_goto(rm_choice)
-			}
-			else {
-				gameState = 190;
-			}
+			gameState = 190
 		}
 	}
 }
@@ -1016,8 +1012,23 @@ if gameState == 166 { //Success
 			playerCompassionEffect = clamp(-6, 6, playerCompassionEffect)
 		}
 		
-		gameState = 100
-		room_goto(rm_choice)
+		score += 1;
+		
+		if storyActive == 1{
+			if score == winTotal{
+				gameState = 001;
+				divineInfluence = 20;
+				room_goto(rm_start);
+			}
+			else {
+				gameState = 100
+				room_goto(rm_choice)
+			}
+		}
+		else {
+			gameState = 100
+			room_goto(rm_choice)
+		}
 	
 	}
 	
@@ -1064,8 +1075,23 @@ if gameState == 167 { //Failure
 			gameState = 152
 		}
 		else {
-			gameState = 100
-			room_goto(rm_choice)
+			score += 1;
+		
+			if storyActive == 1{
+				if score == winTotal{
+					gameState = 001;
+					divineInfluence = 20;
+					room_goto(rm_start);
+				}
+				else {
+					gameState = 100
+					room_goto(rm_choice)
+				}
+			}
+			else {
+				gameState = 100
+				room_goto(rm_choice)
+			}
 		}
 		
 	}
@@ -1367,8 +1393,23 @@ if gameState == 185 { //Right prize selected
 
 if gameState == 186 { //Return to selection
 	if alarm[1] == 0 {
-		room_goto(rm_choice)
-		gameState = 100
+		score += 1;
+		
+		if storyActive == 1{
+			if score == winTotal{
+				gameState = 001;
+				divineInfluence = 20;
+				room_goto(rm_start);
+			}
+			else {
+				gameState = 100
+				room_goto(rm_choice)
+			}
+		}
+		else {
+			gameState = 100
+			room_goto(rm_choice)
+		}
 	
 	}
 }
@@ -1474,8 +1515,23 @@ if gameState == 193 { //Leave item
 		}
 		*/
 	
-		gameState = 100;
-		room_goto(rm_choice);
+		score += 1;
+		
+		if storyActive == 1{
+			if score == winTotal{
+				gameState = 001;
+				divineInfluence = 20;
+				room_goto(rm_start);
+			}
+			else {
+				gameState = 100
+				room_goto(rm_choice)
+			}
+		}
+		else {
+			gameState = 100
+			room_goto(rm_choice)
+		}
 	}
 }
 
@@ -1515,8 +1571,23 @@ if gameState == 194 { //Take item
 		playerCurrentHealth = playerMaxHealth;
 	}
 	
-	gameState = 100;
-	room_goto(rm_choice);
+	score += 1;
+		
+		if storyActive == 1{
+			if score == winTotal{
+				gameState = 001;
+				divineInfluence = 20;
+				room_goto(rm_start);
+			}
+			else {
+				gameState = 100
+				room_goto(rm_choice)
+			}
+		}
+		else {
+			gameState = 100
+			room_goto(rm_choice)
+		}
 	
 	}
 	
