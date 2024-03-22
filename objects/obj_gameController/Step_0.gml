@@ -64,18 +64,21 @@ if gameState == 002 { //Character Selection
 		else if buttonLeft == 1 { //Select Mercy
 			buttonLeft = 0;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 			alarm[0] = 60;
 			gameState = 003;
 		}
 		else if buttonMiddle == 1 { //Select Wisdom
 			buttonMiddle = 0;
 			buttonMiddlePressed = true;
+			alarm[5] = 60
 			alarm[0] = 60;
 			gameState = 004;
 		}
 		else if buttonRight == 1 { //Select Valor
 			buttonRight = 0;
 			buttonRightPressed = true;
+			alarm[6] = 60
 			alarm[0] = 60;
 			gameState = 005;
 		}
@@ -122,12 +125,14 @@ if gameState == 006 {
 	else if buttonLeft == 1 {
 		buttonLeft = 0;
 		buttonLeftPressed = true;
+		alarm[4] = 60
 		alarm[0] = 60;
 		gameState = 002;
 	}
 	else if buttonRight == 1 {
 		buttonRight = 0;
 		buttonRightPressed = true;
+		alarm[6] = 60
 		alarm[0] = 60;
 		//Mercy Stats
 		
@@ -161,12 +166,14 @@ if gameState == 007 {
 	else if buttonLeft == 1 {
 		buttonLeft = 0;
 		buttonLeftPressed = true;
+		alarm[4] = 60
 		alarm[0] = 60;
 		gameState = 002;
 	}
 	else if buttonRight == 1 {
 		buttonRight = 0;
 		buttonRightPressed = true;
+		alarm[6] = 60
 		alarm[0] = 60;
 		//Wisdom stats
 		
@@ -200,12 +207,14 @@ if gameState == 008 {
 	else if buttonLeft == 1 {
 		buttonLeft = 0;
 		buttonLeftPressed = true;
+		alarm[4] = 60
 		alarm[0] = 60;
 		gameState = 002;
 	}
 	else if buttonRight == 1 {
 		buttonRight = 0;
 		buttonRightPressed = true;
+		alarm[6] = 60
 		alarm[0] = 60;
 		//Valor stats
 		
@@ -323,6 +332,7 @@ if gameState == 103 { //Selection
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
 			gameState = 105;
@@ -330,6 +340,7 @@ if gameState == 103 { //Selection
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonMiddlePressed = true;
+			alarm[5] = 60
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
 			gameState = 106;
@@ -337,6 +348,8 @@ if gameState == 103 { //Selection
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonRightPressed = true;
+			alarm[6] = 60
+			alarm[6] = 60
 		}
 		
 	}
@@ -349,16 +362,19 @@ if gameState == 103 { //Selection
 			gameState = 104;
 			playerWaiting = false;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 		}
 		else if randomSelection == 2 {
 			gameState = 105;
 			playerWaiting = false;
 			buttonMiddlePressed = true;
+			alarm[5] = 60
 		}
 		else if randomSelection == 3 {
 			gameState = 106;
 			playerWaiting = false;
 			buttonRightPressed = true;
+			alarm[6] = 60
 		}
 		
 	}
@@ -516,6 +532,7 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 			playerActionChoice = 1;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
@@ -524,6 +541,7 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonMiddlePressed = true;
+			alarm[5] = 60
 			playerActionChoice = 2;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
@@ -532,6 +550,7 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonRightPressed = true;
+			alarm[6] = 60
 			playerActionChoice = 3;
 		}
 	}
@@ -544,18 +563,21 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 			gameState = 133;
 			playerWaiting = false;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 			playerActionChoice = 1;
 		}
 		else if randomSelection == 2 {
 			gameState = 134;
 			playerWaiting = false;
 			buttonMiddlePressed = true;
+			alarm[5] = 60
 			playerActionChoice = 2;
 		}
 		else if randomSelection == 3 {
 			gameState = 135;
 			playerWaiting = false;
 			buttonRightPressed = true;
+			alarm[6] = 60
 			playerActionChoice = 3;
 		}
 		
@@ -847,6 +869,7 @@ if gameState == 162 { //Waiting for controller input (Player Action)
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 			playerActionChoice = 1;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
@@ -855,6 +878,7 @@ if gameState == 162 { //Waiting for controller input (Player Action)
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonMiddlePressed = true;
+			alarm[5] = 60
 			playerActionChoice = 2;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
@@ -863,6 +887,7 @@ if gameState == 162 { //Waiting for controller input (Player Action)
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonRightPressed = true;
+			alarm[6] = 60
 			playerActionChoice = 3;
 		}
 	}
@@ -875,18 +900,21 @@ if gameState == 162 { //Waiting for controller input (Player Action)
 			gameState = 163;
 			playerWaiting = false;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 			playerActionChoice = 1;
 		}
 		else if randomSelection == 2 {
 			gameState = 164;
 			playerWaiting = false;
 			buttonMiddlePressed = true;
+			alarm[5] = 60
 			playerActionChoice = 2;
 		}
 		else if randomSelection == 3 {
 			gameState = 165;
 			playerWaiting = false;
 			buttonRightPressed = true;
+			alarm[6] = 60
 			playerActionChoice = 3;
 		}
 		
@@ -985,7 +1013,7 @@ if gameState == 166 { //Success
 		}
 		else if challengeRewardType = 3 { //influence
 			divineInfluence += irandom_range(encounterValueMin,encounterValueMax)
-			divineInfluence = clamp(0, 20, divineInfluence)
+			divineInfluence = clamp(0, 16, divineInfluence)
 		}
 		else if challengeRewardType = 4 { //vitality
 			playerVitalityEffect += irandom_range(encounterValueMin,encounterValueMax)
@@ -1017,7 +1045,7 @@ if gameState == 166 { //Success
 		if storyActive == 1{
 			if score == winTotal{
 				gameState = 001;
-				divineInfluence = 20;
+				divineInfluence = 16;
 				room_goto(rm_start);
 			}
 			else {
@@ -1044,7 +1072,7 @@ if gameState == 167 { //Failure
 		}
 		else if challengeFailType = 2 { //influence
 			divineInfluence -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-			divineInfluence = clamp(0, 20, divineInfluence)
+			divineInfluence = clamp(0, 16, divineInfluence)
 		}
 		else if challengeFailType = 3 { //vitality
 			playerVitalityEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
@@ -1080,7 +1108,7 @@ if gameState == 167 { //Failure
 			if storyActive == 1{
 				if score == winTotal{
 					gameState = 001;
-					divineInfluence = 20;
+					divineInfluence = 16;
 					room_goto(rm_start);
 				}
 				else {
@@ -1231,6 +1259,7 @@ if gameState == 182 { //Controller reset, waiting for player input
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 			playerActionChoice = 1;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonMiddle == 1 {
@@ -1239,6 +1268,7 @@ if gameState == 182 { //Controller reset, waiting for player input
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonMiddlePressed = true;
+			alarm[5] = 60
 			playerActionChoice = 2;
 		}
 		else if (buttonLeft + buttonMiddle + buttonRight) == 1 && buttonRight == 1 {
@@ -1247,6 +1277,7 @@ if gameState == 182 { //Controller reset, waiting for player input
 			playerWaiting = false;
 			alarm[2] = 0;
 			buttonRightPressed = true;
+			alarm[6] = 60
 			playerActionChoice = 3;
 		}
 	}
@@ -1259,18 +1290,21 @@ if gameState == 182 { //Controller reset, waiting for player input
 			gameState = 183;
 			playerWaiting = false;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 			playerActionChoice = 1;
 		}
 		else if randomSelection == 2 {
 			gameState = 184;
 			playerWaiting = false;
 			buttonMiddlePressed = true;
+			alarm[5] = 60
 			playerActionChoice = 2;
 		}
 		else if randomSelection == 3 {
 			gameState = 185;
 			playerWaiting = false;
 			buttonRightPressed = true;
+			alarm[6] = 60
 			playerActionChoice = 3;
 		}
 		
@@ -1285,7 +1319,7 @@ if gameState == 183 { //Left prize selected
 	}
 	else if reward1 == 2 {
 		divineInfluence += encounterValue*3
-		divineInfluence = clamp(divineInfluence, 0, 20)
+		divineInfluence = clamp(divineInfluence, 0, 16)
 	}
 	else if reward1 == 3 {
 		playerVitalityEffect += encounterValue
@@ -1323,7 +1357,7 @@ if gameState == 184 { //Middle prize selected
 	}
 	else if reward2 == 2 {
 		divineInfluence += encounterValue*3
-		divineInfluence = clamp(divineInfluence, 0, 20)
+		divineInfluence = clamp(divineInfluence, 0, 16)
 	}
 	else if reward2 == 3 {
 		playerVitalityEffect += encounterValue
@@ -1361,7 +1395,7 @@ if gameState == 185 { //Right prize selected
 	}
 	else if reward3 == 2 {
 		divineInfluence += encounterValue*3
-		divineInfluence = clamp(divineInfluence, 0, 20)
+		divineInfluence = clamp(divineInfluence, 0, 16)
 	}
 	else if reward3 == 3 {
 		playerVitalityEffect += encounterValue
@@ -1398,7 +1432,7 @@ if gameState == 186 { //Return to selection
 		if storyActive == 1{
 			if score == winTotal{
 				gameState = 001;
-				divineInfluence = 20;
+				divineInfluence = 16;
 				room_goto(rm_start);
 			}
 			else {
@@ -1466,6 +1500,7 @@ if gameState == 192 { //Selection
 				alarm[2] = 0;
 				
 				buttonLeftPressed = true;
+				alarm[4] = 60
 			}
 			else if buttonRight = 1 {
 				gameState = 194;
@@ -1474,6 +1509,7 @@ if gameState == 192 { //Selection
 				alarm[2] = 0;
 				
 				buttonRightPressed = true;
+				alarm[6] = 60
 			}
 		}
 		
@@ -1487,11 +1523,13 @@ if gameState == 192 { //Selection
 			gameState = 193;
 			playerWaiting = false;
 			buttonLeftPressed = true;
+			alarm[4] = 60
 		}
 		else if randomSelection == 2 {
 			gameState = 194;
 			playerWaiting = false;
 			buttonRightPressed = true;
+			alarm[6] = 60
 		}
 				
 	}
@@ -1576,7 +1614,7 @@ if gameState == 194 { //Take item
 		if storyActive == 1{
 			if score == winTotal{
 				gameState = 001;
-				divineInfluence = 20;
+				divineInfluence = 16;
 				room_goto(rm_start);
 			}
 			else {

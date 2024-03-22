@@ -105,8 +105,8 @@ playerHealthPercentage = 0;
 playerActionChoice = 0;
 fightTurn1 = false;
 
-divineInfluence = 20;
-maxInfluence = 20;
+divineInfluence = 16;
+maxInfluence = 16;
 percentInfluence = 100;
 playerWaiting = false;
 

@@ -1,11 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
+randomize();
 
-room_goto(rm_start);
 
 score = 0;
 
 gameState = 0;
+
+storyActive = 0;
+
+winTotal = 10;
 
 buttonLeft = 0;
 buttonMiddle = 0;
@@ -19,6 +23,9 @@ buttonRightVisible = false;
 buttonLeftPressed = false;
 buttonMiddlePressed = false;
 buttonRightPressed = false;
+
+
+inventoryVisible = true;
 
 
 buttonLeftTextA = "";
@@ -42,39 +49,7 @@ encounterRoll2 = 0;
 encounterRoll3 = 0;
 currentEncounter = 0;
 
-encounterText1A = "A snivelling goblin";
-encounterText1B = "hides in the shadows";
-encounterText1C = "";
-encounterText2A = "A snivelling goblin hides";
-encounterText2B = "in the shadows, clutching";
-encounterText2C = "a victim's trinket";
-encounterText3A = "A ravenous wolf";
-encounterText3B = "stalks its' prey";
-encounterText3C = "";
-encounterText4A = "A ravenous wolf stalks its'";
-encounterText4B = "prey, a victim's trinket ";
-encounterText4C = "dropped beyond it";
-encounterText5A = "A ravenous wolf stalks its'";
-encounterText5B = "prey, a fallen adventurer's";
-encounterText5C = "loot in its' burrow";
-encounterText6A = "A conniving cultist flees";
-encounterText6B = "from battle, a victim's";
-encounterText6C = "trinket on their belt";
-encounterText7A = "A conniving cultist flees";
-encounterText7B = "from battle, a fallen";
-encounterText7C = "adventurer's prize in hand";
-encounterText8A = "A conniving cultist flees";
-encounterText8B = "from battle, a great";
-encounterText8C = "treasure in their bag";
-encounterText9A = "A notorious bandit captain";
-encounterText9B = "stands ahead, a fallen";
-encounterText9C = "adventurer's prize before them";
-encounterText10A = "A notorious bandit captain";
-encounterText10B = "stands ahead, a great";
-encounterText10C = "treasure in their bag";
-encounterText11A = "A notorious bandit captain";
-encounterText11B = "stands ahead, wielding";
-encounterText11C = "a mighty relic";
+
 
 ///Player Stats
 
@@ -86,16 +61,17 @@ playerStrengthBase = 0;
 playerIntelligenceBase = 0;
 playerCompassionBase  = 0;
 
-/*
+
 
 //Effect Modifiers
-global.playerVitalityEffect = 0;
-global.playerEnduranceEffect = 0;
-global.playerAgilityEffect = 0;
-global.playerStrengthEffect = 0;
-global.playerIntelligenceEffect = 0;
-global.playerCompassionEffect = 0;
+playerVitalityEffect = 0;
+playerEnduranceEffect = 0;
+playerAgilityEffect = 0;
+playerStrengthEffect = 0;
+playerIntelligenceEffect = 0;
+playerCompassionEffect = 0;
 
+/*
 //Boon/Bane Modifiers
 global.playerVitalityBoon = 0;
 global.playerEnduranceBoon = 0;
@@ -126,9 +102,12 @@ playerMaxHealth = 0;
 playerCurrentHealth = 0;
 playerHealthPercentage = 0;
 
-divineInfluence = 20;
-maxInfluence = 20;
-percentInfluence = 50;
+playerActionChoice = 0;
+fightTurn1 = false;
+
+divineInfluence = 16;
+maxInfluence = 16;
+percentInfluence = 100;
 playerWaiting = false;
 
 rewardID = 0;
@@ -165,6 +144,66 @@ enemySpeedRoll = 0;
 enemyDamageRoll = 0;
 enemyType = 0; //1 = goblin, 2 = wolf, 3 = cultist, 4 = bandit
 
+enemyStatDatabase = [ //HP, Attack, Defense, Speed, Sprite
+	[0], //Null
+	[6, 2, 1, 3, spr_enemyGoblin], //Goblin (ID 1)
+	[6, 3, 1, 4, spr_enemyWolf], //Wolf (ID 2)
+	[8, 3, 2, 1, spr_enemyCultist], //Cultist (ID 3)
+	[10, 4, 3, 4, spr_enemyBandit] //Bandit Leader (ID 4)
+];
 
 
+//Challenge Stats
+challenge1Text = ""
+challenge2Text = ""
+challenge3Text = ""
+challenge1Stat = 0
+challenge2Stat = 0
+challenge3Stat = 0
+challenge1DC = 0
+challenge2DC = 0
+challenge3DC = 0
+challengeRewardType = 0
+encounterValueParsed = []
+encounterValueMin = 0
+encounterValueMax = 0
 
+challengeFailCost = 0
+challengeFailCostParsed = []
+challengeFailCostMin = 0
+challengeFailCostMax = 0
+challengeFailType = 0
+
+playerChallengeStatChosen = 0 //3 = Strength, 2 = Intelligence, 1 = Compassion
+playerChallengeRoll = 0
+challengeSelectedDC = 0
+
+
+//Shrine Stats
+reward1 = 0
+reward2 = 0
+reward3 = 0
+rewardListMaster = [0,1,2,3,4,5,6,7]
+rewardListCurrent = []
+rewardTextBuffer = 0
+rewardValueBuffer = 0
+rewardType = 0
+
+
+areaListPrototype = [4,5,6,7,8,9,10,11,12,13,14,15,15,16,16,17,17,18,18,18,18,18]
+
+encounterData = ""
+encounterDataParsed = []
+encounterDatabase = []
+encounterDatabaseLine = 0
+
+database = file_text_open_read("encounterDatabase.txt")	
+if (file_exists("encounterDatabase.txt")){
+	
+	while(!file_text_eof(database)){ //Until we reach the end of the file...
+		encounterDatabase[encounterDatabaseLine] = file_text_read_string(database) //Store the file in this array and move on
+		file_text_readln(database)
+		encounterDatabaseLine += 1
+	}
+	file_text_close(database)
+}
