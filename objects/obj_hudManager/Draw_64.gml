@@ -157,13 +157,13 @@ if button3 == true {
 	draw_text(room_width-438,975,obj_gameController.buttonRightTextC)
 }
 if text1 == true {
-	draw_set_alpha(140)
+	draw_set_alpha(0.6)
 	draw_set_color(borderColor1)
 	draw_roundrect_ext(330,150,745,700,20,20,false)
 	draw_set_color(buttonColor1)
 	draw_roundrect_ext(335,155,740,695,15,15,false)
 	
-	draw_set_alpha(255)
+	draw_set_alpha(1)
 	draw_set_font(fnt_plain)
 	draw_set_color(c_dkgray)
 	draw_set_valign(fa_middle)
@@ -173,13 +173,13 @@ if text1 == true {
 	draw_set_halign(fa_left)
 }
 if text2 == true {
-	draw_set_alpha(140)
+	draw_set_alpha(0.6)
 	draw_set_color(borderColor2)
 	draw_roundrect_ext(752,150,room_width-752,700,20,20,false)
 	draw_set_color(buttonColor2)
 	draw_roundrect_ext(757,155,room_width-757,695,15,15,false)
 	
-	draw_set_alpha(255)
+	draw_set_alpha(1)
 	draw_set_font(fnt_plain)
 	draw_set_color(c_ltgray)
 	draw_set_valign(fa_middle)
@@ -189,13 +189,13 @@ if text2 == true {
 	draw_set_halign(fa_left)
 }
 if text3 == true {
-	draw_set_alpha(140)
+	draw_set_alpha(0.6)
 	draw_set_color(borderColor3)
 	draw_roundrect_ext(room_width-330,150,room_width-745,700,20,20,false)
 	draw_set_color(buttonColor3)
 	draw_roundrect_ext(room_width-335,155,room_width-740,695,15,15,false)
 	
-	draw_set_alpha(255)
+	draw_set_alpha(1)
 	draw_set_font(fnt_plain)
 	draw_set_color(c_dkgray)
 	draw_set_valign(fa_middle)
