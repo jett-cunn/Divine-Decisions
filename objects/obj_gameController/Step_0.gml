@@ -45,14 +45,14 @@ if gameState == 002 { //Character Selection
 	buttonMiddleVisible = true;
 	buttonRightVisible = true;
 	
-	buttonLeftTextA = "Choose Mercy"
-	buttonLeftTextB = "";
+	buttonLeftTextA = "";
+	buttonLeftTextB = "Choose Mercy";
 	buttonLeftTextC = "";
-	buttonMiddleTextA = "Choose Wisdom"
-	buttonMiddleTextB = "";
+	buttonMiddleTextA = ""
+	buttonMiddleTextB = "Choose Wisdom";
 	buttonMiddleTextC = "";
-	buttonRightTextA = "Choose Valor"
-	buttonRightTextB = "";
+	buttonRightTextA = ""
+	buttonRightTextB = "Choose Valor";
 	buttonRightTextC = "";
 	
 	
@@ -288,24 +288,32 @@ if gameState == 102 { //Presenting options
 	encounterData = encounterDatabase[encounter1-1]
 	encounterDataParsed = string_split(encounterData, ".")
 	
-	buttonLeftTextA = encounterDataParsed[array_length(encounterDataParsed)-3]
-	buttonLeftTextB = encounterDataParsed[array_length(encounterDataParsed)-2]
-	buttonLeftTextC = encounterDataParsed[array_length(encounterDataParsed)-1]
+	
+	buttonLeftTextA = ""
+	buttonLeftTextB = ""
+	buttonLeftTextC = ""
+	
+	flavorTextLeft = encounterDataParsed[array_length(encounterDataParsed)-1]
 	
 	encounterData = encounterDatabase[encounter2-1]	
 	encounterDataParsed = string_split(encounterData, ".")
 	
-	buttonMiddleTextA = encounterDataParsed[array_length(encounterDataParsed)-3]
-	buttonMiddleTextB = encounterDataParsed[array_length(encounterDataParsed)-2]
-	buttonMiddleTextC = encounterDataParsed[array_length(encounterDataParsed)-1]
+	
+	buttonMiddleTextA = ""
+	buttonMiddleTextB = ""
+	buttonMiddleTextC = ""
+	
+	flavorTextMiddle = encounterDataParsed[array_length(encounterDataParsed)-1]
 	
 	encounterData = encounterDatabase[encounter3-1]	 
 	encounterDataParsed = string_split(encounterData, ".")
 	
-	buttonRightTextA = encounterDataParsed[array_length(encounterDataParsed)-3]
-	buttonRightTextB = encounterDataParsed[array_length(encounterDataParsed)-2]
-	buttonRightTextC = encounterDataParsed[array_length(encounterDataParsed)-1]
 	
+	buttonRightTextA = ""
+	buttonRightTextB = ""
+	buttonRightTextC = ""
+	
+	flavorTextRight = encounterDataParsed[array_length(encounterDataParsed)-1]
 	
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
 		gameState = 103;
@@ -495,16 +503,16 @@ if gameState == 130 { //Setup
 
 if gameState == 131 { //Waiting for controller reset
 	
-	buttonLeftTextA = "Retreat";
-	buttonLeftTextB = "";
+	buttonLeftTextA = "";
+	buttonLeftTextB = "Retreat";
 	buttonLeftTextC = "";
 	
-	buttonMiddleTextA = "Defend";
-	buttonMiddleTextB = "";
+	buttonMiddleTextA = "";
+	buttonMiddleTextB = "Defend";
 	buttonMiddleTextC = "";
 	
-	buttonRightTextA = "Attack";
-	buttonRightTextB = "";
+	buttonRightTextA = "";
+	buttonRightTextB = "Attack";
 	buttonRightTextC = "";
 	
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
@@ -832,17 +840,20 @@ if gameState == 160 { //Setup
 
 if gameState == 161 { //Waiting for controller reset
 	
-	buttonLeftTextA = "";
-	buttonLeftTextB = challenge1Text;
-	buttonLeftTextC = "";
+	buttonLeftTextA = ""
+	buttonLeftTextB = ""
+	buttonLeftTextC = ""
+	flavorTextLeft = challenge1Text
 	
-	buttonMiddleTextA = "";
-	buttonMiddleTextB = challenge2Text;
-	buttonMiddleTextC = "";
+	buttonMiddleTextA = ""
+	buttonMiddleTextB = ""
+	buttonMiddleTextC = ""
+	flavorTextMiddle = challenge2Text
 	
-	buttonRightTextA = "";
-	buttonRightTextB = challenge3Text;
-	buttonRightTextC = "";
+	buttonRightTextA = ""
+	buttonRightTextB = ""
+	buttonRightTextC = ""
+	flavorTextRight = challenge3Text
 	
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
 		gameState = 162;
@@ -1464,9 +1475,11 @@ if gameState == 190 { //Calculate rewards
 	
 	buttonLeftTextA = "Keep your old";
 	buttonLeftTextB = "equipment";
+	buttonLeftTextC = "";
 	
 	buttonRightTextA = "Claim your";
 	buttonRightTextB = "new prize";
+	buttonRightTextC = "";
 	
 	gameState = 191;
 }

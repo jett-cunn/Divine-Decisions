@@ -99,9 +99,9 @@ if button1 == true {
 	if(obj_gameController.buttonLeftTextB == ""){
 		draw_set_font(fnt_gothicMedium)
 	}
-	draw_text(438,925,obj_gameController.buttonLeftTextA)
-	draw_text(438,945,obj_gameController.buttonLeftTextB)
-	draw_text(438,965,obj_gameController.buttonLeftTextC)
+	draw_text(438,935,obj_gameController.buttonLeftTextA)
+	draw_text(438,955,obj_gameController.buttonLeftTextB)
+	draw_text(438,975,obj_gameController.buttonLeftTextC)
 }
 if button2 == true {
 	borderColor2 = make_color_rgb(11, 25, 74)
@@ -122,13 +122,13 @@ if button2 == true {
 		
 		draw_set_halign(fa_center)
 		draw_set_font(fnt_gothic)
-		draw_set_color(c_dkgray)
+		draw_set_color(c_ltgray)
 		if(obj_gameController.buttonMiddleTextB == ""){
 			draw_set_font(fnt_gothicMedium)
 		}
-		draw_text(960,925,obj_gameController.buttonMiddleTextA)
-		draw_text(960,945,obj_gameController.buttonMiddleTextB)
-		draw_text(960,965,obj_gameController.buttonMiddleTextC)
+		draw_text(960,935,obj_gameController.buttonMiddleTextA)
+		draw_text(960,955,obj_gameController.buttonMiddleTextB)
+		draw_text(960,975,obj_gameController.buttonMiddleTextC)
 	}
 }
 if button3 == true {
@@ -152,9 +152,57 @@ if button3 == true {
 	if(obj_gameController.buttonRightTextB == ""){
 		draw_set_font(fnt_gothicMedium)
 	}
-	draw_text(room_width-438,925,obj_gameController.buttonRightTextA)
-	draw_text(room_width-438,945,obj_gameController.buttonRightTextB)
-	draw_text(room_width-438,965,obj_gameController.buttonRightTextC)
+	draw_text(room_width-438,935,obj_gameController.buttonRightTextA)
+	draw_text(room_width-438,955,obj_gameController.buttonRightTextB)
+	draw_text(room_width-438,975,obj_gameController.buttonRightTextC)
+}
+if text1 == true {
+	draw_set_alpha(140)
+	draw_set_color(borderColor1)
+	draw_roundrect_ext(330,150,745,700,20,20,false)
+	draw_set_color(buttonColor1)
+	draw_roundrect_ext(335,155,740,695,15,15,false)
+	
+	draw_set_alpha(255)
+	draw_set_font(fnt_plain)
+	draw_set_color(c_dkgray)
+	draw_set_valign(fa_middle)
+	draw_set_halign(fa_center)
+	draw_text_ext(537.5,425,obj_gameController.flavorTextLeft,-1,400)
+	draw_set_valign(fa_top)
+	draw_set_halign(fa_left)
+}
+if text2 == true {
+	draw_set_alpha(140)
+	draw_set_color(borderColor2)
+	draw_roundrect_ext(752,150,room_width-752,700,20,20,false)
+	draw_set_color(buttonColor2)
+	draw_roundrect_ext(757,155,room_width-757,695,15,15,false)
+	
+	draw_set_alpha(255)
+	draw_set_font(fnt_plain)
+	draw_set_color(c_ltgray)
+	draw_set_valign(fa_middle)
+	draw_set_halign(fa_center)
+	draw_text_ext(960,425,obj_gameController.flavorTextMiddle,-1,400)
+	draw_set_valign(fa_top)
+	draw_set_halign(fa_left)
+}
+if text3 == true {
+	draw_set_alpha(140)
+	draw_set_color(borderColor3)
+	draw_roundrect_ext(room_width-330,150,room_width-745,700,20,20,false)
+	draw_set_color(buttonColor3)
+	draw_roundrect_ext(room_width-335,155,room_width-740,695,15,15,false)
+	
+	draw_set_alpha(255)
+	draw_set_font(fnt_plain)
+	draw_set_color(c_dkgray)
+	draw_set_valign(fa_middle)
+	draw_set_halign(fa_center)
+	draw_text_ext(room_width-537.5,425,obj_gameController.flavorTextRight,-1,400)
+	draw_set_valign(fa_top)
+	draw_set_halign(fa_left)
 }
 
 

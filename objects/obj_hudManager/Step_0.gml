@@ -33,7 +33,12 @@ else if room == rm_choice {
 	playerHealth = false
 	enemyHealth = false
 	text1 = true
-	text2 = true
+	if obj_gameController.buttonMiddleVisible == true {
+		text2 = true
+	}
+	else {
+		text2 = false
+	}
 	text3 = true
 	enemy = false
 	player = false
@@ -75,7 +80,12 @@ else if room == rm_challenge {
 	playerHealth = true
 	enemyHealth = false
 	text1 = true
-	text2 = true
+	if obj_gameController.buttonMiddleVisible == true {
+		text2 = true
+	}
+	else {
+		text2 = false
+	}
 	text3 = true
 	enemy = false
 	player = false
@@ -95,9 +105,9 @@ else if room == rm_shrine {
 	progressBar = true
 	playerHealth = false
 	enemyHealth = false
-	text1 = true
-	text2 = true
-	text3 = true
+	text1 = false
+	text2 = false
+	text3 = false
 	enemy = false
 	player = false
 	inventory = true

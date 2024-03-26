@@ -37,6 +37,9 @@ buttonMiddleTextC = "";
 buttonRightTextA = "";
 buttonRightTextB = "";
 buttonRightTextC = "";
+flavorTextLeft = "";
+flavorTextMiddle = "";
+flavorTextRight = "";
 
 
 encounter1 = 0;
