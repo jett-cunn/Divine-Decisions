@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+/*
 draw_healthbar(x+25,y+98,x+448,y+105,obj_gameController.playerHealthPercentage,c_black,c_red,c_lime,0,false,false);
 
 
@@ -9,6 +10,7 @@ draw_set_halign(fa_left);
 
 draw_set_color(c_green);
 draw_text(x+25,y+120, string(obj_gameController.playerCurrentHealth) + " / " + string(obj_gameController.playerMaxHealth))
+
 
 if (obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 1) || obj_gameController.gameState == 150 {
 	
@@ -86,4 +88,4 @@ if obj_gameController.gameState > 165 && obj_gameController < 168 {
 	
 	
 }
-
+*/

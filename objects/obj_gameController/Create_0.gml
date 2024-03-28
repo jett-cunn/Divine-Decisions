@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 randomize();
-
+window_set_fullscreen(true);
 
 score = 0;
 
@@ -9,7 +9,7 @@ gameState = 0;
 
 storyActive = 0;
 
-winTotal = 10;
+winTotal = 15;
 
 buttonLeft = 0;
 buttonMiddle = 0;
@@ -26,6 +26,8 @@ buttonRightPressed = false;
 
 
 inventoryVisible = true;
+
+timerPercentage = 0;
 
 
 buttonLeftTextA = "";

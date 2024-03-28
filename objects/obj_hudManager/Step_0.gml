@@ -6,8 +6,8 @@ if room == rm_character {
 	button1 = true
 	button2 = true
 	button3 = true
-	influence = true
-	timer = true
+	influence = false
+	timer = false
 	progressBar = true
 	playerHealth = false
 	enemyHealth = false

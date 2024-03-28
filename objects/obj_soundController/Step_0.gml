@@ -11,7 +11,7 @@ if currentRoom != lastRoom {
 	else if room == rm_character {
 		audio_play_sound(snd_bgChar,1,true);
 	}
-	else if room == rm_choice {
+	else if room == rm_choice || room == rm_challenge || room == rm_shrine {
 		audio_play_sound(snd_bgForest,1,true);
 	}
 	else if room == rm_fight {

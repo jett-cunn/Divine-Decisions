@@ -10,6 +10,8 @@ Reference values;
 */
 
 
+timerPercentage = (alarm[2] / 600) * 100
+
 //Character Creation
 
 if gameState == 000 { //Start screen
@@ -91,8 +93,8 @@ if gameState == 003 { //Mercy
 	
 	buttonMiddleVisible = false;
 	
-	buttonLeftTextA = "Deny"
-	buttonRightTextA = "Confirm"
+	buttonLeftTextB = "Deny"
+	buttonRightTextB = "Confirm"
 	
 	gameState = 006;
 }
@@ -101,8 +103,8 @@ if gameState == 004 { //Wisdom
 	
 	buttonMiddleVisible = false;
 	
-	buttonLeftTextA = "Deny"
-	buttonRightTextA = "Confirm"
+	buttonLeftTextB = "Deny"
+	buttonRightTextB = "Confirm"
 	
 	gameState = 007;
 }
@@ -111,8 +113,8 @@ if gameState == 005 { //Valor
 	
 	buttonMiddleVisible = false;
 	
-	buttonLeftTextA = "Deny"
-	buttonRightTextA = "Confirm"
+	buttonLeftTextB = "Deny"
+	buttonRightTextB = "Confirm"
 	
 	gameState = 008;
 }
@@ -773,7 +775,7 @@ if gameState == 153 { //Waiting for restart
 		
 		
 		gameState = 001;
-		divineInfluence = 20;
+		divineInfluence = maxInfluence;
 	}
 }
 
@@ -1024,7 +1026,7 @@ if gameState == 166 { //Success
 		}
 		else if challengeRewardType = 3 { //influence
 			divineInfluence += irandom_range(encounterValueMin,encounterValueMax)
-			divineInfluence = clamp(0, 16, divineInfluence)
+			divineInfluence = clamp(divineInfluence, 0, maxInfluence)
 		}
 		else if challengeRewardType = 4 { //vitality
 			playerVitalityEffect += irandom_range(encounterValueMin,encounterValueMax)
@@ -1056,7 +1058,7 @@ if gameState == 166 { //Success
 		if storyActive == 1{
 			if score == winTotal{
 				gameState = 001;
-				divineInfluence = 16;
+				divineInfluence = maxInfluence;
 				room_goto(rm_start);
 			}
 			else {
@@ -1080,10 +1082,15 @@ if gameState == 167 { //Failure
 		if challengeFailType = 1 { //health
 			playerCurrentHealth -= irandom_range(challengeFailCostMin,challengeFailCostMax)
 			playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
+			
+			if playerCurrentHealth <= 0 {
+				gameState = 153
+				room_goto(rm_die)
+			}
 		}
 		else if challengeFailType = 2 { //influence
 			divineInfluence -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-			divineInfluence = clamp(0, 16, divineInfluence)
+			divineInfluence = clamp(divineInfluence, 0, maxInfluence)
 		}
 		else if challengeFailType = 3 { //vitality
 			playerVitalityEffect -= irandom_range(challengeFailCostMin,challengeFailCostMax)
@@ -1119,7 +1126,7 @@ if gameState == 167 { //Failure
 			if storyActive == 1{
 				if score == winTotal{
 					gameState = 001;
-					divineInfluence = 16;
+					divineInfluence = maxInfluence;
 					room_goto(rm_start);
 				}
 				else {
@@ -1330,7 +1337,7 @@ if gameState == 183 { //Left prize selected
 	}
 	else if reward1 == 2 {
 		divineInfluence += encounterValue*3
-		divineInfluence = clamp(divineInfluence, 0, 16)
+		divineInfluence = clamp(divineInfluence, 0, maxInfluence)
 	}
 	else if reward1 == 3 {
 		playerVitalityEffect += encounterValue
@@ -1368,7 +1375,7 @@ if gameState == 184 { //Middle prize selected
 	}
 	else if reward2 == 2 {
 		divineInfluence += encounterValue*3
-		divineInfluence = clamp(divineInfluence, 0, 16)
+		divineInfluence = clamp(divineInfluence, 0, maxInfluence)
 	}
 	else if reward2 == 3 {
 		playerVitalityEffect += encounterValue
@@ -1406,7 +1413,7 @@ if gameState == 185 { //Right prize selected
 	}
 	else if reward3 == 2 {
 		divineInfluence += encounterValue*3
-		divineInfluence = clamp(divineInfluence, 0, 16)
+		divineInfluence = clamp(divineInfluence, 0, maxInfluence)
 	}
 	else if reward3 == 3 {
 		playerVitalityEffect += encounterValue
@@ -1443,7 +1450,7 @@ if gameState == 186 { //Return to selection
 		if storyActive == 1{
 			if score == winTotal{
 				gameState = 001;
-				divineInfluence = 16;
+				divineInfluence = maxInfluence;
 				room_goto(rm_start);
 			}
 			else {
@@ -1571,7 +1578,7 @@ if gameState == 193 { //Leave item
 		if storyActive == 1{
 			if score == winTotal{
 				gameState = 001;
-				divineInfluence = 20;
+				divineInfluence = maxInfluence;
 				room_goto(rm_start);
 			}
 			else {
@@ -1611,7 +1618,7 @@ if gameState == 194 { //Take item
 			playerWeaponStat = 3;
 		}
 	}
-	
+	/*
 	divineInfluence += encounterValue;
 	if divineInfluence > maxInfluence {
 		divineInfluence = maxInfluence;
@@ -1621,13 +1628,13 @@ if gameState == 194 { //Take item
 	if playerCurrentHealth > playerMaxHealth {
 		playerCurrentHealth = playerMaxHealth;
 	}
-	
+	*/
 	score += 1;
 		
 		if storyActive == 1{
 			if score == winTotal{
 				gameState = 001;
-				divineInfluence = 16;
+				divineInfluence = maxInfluence;
 				room_goto(rm_start);
 			}
 			else {

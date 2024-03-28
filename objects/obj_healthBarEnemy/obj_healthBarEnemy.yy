@@ -32,5 +32,5 @@
     "path": "sprites/spr_healthBarEnemy/spr_healthBarEnemy.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

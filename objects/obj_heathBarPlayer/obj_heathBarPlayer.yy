@@ -32,5 +32,5 @@
     "path": "sprites/spr_healthBarPlayer/spr_healthBarPlayer.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

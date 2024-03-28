@@ -197,14 +197,170 @@ if text3 == true {
 	
 	draw_set_alpha(1)
 	draw_set_font(fnt_plain)
-	draw_set_color(c_dkgray)
+	draw_set_color(c_gray)
 	draw_set_valign(fa_middle)
 	draw_set_halign(fa_center)
 	draw_text_ext(room_width-537.5,425,obj_gameController.flavorTextRight,-1,400)
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
 }
+if playerHealth == true {
+	pHealthBarX = 32
+	pHealthBarY = 608
+	
+	draw_set_color(c_green)
+	draw_roundrect_ext(pHealthBarX,pHealthBarY,pHealthBarX+471,pHealthBarY+193,10,10,false)
+	draw_set_color(c_ltgrey)
+	draw_roundrect_ext(pHealthBarX+5,pHealthBarY+5,pHealthBarX+466,pHealthBarY+188,5,5,false)
+	
+	draw_healthbar(pHealthBarX+25,pHealthBarY+98,pHealthBarX+448,pHealthBarY+105,obj_gameController.playerHealthPercentage,c_grey,c_red,c_lime,0,true,true);
 
 
+	draw_set_font(fnt_plain);
+	draw_set_halign(fa_left);
+
+	draw_set_color(c_green);
+	draw_text(pHealthBarX+25,pHealthBarY+120, string(obj_gameController.playerCurrentHealth) + " / " + string(obj_gameController.playerMaxHealth))
+	
+	draw_set_color(c_black);
+	draw_text(pHealthBarX+10,pHealthBarY+10, "CHAMPION")
+	if (obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 1) || obj_gameController.gameState == 150 {
+	
+		draw_set_color(c_lime);
+		draw_text(pHealthBarX+150, pHealthBarY+40, string(obj_gameController.playerAgilityRoll));
+		
+		draw_set_color(c_green);
+		draw_text(pHealthBarX+180, pHealthBarY+40, "- " + string(obj_gameController.enemySpeedRoll));
+		
+		draw_set_color(c_green)
+		if obj_gameController.playerAgilityRoll > obj_gameController.enemySpeedRoll {
+			draw_text(pHealthBarX+220, pHealthBarY+40, "= Escape")
+		}
+		else {
+			draw_text(pHealthBarX+220, pHealthBarY+40, "= Fail")
+		}
+		
+	}
+
+	if obj_gameController.gameState == 132 && obj_gameController.fightTurn1 == false {
+	
+		if obj_gameController.playerGuarded == 0 {
+			draw_set_color(c_red);
+			draw_text(pHealthBarX+150, pHealthBarY+40, string(obj_gameController.enemyAttackRoll));
+			
+			draw_set_color(c_blue);
+			draw_text(pHealthBarX+180, pHealthBarY+40, "- " + string(obj_gameController.playerEnduranceRoll));
+			
+		draw_set_color(c_green	)
+		draw_text(pHealthBarX+220, pHealthBarY+40, "= " + string(obj_gameController.enemyDamageRoll) + " Damage");	
+
+		}
+		else if obj_gameController.playerGuarded == 1 {
+			draw_set_color(c_red);
+			draw_text(pHealthBarX+150, pHealthBarY+40, string(obj_gameController.enemyAttackRoll));
+			
+			draw_set_color(c_blue);
+			draw_text(pHealthBarX+180, pHealthBarY+40, "- " + string(obj_gameController.playerEnduranceRoll));
+			
+			draw_set_color(c_maroon);
+			draw_text(pHealthBarX+220, pHealthBarY+40, "- " + string(obj_gameController.playerAttackRoll));
+			
+			draw_set_color(c_green)
+			draw_text(pHealthBarX+260, pHealthBarY+40, "= " + string(obj_gameController.enemyDamageRoll) + " Damage");
+		}
+		
+	}
+
+	if obj_gameController.gameState > 165 && obj_gameController < 168 {
+		
+		if obj_gameController.playerChallengeStatChosen == 1 {
+			draw_set_color(c_green)
+		}
+		else if obj_gameController.playerChallengeStatChosen == 2 {
+			draw_set_color(c_blue)
+		}
+		else if obj_gameController.playerChallengeStatChosen == 3 {
+			draw_set_color(c_red)
+		}
+		draw_text(pHealthBarX+125, pHealthBarY+40, string(obj_gameController.playerChallengeRoll))
+		
+		
+		if obj_gameController.gameState == 166 {
+			draw_set_color(c_lime)
+			draw_text(pHealthBarX+155, pHealthBarY+40, ">")
+		}
+		else {
+			draw_set_color(c_maroon)
+			draw_text(pHealthBarX+155, pHealthBarY+40, "<")
+		}
+		
+		
+		draw_set_color(c_black)
+		draw_text(pHealthBarX+170,pHealthBarY+40, string(obj_gameController.challengeSelectedDC))
+		
+		
+	}
+}
+if enemyHealth == true {
+	eHealthBarX = 1408
+	eHealthBarY = 96
+	
+	draw_set_color(c_maroon)
+	draw_roundrect_ext(eHealthBarX,eHealthBarY,eHealthBarX+471,eHealthBarY+193,10,10,false)
+	draw_set_color(c_ltgrey)
+	draw_roundrect_ext(eHealthBarX+5,eHealthBarY+5,eHealthBarX+466,eHealthBarY+188,5,5,false)
+	
+	draw_healthbar(eHealthBarX+25,eHealthBarY+98,eHealthBarX+448,eHealthBarY+105,obj_gameController.enemyHealthPercentage,c_grey,c_red,c_lime,1,true,true);
+
+
+	draw_set_font(fnt_plain);
+	draw_set_halign(fa_left);
+
+	draw_set_color(c_red);
+	draw_text(eHealthBarX+25,eHealthBarY+120, string(obj_gameController.enemyCurrentHealth) + " / " + string(obj_gameController.enemyMaxHealth))
+	
+	if obj_gameController.enemyType == 1 {
+		enemyName = "Wolf"
+	}
+	else if obj_gameController.enemyType == 2 {
+		enemyName = "Goblin"
+	}
+	else if obj_gameController.enemyType == 3 {
+		enemyName = "Cultist"
+	}
+	else if obj_gameController.enemyType == 4 {
+		enemyName = "Bandit Leader"
+	}
+	draw_set_color(c_black);
+	draw_text(eHealthBarX+10,eHealthBarY+10, enemyName)
+	
+	if (obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 3) || obj_gameController.gameState == 151 {
+	
+		draw_set_color(c_red);
+		draw_text(eHealthBarX+150, eHealthBarY+40, string(obj_gameController.playerAttackRoll));
+		
+		draw_set_color(c_blue);
+		draw_text(eHealthBarX+180, eHealthBarY+40, "- " + string(obj_gameController.enemyDefenseRoll));
+		
+		draw_set_color(c_green)
+		draw_text(eHealthBarX+220, eHealthBarY+40, "= " + string(obj_gameController.playerDamageValue) + " Damage")
+	
+	}
+}
+if timer == true {
+	timerX1 = 1509
+	timerX2 = 1627
+	timerY1 = 709
+	timerY2 = 827
+	draw_set_color(c_dkgray)
+	draw_roundrect_ext(timerX1-5,timerY1-5,timerX2+5,timerY2+5,5,5,false)
+	draw_set_color(c_ltgray)
+	draw_rectangle(timerX1,timerY1,timerX2,timerY2,false)
+	draw_healthbar(timerX1+5,timerY1+5,timerX2-5,timerY2-5,obj_gameController.timerPercentage,c_dkgray,c_red,c_green,3,true,false)
+	draw_triangle(timerX1,timerY1,timerX1,timerY2,timerX1+20,timerY1+64,false)
+	draw_triangle(timerX2,timerY1,timerX2,timerY2,timerX2-20,timerY1+64,false)
+	draw_triangle(timerX1,timerY1+40,timerX1,timerY2-40,timerX1+40,timerY1+64,false)
+	draw_triangle(timerX2,timerY1+40,timerX2,timerY2-40,timerX2-40,timerY1+64,false)	
+}
 
 
