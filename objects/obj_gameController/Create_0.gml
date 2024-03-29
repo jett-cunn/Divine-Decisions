@@ -59,6 +59,8 @@ currentEncounter = 0;
 ///Player Stats
 
 //Base Stats
+playerName = ""
+
 playerVitalityBase = 0;
 playerEnduranceBase = 0;
 playerAgilityBase = 0;

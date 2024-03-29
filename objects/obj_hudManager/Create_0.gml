@@ -26,3 +26,7 @@ dicePanel = false
 die1 = false
 die2 = false
 die3 = false
+
+
+
+diceAnimationFrame = 0

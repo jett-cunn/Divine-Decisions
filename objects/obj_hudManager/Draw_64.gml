@@ -223,7 +223,8 @@ if playerHealth == true {
 	draw_text(pHealthBarX+25,pHealthBarY+120, string(obj_gameController.playerCurrentHealth) + " / " + string(obj_gameController.playerMaxHealth))
 	
 	draw_set_color(c_black);
-	draw_text(pHealthBarX+10,pHealthBarY+10, "CHAMPION")
+	draw_text(pHealthBarX+10,pHealthBarY+10, "Champion of " + obj_gameController.playerName)
+	
 	if (obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 1) || obj_gameController.gameState == 150 {
 	
 		draw_set_color(c_lime);
@@ -357,10 +358,247 @@ if timer == true {
 	draw_set_color(c_ltgray)
 	draw_rectangle(timerX1,timerY1,timerX2,timerY2,false)
 	draw_healthbar(timerX1+5,timerY1+5,timerX2-5,timerY2-5,obj_gameController.timerPercentage,c_dkgray,c_red,c_green,3,true,false)
-	draw_triangle(timerX1,timerY1,timerX1,timerY2,timerX1+20,timerY1+64,false)
-	draw_triangle(timerX2,timerY1,timerX2,timerY2,timerX2-20,timerY1+64,false)
-	draw_triangle(timerX1,timerY1+40,timerX1,timerY2-40,timerX1+40,timerY1+64,false)
-	draw_triangle(timerX2,timerY1+40,timerX2,timerY2-40,timerX2-40,timerY1+64,false)	
+	draw_triangle(timerX1,timerY1,timerX1,timerY2,timerX1+20,timerY1+61,false)
+	draw_triangle(timerX2,timerY1,timerX2,timerY2,timerX2-20,timerY1+61,false)
+	draw_triangle(timerX1,timerY1+40,timerX1,timerY2-40,timerX1+40,timerY1+61,false)
+	draw_triangle(timerX2,timerY1+40,timerX2,timerY2-40,timerX2-40,timerY1+61,false)	
+}
+if inventory == true {
+	
+	drawColumn = 1675
+drawLine = 0
+charmName = ""
+armorName = ""
+bootsName = ""
+weaponName = ""
+
+if obj_gameController.playerCharmBonus == 1 {
+	charmName = "Symbolic Ink (+1 Vitality)"
+}
+else if obj_gameController.playerCharmBonus == 2 {
+	charmName = "Shrine Charm (+2 Vitality)"
+}
+else if obj_gameController.playerCharmBonus == 3 {
+	charmName = "Talisman (+3 Vitality)"
+}
+else if obj_gameController.playerCharmBonus == 4 {
+	charmName = "Enchanted Symbolic Ink (+4 Vitality)"
+}
+else {
+	charmName = ""
+}
+
+if obj_gameController.playerArmorBonus == 1 {
+	armorName = "Cuirass (+1 Endurance)"
+}
+else if obj_gameController.playerArmorBonus == 2 {
+	armorName = "Chainmail (+2 Endurance)"
+}
+else if obj_gameController.playerArmorBonus == 3 {
+	armorName = "Plate Armor (+3 Endurance)"
+}
+else if obj_gameController.playerArmorBonus == 4 {
+	armorName = "Enchanted Cuirass (+4 Endurance)"
+}
+else {
+	armorName = ""
+}
+
+if obj_gameController.playerBootBonus == 1 {
+	bootsName = "Symbolic Ink (+1 Vitality)"
+}
+else if obj_gameController.playerBootBonus == 2 {
+	bootsName = "Shrine Charm (+2 Vitality)"
+}
+else if obj_gameController.playerBootBonus == 3 {
+	bootsName = "Talisman (+3 Vitality)"
+}
+else if obj_gameController.playerBootBonus == 4 {
+	bootsName = "Enchanted Symbolic Ink (+4 Vitality)"
+}
+else {
+	bootsName = ""
 }
 
 
+if obj_gameController.playerWeaponStat == 1 {
+	if obj_gameController.playerWeaponBonus == 1 {
+		weaponName = "Dagger (+1 Strength)"
+	}
+	else if obj_gameController.playerWeaponBonus == 2 {
+		weaponName = "Sword (+2 Strength)"
+	}
+	else if obj_gameController.playerWeaponBonus == 3 {
+		weaponName = "Greataxe (+3 Strength)"
+	}
+	else if obj_gameController.playerWeaponBonus == 4 {
+		weaponName = "Enchanted Dagger (+4 Strength)"
+	}
+}
+else if obj_gameController.playerWeaponStat == 2 {
+		if obj_gameController.playerWeaponBonus == 1 {
+		weaponName = "Tome (+1 Intelligence)"
+	}
+	else if obj_gameController.playerWeaponBonus == 2 {
+		weaponName = "Wand (+2 Intelligence)"
+	}
+	else if obj_gameController.playerWeaponBonus == 3 {
+		weaponName = "Staff (+3 Intelligence)"
+	}
+	else if obj_gameController.playerWeaponBonus == 4 {
+		weaponName = "Enchanted Tome (+4 Intelligence)"
+	}
+}
+else if obj_gameController.playerWeaponStat == 3 {
+		if obj_gameController.playerWeaponBonus == 1 {
+		weaponName = "Flute (+1 Compassion)"
+	}
+	else if obj_gameController.playerWeaponBonus == 2 {
+		weaponName = "Drum (+2 Compassion)"
+	}
+	else if obj_gameController.playerWeaponBonus == 3 {
+		weaponName = "Harp (+3 Compassion)"
+	}
+	else if obj_gameController.playerWeaponBonus == 4 {
+		weaponName = "Enchanted Flute (+4 Compassion)"
+	}
+}
+else {
+	weaponName = ""
+}
+	
+	draw_set_color(c_ltgray)
+	draw_rectangle(1675,300,1920,690,false)
+	draw_set_color(c_dkgray)
+	draw_rectangle(1675,300,1920,690,true)
+	
+	draw_set_font(fnt_debug)
+	draw_set_color(c_maroon)
+	draw_set_halign(fa_left)
+	
+	drawLine = 300
+	
+	draw_text(drawColumn, drawLine, "Base Vitality; " + string(obj_gameController.playerVitalityBase))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Base Endurance; " + string(obj_gameController.playerEnduranceBase))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Base Agility; " + string(obj_gameController.playerAgilityBase))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Base Strength; " + string(obj_gameController.playerStrengthBase))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Base Intelligence; " + string(obj_gameController.playerIntelligenceBase))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Base Compassion; " + string(obj_gameController.playerCompassionBase))
+	drawLine += 30
+	
+	draw_text(drawColumn, drawLine, "Charm; " + charmName)
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Armor; " + armorName)
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Boots; " + bootsName)
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Weapon; " + weaponName)
+	drawLine += 30
+	
+	draw_text(drawColumn, drawLine, "Vitality Bonus; " + string(obj_gameController.playerVitalityEffect))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Endurance Bonus; " + string(obj_gameController.playerEnduranceEffect))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Agility Bonus; " + string(obj_gameController.playerAgilityEffect))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Strength Bonus; " + string(obj_gameController.playerStrengthEffect))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Intelligence Bonus; " + string(obj_gameController.playerIntelligenceEffect))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Compassion Bonus; " + string(obj_gameController.playerCompassionEffect))
+	drawLine += 30
+	
+	draw_text(drawColumn, drawLine, "Total Stats;")
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Vitality; " + string(obj_gameController.playerVitalityTotal))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Endurance; " + string(obj_gameController.playerEnduranceTotal))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Agility; " + string(obj_gameController.playerAgilityTotal))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Strength; " + string(obj_gameController.playerStrengthTotal))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Intelligence; " + string(obj_gameController.playerIntelligenceTotal))
+	drawLine += 15
+	draw_text(drawColumn, drawLine, "Compassion; " + string(obj_gameController.playerCompassionTotal))
+	drawLine += 30
+	
+}
+
+if dicePanel == true {
+	if obj_gameController.alarm[1] > 0 {
+		draw_set_color(c_dkgray)
+		draw_set_alpha(0.5)
+		draw_roundrect_ext(800,650,room_width-800,800,40,40,false)
+		draw_set_color(c_gray)
+		draw_roundrect_ext(810,660,room_width-810,790,30,30,false)
+		draw_set_alpha(1)
+		
+		
+		if obj_gameController.alarm[1] > 60 {
+			diceAnimationFrame += 1
+			if diceAnimationFrame > 9 {
+				diceAnimationFrame = 1
+			}
+		}
+		else {
+			diceAnimationFrame = 0
+		}
+		
+		
+		if obj_gameController.gameState > 165 && obj_gameController.gameState < 168 { //Challenge
+			draw_sprite(spr_diceAnim,diceAnimationFrame,960,725)
+			draw_set_color(c_black)
+			draw_set_halign(fa_center)
+			draw_set_valign(fa_middle)
+			draw_set_font(fnt_plain)
+			draw_text(960,685,"DC: " + obj_gameController.challengeSelectedDC)
+			if obj_gameController.alarm[1] <= 60 {
+				if obj_gameController.playerChallengeStatChosen == 1 {
+					draw_set_color(c_green)
+				}
+				else if obj_gameController.playerChallengeStatChosen == 2 {
+					draw_set_color(c_blue)
+				}
+				else if obj_gameController.playerChallengeStatChosen == 3 {
+					draw_set_color(c_red)
+				}
+				draw_text(960,725,obj_gameController.playerChallengeRoll)
+				if obj_gameController.playerChallengeRoll >= obj_gameController.challengeSelectedDC {
+					draw_set_color(c_lime)
+					draw_text(960,765,"Success")
+				}
+				else {
+					draw_set_color(c_maroon)
+					draw_text(960,765,"Failure")
+				}
+			}
+			draw_set_halign(fa_left)
+			draw_set_valign(fa_top)
+		}
+		else if obj_gameController.gameState == 150 || (obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 1) { //Running
+			draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
+			draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
+		}
+		else if obj_gameController.gameState == 132 && !obj_gameController.fightTurn1 {
+			if obj_gameController.playerGuarded == true { //Defending
+				draw_sprite(spr_diceAnim,diceAnimationFrame,960,725)
+				draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
+				draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
+			}
+			else { //Not Defending
+				draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
+				draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
+			}
+		}
+		else if obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 3 { //Attacking
+			draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
+			draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
+		}
+	}
+}

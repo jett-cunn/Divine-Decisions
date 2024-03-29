@@ -84,9 +84,6 @@ if gameState == 002 { //Character Selection
 			alarm[0] = 60;
 			gameState = 005;
 		}
-	
-	
-	
 }
 
 if gameState == 003 { //Mercy
@@ -154,6 +151,7 @@ if gameState == 006 {
 		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
 		playerMaxHealth = (2 * playerVitalityTotal) + 2;
 		playerCurrentHealth = playerMaxHealth;
+		playerName = "Mercy"
 		
 		gameState = 009;
 	}
@@ -195,6 +193,7 @@ if gameState == 007 {
 		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
 		playerMaxHealth = (2 * playerVitalityTotal) + 2;
 		playerCurrentHealth = playerMaxHealth;
+		playerName = "Wisdom"
 		
 		gameState = 009;
 	}
@@ -236,6 +235,7 @@ if gameState == 008 {
 		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
 		playerMaxHealth = (2 * playerVitalityTotal) + 2;
 		playerCurrentHealth = playerMaxHealth;
+		playerName = "Valor"
 		
 		gameState = 009;
 	}
@@ -611,7 +611,7 @@ if gameState == 133 { //Escape
 			gameState = 136;
 		}
 		
-		alarm[1] = 90;
+		alarm[1] = 120;
 	
 }
 
@@ -623,7 +623,7 @@ if gameState == 134 { //Defend
 		gameState = 136
 		
 		
-		alarm[1] = 90
+		alarm[1] = 120
 	
 	
 }
@@ -663,7 +663,7 @@ if gameState == 135 { //Attack
 		}
 		
 		playerGuarded = 0;
-		alarm[1] = 90
+		alarm[1] = 120
 		
 }
 
@@ -705,7 +705,7 @@ if gameState == 136 { //Enemy Turn
 			gameState = 131;
 		}
 		
-		alarm[1] = 90;
+		alarm[1] = 120;
 		fightTurn1 = false;
 	
 	}
@@ -957,7 +957,7 @@ if gameState == 163 { //Left option selected
 		gameState = 167
 	}
 	
-	alarm[1] = 90
+	alarm[1] = 120
 }
 
 if gameState == 164 { //Middle option selected
@@ -983,7 +983,7 @@ if gameState == 164 { //Middle option selected
 		gameState = 167
 	}
 	
-	alarm[1] = 90
+	alarm[1] = 120
 }
 
 if gameState == 165 { //Right option selected
@@ -1009,7 +1009,7 @@ if gameState == 165 { //Right option selected
 		gameState = 167
 	}
 	
-	alarm[1] = 90
+	alarm[1] = 120
 }
 
 if gameState == 166 { //Success
@@ -1363,7 +1363,7 @@ if gameState == 183 { //Left prize selected
 		playerCompassionEffect += encounterValue
 		playerCompassionEffect = clamp(playerCompassionEffect, -6, 6)
 	}
-	alarm[1] = 90
+	alarm[1] = 120
 	gameState = 186
 }
 
@@ -1401,7 +1401,7 @@ if gameState == 184 { //Middle prize selected
 		playerCompassionEffect += encounterValue
 		playerCompassionEffect = clamp(playerCompassionEffect, -6, 6)
 	}
-	alarm[1] = 90
+	alarm[1] = 120
 	gameState = 186
 }
 
@@ -1439,7 +1439,7 @@ if gameState == 185 { //Right prize selected
 		playerCompassionEffect += encounterValue
 		playerCompassionEffect = clamp(playerCompassionEffect, -6, 6)
 	}
-	alarm[1] = 90
+	alarm[1] = 120
 	gameState = 186
 }
 
@@ -1554,7 +1554,7 @@ if gameState == 192 { //Selection
 				
 	}
 	
-	alarm[1] = 90;
+	alarm[1] = 120;
 	
 }
 

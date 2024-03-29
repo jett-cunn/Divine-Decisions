@@ -27,6 +27,7 @@
     {"name":"obj_heathBarPlayer","order":18,"path":"objects/obj_heathBarPlayer/obj_heathBarPlayer.yy",},
     {"name":"spr_fightBackground","order":10,"path":"sprites/spr_fightBackground/spr_fightBackground.yy",},
     {"name":"spr_buttonMiddleLit","order":27,"path":"sprites/spr_buttonMiddleLit/spr_buttonMiddleLit.yy",},
+    {"name":"spr_diceAnim","order":40,"path":"sprites/spr_diceAnim/spr_diceAnim.yy",},
     {"name":"spr_pathSelection","order":9,"path":"sprites/spr_pathSelection/spr_pathSelection.yy",},
     {"name":"spr_healthBarPlayer","order":11,"path":"sprites/spr_healthBarPlayer/spr_healthBarPlayer.yy",},
     {"name":"rm_die","order":4,"path":"rooms/rm_die/rm_die.yy",},

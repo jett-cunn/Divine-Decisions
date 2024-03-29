@@ -64,6 +64,7 @@
     {"id":{"name":"obj_heathBarPlayer","path":"objects/obj_heathBarPlayer/obj_heathBarPlayer.yy",},},
     {"id":{"name":"spr_fightBackground","path":"sprites/spr_fightBackground/spr_fightBackground.yy",},},
     {"id":{"name":"spr_buttonMiddleLit","path":"sprites/spr_buttonMiddleLit/spr_buttonMiddleLit.yy",},},
+    {"id":{"name":"spr_diceAnim","path":"sprites/spr_diceAnim/spr_diceAnim.yy",},},
     {"id":{"name":"spr_pathSelection","path":"sprites/spr_pathSelection/spr_pathSelection.yy",},},
     {"id":{"name":"spr_healthBarPlayer","path":"sprites/spr_healthBarPlayer/spr_healthBarPlayer.yy",},},
     {"id":{"name":"rm_die","path":"rooms/rm_die/rm_die.yy",},},

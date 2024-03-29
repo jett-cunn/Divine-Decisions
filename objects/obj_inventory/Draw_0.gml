@@ -1,6 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+/*
+drawColumn = 1675
+drawLine = 0
+charmName = ""
+armorName = ""
+bootsName = ""
+weaponName = ""
+
 if obj_gameController.playerCharmBonus == 1 {
 	charmName = "Symbolic Ink (+1 Vitality)"
 }

@@ -90,10 +90,10 @@ else if room == rm_challenge {
 	enemy = false
 	player = false
 	inventory = true
-	dicePanel = false
-	die1 = false
-	die2 = false
-	die3 = false
+	dicePanel = true
+	die1 = true
+	die2 = true
+	die3 = true
 }
 else if room == rm_shrine {
 	buttonBar = true
@@ -111,10 +111,10 @@ else if room == rm_shrine {
 	enemy = false
 	player = false
 	inventory = true
-	dicePanel = true
-	die1 = true
-	die2 = true
-	die3 = true
+	dicePanel = false
+	die1 = false
+	die2 = false
+	die3 = false
 }
 else if room == rm_reward {
 	buttonBar = true
@@ -132,10 +132,10 @@ else if room == rm_reward {
 	enemy = false
 	player = false
 	inventory = true
-	dicePanel = true
-	die1 = true
-	die2 = true
-	die3 = true
+	dicePanel = false
+	die1 = false
+	die2 = false
+	die3 = false
 }
 else if room == rm_die {
 	buttonBar = false
