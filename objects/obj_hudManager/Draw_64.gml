@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+draw_set_color(c_yellow)
+draw_text(960, 540, string(obj_gameController.diceSimState))
+
 if progressBar == true {
 	
 	
@@ -224,83 +228,6 @@ if playerHealth == true {
 	
 	draw_set_color(c_black);
 	draw_text(pHealthBarX+10,pHealthBarY+10, "Champion of " + obj_gameController.playerName)
-	
-	if (obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 1) || obj_gameController.gameState == 150 {
-	
-		draw_set_color(c_lime);
-		draw_text(pHealthBarX+150, pHealthBarY+40, string(obj_gameController.playerAgilityRoll));
-		
-		draw_set_color(c_green);
-		draw_text(pHealthBarX+180, pHealthBarY+40, "- " + string(obj_gameController.enemySpeedRoll));
-		
-		draw_set_color(c_green)
-		if obj_gameController.playerAgilityRoll > obj_gameController.enemySpeedRoll {
-			draw_text(pHealthBarX+220, pHealthBarY+40, "= Escape")
-		}
-		else {
-			draw_text(pHealthBarX+220, pHealthBarY+40, "= Fail")
-		}
-		
-	}
-
-	if obj_gameController.gameState == 132 && obj_gameController.fightTurn1 == false {
-	
-		if obj_gameController.playerGuarded == 0 {
-			draw_set_color(c_red);
-			draw_text(pHealthBarX+150, pHealthBarY+40, string(obj_gameController.enemyAttackRoll));
-			
-			draw_set_color(c_blue);
-			draw_text(pHealthBarX+180, pHealthBarY+40, "- " + string(obj_gameController.playerEnduranceRoll));
-			
-		draw_set_color(c_green	)
-		draw_text(pHealthBarX+220, pHealthBarY+40, "= " + string(obj_gameController.enemyDamageRoll) + " Damage");	
-
-		}
-		else if obj_gameController.playerGuarded == 1 {
-			draw_set_color(c_red);
-			draw_text(pHealthBarX+150, pHealthBarY+40, string(obj_gameController.enemyAttackRoll));
-			
-			draw_set_color(c_blue);
-			draw_text(pHealthBarX+180, pHealthBarY+40, "- " + string(obj_gameController.playerEnduranceRoll));
-			
-			draw_set_color(c_maroon);
-			draw_text(pHealthBarX+220, pHealthBarY+40, "- " + string(obj_gameController.playerAttackRoll));
-			
-			draw_set_color(c_green)
-			draw_text(pHealthBarX+260, pHealthBarY+40, "= " + string(obj_gameController.enemyDamageRoll) + " Damage");
-		}
-		
-	}
-
-	if obj_gameController.gameState > 165 && obj_gameController < 168 {
-		
-		if obj_gameController.playerChallengeStatChosen == 1 {
-			draw_set_color(c_green)
-		}
-		else if obj_gameController.playerChallengeStatChosen == 2 {
-			draw_set_color(c_blue)
-		}
-		else if obj_gameController.playerChallengeStatChosen == 3 {
-			draw_set_color(c_red)
-		}
-		draw_text(pHealthBarX+125, pHealthBarY+40, string(obj_gameController.playerChallengeRoll))
-		
-		
-		if obj_gameController.gameState == 166 {
-			draw_set_color(c_lime)
-			draw_text(pHealthBarX+155, pHealthBarY+40, ">")
-		}
-		else {
-			draw_set_color(c_maroon)
-			draw_text(pHealthBarX+155, pHealthBarY+40, "<")
-		}
-		
-		
-		draw_set_color(c_black)
-		draw_text(pHealthBarX+170,pHealthBarY+40, string(obj_gameController.challengeSelectedDC))
-		
-		
-	}
 }
 if enemyHealth == true {
 	eHealthBarX = 1408
@@ -321,10 +248,10 @@ if enemyHealth == true {
 	draw_text(eHealthBarX+25,eHealthBarY+120, string(obj_gameController.enemyCurrentHealth) + " / " + string(obj_gameController.enemyMaxHealth))
 	
 	if obj_gameController.enemyType == 1 {
-		enemyName = "Wolf"
+		enemyName = "Goblin"
 	}
 	else if obj_gameController.enemyType == 2 {
-		enemyName = "Goblin"
+		enemyName = "Wolf"
 	}
 	else if obj_gameController.enemyType == 3 {
 		enemyName = "Cultist"
@@ -334,19 +261,6 @@ if enemyHealth == true {
 	}
 	draw_set_color(c_black);
 	draw_text(eHealthBarX+10,eHealthBarY+10, enemyName)
-	
-	if (obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 3) || obj_gameController.gameState == 151 {
-	
-		draw_set_color(c_red);
-		draw_text(eHealthBarX+150, eHealthBarY+40, string(obj_gameController.playerAttackRoll));
-		
-		draw_set_color(c_blue);
-		draw_text(eHealthBarX+180, eHealthBarY+40, "- " + string(obj_gameController.enemyDefenseRoll));
-		
-		draw_set_color(c_green)
-		draw_text(eHealthBarX+220, eHealthBarY+40, "= " + string(obj_gameController.playerDamageValue) + " Damage")
-	
-	}
 }
 if timer == true {
 	timerX1 = 1509
@@ -366,11 +280,11 @@ if timer == true {
 if inventory == true {
 	
 	drawColumn = 1675
-drawLine = 0
-charmName = ""
-armorName = ""
-bootsName = ""
-weaponName = ""
+	drawLine = 0
+	charmName = ""
+	armorName = ""
+	bootsName = ""
+	weaponName = ""
 
 if obj_gameController.playerCharmBonus == 1 {
 	charmName = "Symbolic Ink (+1 Vitality)"
@@ -531,34 +445,149 @@ else {
 }
 
 if dicePanel == true {
-	if obj_gameController.alarm[1] > 0 {
-		draw_set_color(c_dkgray)
+	
+	if obj_gameController.alarm[1] < 0 { //Hide dice panel when process is complete
+		obj_gameController.diceSimVisible = false
+	}
+	
+	if obj_gameController.diceSimVisible == true { //Draw dice panel
+		
+		//Draw panel background
 		draw_set_alpha(0.5)
+		draw_set_color(c_dkgray)
 		draw_roundrect_ext(800,650,room_width-800,800,40,40,false)
 		draw_set_color(c_gray)
 		draw_roundrect_ext(810,660,room_width-810,790,30,30,false)
 		draw_set_alpha(1)
 		
-		
-		if obj_gameController.alarm[1] > 60 {
-			diceAnimationFrame += 1
-			if diceAnimationFrame > 9 {
-				diceAnimationFrame = 1
+		//Animate rolling dice
+		if obj_gameController.alarm[1] > 120 {
+			diceAnimationCooldown -= 1
+			if diceAnimationCooldown == 0 {
+				diceAnimationFrame = irandom_range(1,9)		
+				diceAnimationCooldown = 5
 			}
 		}
 		else {
 			diceAnimationFrame = 0
 		}
 		
-		
-		if obj_gameController.gameState > 165 && obj_gameController.gameState < 168 { //Challenge
+		if obj_gameController.diceSimState == 1 { //Draw player attacking dice
+			draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
+			draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
+			
+			draw_set_halign(fa_center)
+			draw_set_valign(fa_middle)
+			draw_set_font(fnt_plain)			
+			draw_set_color(c_black)
+			draw_text(864,685,"P Atk:")
+			draw_text(1056,685,"E Def:")
+			
+			if obj_gameController.alarm[1] <= 120 {
+				draw_set_color(c_red)
+				draw_text(864,725,obj_gameController.playerAttackRoll)
+				draw_set_color(c_blue)
+				draw_text(1056,725,obj_gameController.enemyDefenseRoll)
+				
+				draw_set_color(c_black)
+				draw_text(960,725,"-")
+				draw_text(960,765,"= " + string(obj_gameController.playerDamageValue) + " Damage Dealt")
+				
+			}
+			draw_set_halign(fa_left)
+			draw_set_valign(fa_top)
+		}
+		else if obj_gameController.diceSimState == 2 { //Draw enemy attacking dice
+			draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
+			draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
+			
+			draw_set_halign(fa_center)
+			draw_set_valign(fa_middle)
+			draw_set_font(fnt_plain)			
+			draw_set_color(c_black)
+			draw_text(864,685,"E Atk:")
+			draw_text(1056,685,"P Def:")
+			
+			if obj_gameController.alarm[1] <= 120 {
+				draw_set_color(c_maroon)
+				draw_text(864,725,obj_gameController.enemyAttackRoll)
+				draw_set_color(c_blue)
+				draw_text(1056,725,obj_gameController.playerEnduranceRoll)
+				
+				draw_set_color(c_black)
+				draw_text(960,725,"-")
+				draw_text(960,765,"= " + string(obj_gameController.enemyDamageRoll) + " Damage Taken")
+				
+			}
+			draw_set_halign(fa_left)
+			draw_set_valign(fa_top)
+		}
+		else if obj_gameController.diceSimState == 3 { //Draw player defending dice
+			draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
+			draw_sprite(spr_diceAnim,diceAnimationFrame,960,725)
+			draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
+			
+			draw_set_halign(fa_center)
+			draw_set_valign(fa_middle)
+			draw_set_font(fnt_plain)			
+			draw_set_color(c_black)
+			draw_text(864,685,"E Atk:")
+			draw_text(960,685,"P Grd:")
+			draw_text(1056,685,"P Def:")
+			
+			if obj_gameController.alarm[1] <= 120 {
+				draw_set_color(c_maroon)
+				draw_text(864,725,obj_gameController.enemyAttackRoll)
+				draw_set_color(c_red)
+				draw_text(960,725,obj_gameController.playerAttackRoll)
+				draw_set_color(c_blue)
+				draw_text(1056,725,obj_gameController.playerEnduranceRoll)
+				
+				draw_set_color(c_black)
+				draw_text(912,725,"-")
+				draw_text(1008,725,"-")
+				draw_text(960,765,"= " + string(obj_gameController.enemyDamageRoll) + " Damage Taken")
+				
+			}
+			draw_set_halign(fa_left)
+			draw_set_valign(fa_top)
+		}
+		else if obj_gameController.diceSimState == 4 { //Draw player running dice
+			draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
+			draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
+			draw_set_color(c_black)
+			draw_set_halign(fa_center)
+			draw_set_valign(fa_middle)
+			draw_set_font(fnt_plain)
+			draw_text(864,685,"Player:")
+			draw_text(1056,685,"Enemy:")
+			if obj_gameController.alarm[1] <= 120 {
+				draw_set_color(c_lime)
+				draw_text(864,725,obj_gameController.playerAgilityRoll)
+				draw_set_color(c_green)
+				draw_text(1056,725,obj_gameController.enemySpeedRoll)
+				
+				draw_set_color(c_black)
+				if obj_gameController.playerAgilityRoll > obj_gameController.enemySpeedRoll {
+					draw_text(960,725,">")
+					draw_text(960,765,"Success")
+				}
+				else {
+					draw_text(960,725,"<")
+					draw_text(960,765,"Failure")
+				}
+			}
+			draw_set_halign(fa_left)
+			draw_set_valign(fa_top)
+		}
+		else if obj_gameController.diceSimState == 5 { //Draw challenge dice
 			draw_sprite(spr_diceAnim,diceAnimationFrame,960,725)
 			draw_set_color(c_black)
 			draw_set_halign(fa_center)
 			draw_set_valign(fa_middle)
 			draw_set_font(fnt_plain)
 			draw_text(960,685,"DC: " + obj_gameController.challengeSelectedDC)
-			if obj_gameController.alarm[1] <= 60 {
+			if obj_gameController.alarm[1] <= 120 {
 				if obj_gameController.playerChallengeStatChosen == 1 {
 					draw_set_color(c_green)
 				}
@@ -580,25 +609,6 @@ if dicePanel == true {
 			}
 			draw_set_halign(fa_left)
 			draw_set_valign(fa_top)
-		}
-		else if obj_gameController.gameState == 150 || (obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 1) { //Running
-			draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
-			draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
-		}
-		else if obj_gameController.gameState == 132 && !obj_gameController.fightTurn1 {
-			if obj_gameController.playerGuarded == true { //Defending
-				draw_sprite(spr_diceAnim,diceAnimationFrame,960,725)
-				draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
-				draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
-			}
-			else { //Not Defending
-				draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
-				draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
-			}
-		}
-		else if obj_gameController.gameState == 136 && obj_gameController.playerActionChoice == 3 { //Attacking
-			draw_sprite(spr_diceAnim,diceAnimationFrame,864,725)
-			draw_sprite(spr_diceAnim,diceAnimationFrame,1056,725)
-		}
+		}		
 	}
 }

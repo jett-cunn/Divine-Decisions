@@ -130,8 +130,8 @@ playerDamageValue = 0;
 
 playerGuarded = 0;
 
-
-
+diceSimVisible = false
+diceSimState = 0
 
 
 ///Enemy Stats

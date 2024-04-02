@@ -30,3 +30,4 @@ die3 = false
 
 
 diceAnimationFrame = 0
+diceAnimationCooldown = 3
