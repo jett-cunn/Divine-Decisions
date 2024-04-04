@@ -29,6 +29,9 @@ inventoryVisible = true;
 
 timerPercentage = 0;
 
+gamePaused = false
+pausedRoom = rm_start
+pauseMenuOption = 0
 
 buttonLeftTextA = "";
 buttonLeftTextB = "";

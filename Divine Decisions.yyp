@@ -73,6 +73,7 @@
     {"id":{"name":"obj_healthBarEnemy","path":"objects/obj_healthBarEnemy/obj_healthBarEnemy.yy",},},
     {"id":{"name":"spr_enemyBandit","path":"sprites/spr_enemyBandit/spr_enemyBandit.yy",},},
     {"id":{"name":"obj_influenceCounter","path":"objects/obj_influenceCounter/obj_influenceCounter.yy",},},
+    {"id":{"name":"rm_pause","path":"rooms/rm_pause/rm_pause.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_buttonRight","path":"sprites/spr_buttonRight/spr_buttonRight.yy",},},
     {"id":{"name":"rm_shrine","path":"rooms/rm_shrine/rm_shrine.yy",},},
@@ -119,6 +120,7 @@
     {"roomId":{"name":"rm_reward","path":"rooms/rm_reward/rm_reward.yy",},},
     {"roomId":{"name":"rm_challenge","path":"rooms/rm_challenge/rm_challenge.yy",},},
     {"roomId":{"name":"rm_shrine","path":"rooms/rm_shrine/rm_shrine.yy",},},
+    {"roomId":{"name":"rm_pause","path":"rooms/rm_pause/rm_pause.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

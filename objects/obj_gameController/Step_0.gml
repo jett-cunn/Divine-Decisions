@@ -1,13 +1,69 @@
 ///The following code comprises the game's state machine. Refer to the reference document for gameState values.
 
 
-/*
 
-Reference values;
-	Game controller; inst_6514177A
-
-
-*/
+if gamePaused == true {
+	
+	//Freeze timers
+	if alarm[1] > 1 {
+		alarm[1] += 1
+	}
+	if alarm[2] > 1 {
+		alarm[2] += 1
+	}
+	if alarm[3] > 1 {
+		alarm[3] += 1
+	}
+	if alarm[4] > 1 {
+		alarm[4] += 1
+	}
+	if alarm[5] > 1 {
+		alarm[5] += 1
+	}
+	if alarm[6] > 1 {
+		alarm[6] += 1
+	}
+	
+	//Input
+	if buttonLeft + buttonMiddle + buttonRight == 1 {
+		if buttonLeft == 1 { //Restart Endless
+			pauseMenuOption = 1
+		}
+		if buttonMiddle == 1 { //Restart Story
+			pauseMenuOption = 2
+		}
+		if buttonRight == 1 { //Continue
+			pauseMenuOption = 3
+		}
+	}
+	
+	if buttonLeft+buttonMiddle+buttonRight == 0 {
+		if pauseMenuOption == 1 {
+			gameState = 001
+			divineInfluence = maxInfluence
+			alarm[2] = 600
+			room_goto(rm_start)
+			gamePaused = false
+			storyActive = false
+			pauseMenuOption = 0
+		}
+		else if pauseMenuOption == 2 {
+			gameState = 001
+			divineInfluence = maxInfluence
+			alarm[2] = 600
+			room_goto(rm_start)
+			gamePaused = false
+			storyActive = true
+			pauseMenuOption = 0
+		}
+		else if pauseMenuOption == 3 {
+			room = pausedRoom
+			gamePaused = false
+			pauseMenuOption = 0
+		} 
+	}
+}
+else {
 
 timerPercentage = (alarm[2] / 600) * 100
 
@@ -249,6 +305,7 @@ if gameState == 009 {
 	//Transition to gameplay
 	gameState = 100
 	room_goto(rm_choice);
+	alarm[2] = 600
 	
 }
 
@@ -748,7 +805,7 @@ if gameState == 151 { //Victory
 			if storyActive == 1 {
 				if score == winTotal {
 					gameState = 001
-					divineInfluence = 20
+					divineInfluence = maxInfluence
 					room_goto(rm_start)
 				}
 				else {
@@ -1670,3 +1727,4 @@ if gameState == 194 { //Take item
 
 
 
+}

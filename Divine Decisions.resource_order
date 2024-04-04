@@ -36,6 +36,7 @@
     {"name":"obj_healthBarEnemy","order":19,"path":"objects/obj_healthBarEnemy/obj_healthBarEnemy.yy",},
     {"name":"spr_enemyBandit","order":18,"path":"sprites/spr_enemyBandit/spr_enemyBandit.yy",},
     {"name":"obj_influenceCounter","order":26,"path":"objects/obj_influenceCounter/obj_influenceCounter.yy",},
+    {"name":"rm_pause","order":8,"path":"rooms/rm_pause/rm_pause.yy",},
     {"name":"spr_player","order":17,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_buttonRight","order":8,"path":"sprites/spr_buttonRight/spr_buttonRight.yy",},
     {"name":"rm_shrine","order":7,"path":"rooms/rm_shrine/rm_shrine.yy",},
