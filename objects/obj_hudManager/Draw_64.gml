@@ -621,3 +621,14 @@ if room == rm_pause {
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_top)
 }
+
+if room == rm_start {
+	draw_set_halign(fa_center)
+	draw_set_valign(fa_middle)
+	draw_set_font(fnt_plain)
+	draw_set_color(c_white)
+	draw_text(480,540,"Press Left to begin Endless Mode")
+	draw_text(room_width-480,540,"Press Right to begin Story Mode")
+	draw_set_halign(fa_left)
+	draw_set_valign(fa_top)
+}
