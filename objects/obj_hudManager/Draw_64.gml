@@ -213,7 +213,7 @@ if playerHealth == true {
 	draw_set_color(c_ltgrey)
 	draw_roundrect_ext(pHealthBarX+5,pHealthBarY+5,pHealthBarX+466,pHealthBarY+188,5,5,false)
 	
-	draw_healthbar(pHealthBarX+25,pHealthBarY+98,pHealthBarX+448,pHealthBarY+105,obj_gameController.playerHealthPercentage,c_grey,c_red,c_lime,0,true,true);
+	draw_healthbar(pHealthBarX+25,pHealthBarY+93,pHealthBarX+448,pHealthBarY+110,obj_gameController.playerHealthPercentage,c_dkgrey,c_red,c_lime,0,true,true);
 
 
 	draw_set_font(fnt_plain);
@@ -234,7 +234,7 @@ if enemyHealth == true {
 	draw_set_color(c_ltgrey)
 	draw_roundrect_ext(eHealthBarX+5,eHealthBarY+5,eHealthBarX+466,eHealthBarY+188,5,5,false)
 	
-	draw_healthbar(eHealthBarX+25,eHealthBarY+98,eHealthBarX+448,eHealthBarY+105,obj_gameController.enemyHealthPercentage,c_grey,c_red,c_lime,1,true,true);
+	draw_healthbar(eHealthBarX+25,eHealthBarY+93,eHealthBarX+448,eHealthBarY+110,obj_gameController.enemyHealthPercentage,c_dkgrey,c_red,c_lime,1,true,true);
 
 
 	draw_set_font(fnt_plain);
