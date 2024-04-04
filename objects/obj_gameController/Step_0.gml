@@ -322,13 +322,24 @@ if gameState == 100 { //Waiting for controller reset
 
 if gameState == 101 { //Choosing encounters
 	
+	if score <= 7 {
+		areaListCurrent = areaList1
+	}
+	else if score <= 14 {
+		areaListCurrent = areaList2
+	}
+	else if score > 14 {
+		areaListCurrent = areaListPrototype
+	}
 	
 	
-	encounterRoll1 = areaListPrototype[irandom_range(1, array_length(areaListPrototype))-1];
+	
+	
+	encounterRoll1 = areaListCurrent[irandom_range(1, array_length(areaListCurrent))-1];
 	encounter1 = encounterRoll1;
-	encounterRoll2 = areaListPrototype[irandom_range(1, array_length(areaListPrototype))-1];
+	encounterRoll2 = areaListCurrent[irandom_range(1, array_length(areaListCurrent))-1];
 	encounter2 = encounterRoll2;
-	encounterRoll3 = areaListPrototype[irandom_range(1, array_length(areaListPrototype))-1];
+	encounterRoll3 = areaListCurrent[irandom_range(1, array_length(areaListCurrent))-1];
 	encounter3 = encounterRoll3;
 	
 	gameState = 102;
@@ -1226,7 +1237,7 @@ if gameState == 180 { //Shrine Setup
 	
 	rewardListCurrent = rewardListMaster
 	
-	array_shuffle(rewardListCurrent)
+	rewardListCurrent = array_shuffle(rewardListCurrent)
 	reward1 = array_pop(rewardListCurrent)
 	reward2 = array_pop(rewardListCurrent)
 	reward3 = array_pop(rewardListCurrent)

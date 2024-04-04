@@ -1,22 +1,20 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-/*
-draw_set_font(fnt_gothicLarge);
+
+draw_set_font(fnt_plain);
 
 draw_set_halign(fa_left);
 
 draw_set_color(c_aqua);
 
-draw_text(15,15,score);
+draw_text(15,15,reward1);
 
-draw_text(15,45,gameState)
+draw_text(15,45,reward2)
 
-draw_text(15,75,playerChallengeRoll)
+draw_text(15,75,reward3)
 
-draw_text(15,105,challengeSelectedDC)
-
-
+/*
 draw_set_font(fnt_debug);
 
 if gameState >= 2 {
