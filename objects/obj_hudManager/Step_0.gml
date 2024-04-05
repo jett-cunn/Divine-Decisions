@@ -23,14 +23,14 @@ if room == rm_character {
 	die3 = false
 }
 else if room == rm_choice {
-	buttonBar = true
-	button1 = true
-	button2 = true
-	button3 = true
+	buttonBar = false
+	button1 = false
+	button2 = false
+	button3 = false
 	influence = true
 	timer = true
 	progressBar = true
-	playerHealth = false
+	playerHealth = true
 	enemyHealth = false
 	text1 = true
 	if obj_gameController.buttonMiddleVisible == true {
@@ -42,7 +42,7 @@ else if room == rm_choice {
 	text3 = true
 	enemy = false
 	player = false
-	inventory = false
+	inventory = true
 	dicePanel = false
 	die1 = false
 	die2 = false

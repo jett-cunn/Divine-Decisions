@@ -50,6 +50,7 @@
     {"id":{"name":"rm_character","path":"rooms/rm_character/rm_character.yy",},},
     {"id":{"name":"spr_enemyCultist","path":"sprites/spr_enemyCultist/spr_enemyCultist.yy",},},
     {"id":{"name":"spr_rewardMenu","path":"sprites/spr_rewardMenu/spr_rewardMenu.yy",},},
+    {"id":{"name":"fnt_plainLarge","path":"fonts/fnt_plainLarge/fnt_plainLarge.yy",},},
     {"id":{"name":"fnt_gothicLarge","path":"fonts/fnt_gothicLarge/fnt_gothicLarge.yy",},},
     {"id":{"name":"fnt_gothic","path":"fonts/fnt_gothic/fnt_gothic.yy",},},
     {"id":{"name":"obj_fightBackground","path":"objects/obj_fightBackground/obj_fightBackground.yy",},},

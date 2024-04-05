@@ -1,7 +1,7 @@
 {
   "resourceType": "GMFont",
   "resourceVersion": "1.0",
-  "name": "fnt_plain",
+  "name": "fnt_plainLarge",
   "AntiAlias": 1,
   "applyKerning": 0,
   "ascender": 40,

@@ -15,6 +15,7 @@
     {"name":"rm_character","order":1,"path":"rooms/rm_character/rm_character.yy",},
     {"name":"spr_enemyCultist","order":19,"path":"sprites/spr_enemyCultist/spr_enemyCultist.yy",},
     {"name":"spr_rewardMenu","order":24,"path":"sprites/spr_rewardMenu/spr_rewardMenu.yy",},
+    {"name":"fnt_plainLarge","order":5,"path":"fonts/fnt_plainLarge/fnt_plainLarge.yy",},
     {"name":"fnt_gothicLarge","order":2,"path":"fonts/fnt_gothicLarge/fnt_gothicLarge.yy",},
     {"name":"obj_fightBackground","order":15,"path":"objects/obj_fightBackground/obj_fightBackground.yy",},
     {"name":"obj_characterSelection","order":4,"path":"objects/obj_characterSelection/obj_characterSelection.yy",},

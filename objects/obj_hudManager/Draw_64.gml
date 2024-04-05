@@ -94,14 +94,13 @@ if button1 == true {
 	
 	
 	draw_set_halign(fa_center)
-	draw_set_font(fnt_gothic)
+	draw_set_valign(fa_middle)
+	draw_set_font(fnt_plainLarge)
 	draw_set_color(c_dkgray)
-	if(obj_gameController.buttonLeftTextB == ""){
-		draw_set_font(fnt_gothicMedium)
-	}
-	draw_text(438,935,obj_gameController.buttonLeftTextA)
+	
+	
 	draw_text(438,955,obj_gameController.buttonLeftTextB)
-	draw_text(438,975,obj_gameController.buttonLeftTextC)
+	
 }
 if button2 == true {
 	borderColor2 = make_color_rgb(11, 25, 74)
@@ -121,14 +120,13 @@ if button2 == true {
 		
 		
 		draw_set_halign(fa_center)
-		draw_set_font(fnt_gothic)
+		draw_set_valign(fa_middle)
+		draw_set_font(fnt_plainLarge)
 		draw_set_color(c_ltgray)
-		if(obj_gameController.buttonMiddleTextB == ""){
-			draw_set_font(fnt_gothicMedium)
-		}
-		draw_text(960,935,obj_gameController.buttonMiddleTextA)
+		
+		
 		draw_text(960,955,obj_gameController.buttonMiddleTextB)
-		draw_text(960,975,obj_gameController.buttonMiddleTextC)
+		
 	}
 }
 if button3 == true {
@@ -147,14 +145,13 @@ if button3 == true {
 	draw_roundrect_ext(room_width-185,865,room_width-690,1045,5,5,false)
 	
 	draw_set_halign(fa_center)
-	draw_set_font(fnt_gothic)
+	draw_set_valign(fa_middle)
+	draw_set_font(fnt_plainLarge)
 	draw_set_color(c_dkgray)
-	if(obj_gameController.buttonRightTextB == ""){
-		draw_set_font(fnt_gothicMedium)
-	}
-	draw_text(room_width-438,935,obj_gameController.buttonRightTextA)
+	
+	
 	draw_text(room_width-438,955,obj_gameController.buttonRightTextB)
-	draw_text(room_width-438,975,obj_gameController.buttonRightTextC)
+	
 }
 if text1 == true {
 	draw_set_alpha(0.6)
@@ -206,21 +203,27 @@ if text3 == true {
 }
 if playerHealth == true {
 	pHealthBarX = 32
-	pHealthBarY = 608
+	if room = rm_choice {
+		pHealthBarY = 880
+	}
+	else {
+		pHealthBarY = 683
+	}
+	
 	
 	draw_set_color(c_green)
-	draw_roundrect_ext(pHealthBarX,pHealthBarY,pHealthBarX+471,pHealthBarY+193,10,10,false)
+	draw_roundrect_ext(pHealthBarX,pHealthBarY,pHealthBarX+471,pHealthBarY+143,10,10,false)
 	draw_set_color(c_ltgrey)
-	draw_roundrect_ext(pHealthBarX+5,pHealthBarY+5,pHealthBarX+466,pHealthBarY+188,5,5,false)
+	draw_roundrect_ext(pHealthBarX+5,pHealthBarY+5,pHealthBarX+466,pHealthBarY+138,5,5,false)
 	
-	draw_healthbar(pHealthBarX+25,pHealthBarY+93,pHealthBarX+448,pHealthBarY+110,obj_gameController.playerHealthPercentage,c_dkgrey,c_red,c_lime,0,true,true);
+	draw_healthbar(pHealthBarX+25,pHealthBarY+68,pHealthBarX+448,pHealthBarY+85,obj_gameController.playerHealthPercentage,c_dkgrey,c_red,c_lime,0,true,true);
 
 
 	draw_set_font(fnt_plain);
 	draw_set_halign(fa_left);
-
+	draw_set_valign(fa_top);
 	draw_set_color(c_green);
-	draw_text(pHealthBarX+25,pHealthBarY+120, string(obj_gameController.playerCurrentHealth) + " / " + string(obj_gameController.playerMaxHealth))
+	draw_text(pHealthBarX+25,pHealthBarY+95, string(obj_gameController.playerCurrentHealth) + " / " + string(obj_gameController.playerMaxHealth))
 	
 	draw_set_color(c_black);
 	draw_text(pHealthBarX+10,pHealthBarY+10, "Champion of " + obj_gameController.playerName)
@@ -230,18 +233,18 @@ if enemyHealth == true {
 	eHealthBarY = 96
 	
 	draw_set_color(c_maroon)
-	draw_roundrect_ext(eHealthBarX,eHealthBarY,eHealthBarX+471,eHealthBarY+193,10,10,false)
+	draw_roundrect_ext(eHealthBarX,eHealthBarY,eHealthBarX+471,eHealthBarY+143,10,10,false)
 	draw_set_color(c_ltgrey)
-	draw_roundrect_ext(eHealthBarX+5,eHealthBarY+5,eHealthBarX+466,eHealthBarY+188,5,5,false)
+	draw_roundrect_ext(eHealthBarX+5,eHealthBarY+5,eHealthBarX+466,eHealthBarY+138,5,5,false)
 	
-	draw_healthbar(eHealthBarX+25,eHealthBarY+93,eHealthBarX+448,eHealthBarY+110,obj_gameController.enemyHealthPercentage,c_dkgrey,c_red,c_lime,1,true,true);
+	draw_healthbar(eHealthBarX+25,eHealthBarY+68,eHealthBarX+448,eHealthBarY+85,obj_gameController.enemyHealthPercentage,c_dkgrey,c_red,c_lime,1,true,true);
 
 
 	draw_set_font(fnt_plain);
 	draw_set_halign(fa_left);
-
+	draw_set_valign(fa_top);
 	draw_set_color(c_red);
-	draw_text(eHealthBarX+25,eHealthBarY+120, string(obj_gameController.enemyCurrentHealth) + " / " + string(obj_gameController.enemyMaxHealth))
+	draw_text(eHealthBarX+25,eHealthBarY+95, string(obj_gameController.enemyCurrentHealth) + " / " + string(obj_gameController.enemyMaxHealth))
 	
 	if obj_gameController.enemyType == 1 {
 		enemyName = "Goblin"
@@ -259,10 +262,18 @@ if enemyHealth == true {
 	draw_text(eHealthBarX+10,eHealthBarY+10, enemyName)
 }
 if timer == true {
-	timerX1 = 1509
-	timerX2 = 1627
-	timerY1 = 709
-	timerY2 = 827
+		timerX1 = 1509
+		timerX2 = 1627
+	if room == rm_choice {
+		timerY1 = 887
+		timerY2 = 1005
+	}
+	else {
+		
+		timerY1 = 709
+		timerY2 = 827
+	}
+	
 	draw_set_color(c_dkgray)
 	draw_roundrect_ext(timerX1-5,timerY1-5,timerX2+5,timerY2+5,5,5,false)
 	draw_set_color(c_ltgray)
@@ -631,4 +642,10 @@ if room == rm_start {
 	draw_text(room_width-480,700,"Press Right to begin Story Mode")
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_top)
+}
+if room == rm_choice {
+	obj_influenceCounter.y = 941
+}
+else if room != rm_start{
+	obj_influenceCounter.y = 768
 }
