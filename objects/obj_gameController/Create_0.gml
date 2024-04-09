@@ -156,10 +156,13 @@ enemyType = 0; //1 = goblin, 2 = wolf, 3 = cultist, 4 = bandit
 
 enemyStatDatabase = [ //HP, Attack, Defense, Speed, Sprite
 	[0], //Null
-	[6, 2, 1, 3, spr_enemyGoblin], //Goblin (ID 1)
-	[6, 3, 1, 4, spr_enemyWolf], //Wolf (ID 2)
-	[8, 3, 2, 1, spr_enemyCultist], //Cultist (ID 3)
-	[10, 4, 3, 4, spr_enemyBandit] //Bandit Leader (ID 4)
+	[4, 1, 1, 1, spr_enemyCitizen], //Citizen (ID 1)
+	[6, 2, 1, 3, spr_enemyGoblin], //Goblin (ID 2)
+	[8, 3, 2, 4, spr_enemyWolf], //Wolf (ID 3)
+	[10, 4, 3, 2, spr_enemyBandit], //Bandit (ID 4)
+	[12, 2, 4, 3, spr_enemyCultist], //Cultist (ID 5)
+	[14, 5, 4, 3, spr_enemyBanditCaptain], //Bandit Captain (ID 6)
+	[25, 7, 5, 6, spr_enemyDragon] //Dragon (ID 7)
 ];
 
 

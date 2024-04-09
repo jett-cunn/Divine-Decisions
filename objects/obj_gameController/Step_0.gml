@@ -1584,12 +1584,12 @@ if gameState == 190 { //Calculate rewards
 	
 	buttonMiddleVisible = false;
 	
-	buttonLeftTextA = "Keep your old";
-	buttonLeftTextB = "equipment";
+	buttonLeftTextA = "";
+	buttonLeftTextB = "keep old gear";
 	buttonLeftTextC = "";
 	
-	buttonRightTextA = "Claim your";
-	buttonRightTextB = "new prize";
+	buttonRightTextA = "";
+	buttonRightTextB = "take new item";
 	buttonRightTextC = "";
 	
 	gameState = 191;
