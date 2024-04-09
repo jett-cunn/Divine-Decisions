@@ -200,10 +200,12 @@ rewardValueBuffer = 0
 rewardType = 0
 
 
-areaListPrototype = [4,5,6,7,8,9,10,11,12,13,14,15,15,16,16,17,17,18,18,18,19,19,19]
 areaList1 = [4,5,6,7,8,9,15,16,18]
 areaList2 = [8,9,10,11,12,13,14,15,17,19]
+areaList3 = [4,5,6,7,8,9,10,11,12,13,14,15,15,16,16,17,17,18,18,18,19,19,19]
 areaListCurrent = []
+
+currentArea = 1
 
 encounterData = ""
 encounterDataParsed = []

@@ -1,5 +1,25 @@
 ///The following code comprises the game's state machine. Refer to the reference document for gameState values.
 
+if score <= 7 {
+	currentArea = 1
+}
+else if score <= 14 {
+	currentArea = 2
+}
+else if score > 14 {
+	currentArea = 3
+}
+
+
+if currentArea == 1 {
+	object_set_sprite(obj_worldBackground,spr_villageBackground)
+}
+else if currentArea == 2 {
+	object_set_sprite(obj_worldBackground,spr_forestBackground)
+}
+else if currentArea == 3 {
+	object_set_sprite(obj_worldBackground,spr_forestBackground)
+}
 
 
 if gamePaused == true {
@@ -329,7 +349,7 @@ if gameState == 101 { //Choosing encounters
 		areaListCurrent = areaList2
 	}
 	else if score > 14 {
-		areaListCurrent = areaListPrototype
+		areaListCurrent = areaList3
 	}
 	
 	
