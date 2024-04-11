@@ -348,13 +348,13 @@ if gameState == 100 { //Waiting for controller reset
 
 if gameState == 101 { //Choosing encounters
 	
-	if score <= 7 {
+	if currentArea == 1 {
 		areaListCurrent = areaList1
 	}
-	else if score <= 14 {
+	else if currentArea == 2 {
 		areaListCurrent = areaList2
 	}
-	else if score == 15 {
+	else if currentArea == 3 {
 		areaListCurrent = areaList3
 	}
 	else {
