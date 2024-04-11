@@ -6,8 +6,11 @@ if score <= 7 {
 else if score <= 14 {
 	currentArea = 2
 }
-else if score > 14 {
+else if score = 15 {
 	currentArea = 3
+}
+else if score > 15 {
+	currentArea = 4
 }
 
 
@@ -18,6 +21,9 @@ else if currentArea == 2 {
 	object_set_sprite(obj_worldBackground,spr_forestBackground)
 }
 else if currentArea == 3 {
+	object_set_sprite(obj_worldBackground,spr_forestBackground)
+}
+else if currentArea > 3 {
 	object_set_sprite(obj_worldBackground,spr_forestBackground)
 }
 
@@ -348,8 +354,11 @@ if gameState == 101 { //Choosing encounters
 	else if score <= 14 {
 		areaListCurrent = areaList2
 	}
-	else if score > 14 {
+	else if score == 15 {
 		areaListCurrent = areaList3
+	}
+	else {
+		areaListCurrent = areaListEndless
 	}
 	
 	
