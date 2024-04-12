@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_forestBackground",
-    "path": "sprites/spr_forestBackground/spr_forestBackground.yy",
+    "name": "spr_worldBackground",
+    "path": "sprites/spr_worldBackground/spr_worldBackground.yy",
   },
   "spriteMaskId": null,
   "visible": true,

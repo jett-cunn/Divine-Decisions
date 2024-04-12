@@ -13,7 +13,7 @@ else if score > 15 {
 	currentArea = 4
 }
 
-
+/*
 if currentArea == 1 {
 	object_set_sprite(obj_worldBackground,spr_villageBackground)
 }
@@ -26,7 +26,7 @@ else if currentArea == 3 {
 else if currentArea > 3 {
 	object_set_sprite(obj_worldBackground,spr_forestBackground)
 }
-
+*/
 
 if gamePaused == true {
 	
@@ -106,6 +106,7 @@ if gameState == 000 { //Start screen
 		else if buttonRight == 1 { // Story Mode
 			storyActive = 1;
 		}
+		audio_play_sound(snd_fxStartShout,10,false)
 		gameState = 001;
 	}
 }
@@ -114,12 +115,18 @@ if gameState == 001 { //Waiting for controller reset
 	
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
 		gameState = 002;
+		
 		room_goto(rm_character);
 	}
-	
+	fxStartShout = false
 }
 
 if gameState == 002 { //Character Selection
+	
+	if fxStartShout == false {
+		audio_play_sound(snd_fxStartShout,10,false)
+		fxStartShout = true
+	}
 	
 	score = 0;
 	
@@ -149,6 +156,7 @@ if gameState == 002 { //Character Selection
 			buttonLeftPressed = true;
 			alarm[4] = 60
 			alarm[0] = 60;
+			audio_play_sound(snd_fxSelectCompassion,10,false)
 			gameState = 003;
 		}
 		else if buttonMiddle == 1 { //Select Wisdom
@@ -156,6 +164,7 @@ if gameState == 002 { //Character Selection
 			buttonMiddlePressed = true;
 			alarm[5] = 60
 			alarm[0] = 60;
+			audio_play_sound(snd_fxSelectIntelligence,10,false)
 			gameState = 004;
 		}
 		else if buttonRight == 1 { //Select Valor
@@ -163,6 +172,7 @@ if gameState == 002 { //Character Selection
 			buttonRightPressed = true;
 			alarm[6] = 60
 			alarm[0] = 60;
+			audio_play_sound(snd_fxSelectStrength,10,false)
 			gameState = 005;
 		}
 }
@@ -329,6 +339,7 @@ if gameState == 008 {
 if gameState == 009 {
 	
 	//Transition to gameplay
+	audio_play_sound(snd_fxStartGame,10,false)
 	gameState = 100
 	room_goto(rm_choice);
 	alarm[2] = 600

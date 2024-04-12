@@ -247,16 +247,25 @@ if enemyHealth == true {
 	draw_text(eHealthBarX+25,eHealthBarY+95, string(obj_gameController.enemyCurrentHealth) + " / " + string(obj_gameController.enemyMaxHealth))
 	
 	if obj_gameController.enemyType == 1 {
-		enemyName = "Goblin"
+		enemyName = "Crazed Villager"
 	}
 	else if obj_gameController.enemyType == 2 {
-		enemyName = "Wolf"
+		enemyName = "Goblin"
 	}
 	else if obj_gameController.enemyType == 3 {
-		enemyName = "Cultist"
+		enemyName = "Wolf"
 	}
 	else if obj_gameController.enemyType == 4 {
+		enemyName = "Bandit"
+	}
+	else if obj_gameController.enemyType == 5 {
+		enemyName = "Cultist"
+	}
+	else if obj_gameController.enemyType == 6 {
 		enemyName = "Bandit Leader"
+	}
+	else if obj_gameController.enemyType == 7 {
+		enemyName = "Dragon of Darkness"
 	}
 	draw_set_color(c_black);
 	draw_text(eHealthBarX+10,eHealthBarY+10, enemyName)
@@ -468,6 +477,9 @@ if dicePanel == true {
 		draw_set_alpha(1)
 		
 		//Animate rolling dice
+		if obj_gameController.alarm[1] == 180 {
+			audio_play_sound(snd_fxDice,10,false,1)
+		}
 		if obj_gameController.alarm[1] > 120 {
 			diceAnimationCooldown -= 1
 			if diceAnimationCooldown == 0 {
@@ -477,6 +489,7 @@ if dicePanel == true {
 		}
 		else {
 			diceAnimationFrame = 0
+			
 		}
 		
 		if obj_gameController.diceSimState == 1 { //Draw player attacking dice

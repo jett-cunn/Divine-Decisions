@@ -228,3 +228,6 @@ if (file_exists("encounterDatabase.txt")){
 }
 
 
+
+//Sound Control Variables
+fxStartShout = false

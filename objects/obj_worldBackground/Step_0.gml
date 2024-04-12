@@ -17,7 +17,12 @@ else {
 	visible = false
 }
 
-
+if obj_gameController.currentArea == 1 {
+	image_index = 0
+}
+if obj_gameController.currentArea > 1 {
+	image_index = 1
+}
 
 
 
