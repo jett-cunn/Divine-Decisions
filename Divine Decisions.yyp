@@ -66,6 +66,7 @@
     {"id":{"name":"obj_heathBarPlayer","path":"objects/obj_heathBarPlayer/obj_heathBarPlayer.yy",},},
     {"id":{"name":"spr_forestBackground","path":"sprites/spr_forestBackground/spr_forestBackground.yy",},},
     {"id":{"name":"spr_buttonMiddleLit","path":"sprites/spr_buttonMiddleLit/spr_buttonMiddleLit.yy",},},
+    {"id":{"name":"fnt_plainSmall","path":"fonts/fnt_plainSmall/fnt_plainSmall.yy",},},
     {"id":{"name":"spr_diceAnim","path":"sprites/spr_diceAnim/spr_diceAnim.yy",},},
     {"id":{"name":"spr_pathSelection","path":"sprites/spr_pathSelection/spr_pathSelection.yy",},},
     {"id":{"name":"spr_healthBarPlayer","path":"sprites/spr_healthBarPlayer/spr_healthBarPlayer.yy",},},

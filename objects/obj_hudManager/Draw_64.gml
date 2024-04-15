@@ -295,119 +295,221 @@ if timer == true {
 }
 if inventory == true {
 	
-	drawColumn = 1675
+	drawColumn = 1685
 	drawLine = 0
 	charmName = ""
 	armorName = ""
 	bootsName = ""
 	weaponName = ""
 
-if obj_gameController.playerCharmBonus == 1 {
-	charmName = "Symbolic Ink (+1 Vitality)"
-}
-else if obj_gameController.playerCharmBonus == 2 {
-	charmName = "Shrine Charm (+2 Vitality)"
-}
-else if obj_gameController.playerCharmBonus == 3 {
-	charmName = "Talisman (+3 Vitality)"
-}
-else if obj_gameController.playerCharmBonus == 4 {
-	charmName = "Enchanted Symbolic Ink (+4 Vitality)"
-}
-else {
-	charmName = ""
-}
-
-if obj_gameController.playerArmorBonus == 1 {
-	armorName = "Cuirass (+1 Endurance)"
-}
-else if obj_gameController.playerArmorBonus == 2 {
-	armorName = "Chainmail (+2 Endurance)"
-}
-else if obj_gameController.playerArmorBonus == 3 {
-	armorName = "Plate Armor (+3 Endurance)"
-}
-else if obj_gameController.playerArmorBonus == 4 {
-	armorName = "Enchanted Cuirass (+4 Endurance)"
-}
-else {
-	armorName = ""
-}
-
-if obj_gameController.playerBootBonus == 1 {
-	bootsName = "Symbolic Ink (+1 Vitality)"
-}
-else if obj_gameController.playerBootBonus == 2 {
-	bootsName = "Shrine Charm (+2 Vitality)"
-}
-else if obj_gameController.playerBootBonus == 3 {
-	bootsName = "Talisman (+3 Vitality)"
-}
-else if obj_gameController.playerBootBonus == 4 {
-	bootsName = "Enchanted Symbolic Ink (+4 Vitality)"
-}
-else {
-	bootsName = ""
-}
-
-
-if obj_gameController.playerWeaponStat == 1 {
-	if obj_gameController.playerWeaponBonus == 1 {
-		weaponName = "Dagger (+1 Strength)"
+	if obj_gameController.playerCharmBonus == 1 {
+		charmName = "Symbolic Ink (+1)"
 	}
-	else if obj_gameController.playerWeaponBonus == 2 {
-		weaponName = "Sword (+2 Strength)"
+	else if obj_gameController.playerCharmBonus == 2 {
+		charmName = "Shrine Charm (+2)"
 	}
-	else if obj_gameController.playerWeaponBonus == 3 {
-		weaponName = "Greataxe (+3 Strength)"
+	else if obj_gameController.playerCharmBonus == 3 {
+		charmName = "Talisman (+3)"
 	}
-	else if obj_gameController.playerWeaponBonus == 4 {
-		weaponName = "Enchanted Dagger (+4 Strength)"
+	else if obj_gameController.playerCharmBonus == 4 {
+		charmName = "Ench. Ink (+4)"
 	}
-}
-else if obj_gameController.playerWeaponStat == 2 {
+	else if obj_gameController.playerCharmBonus == 5 {
+		charmName = "Ench. Charm (+5)"
+	}
+	else if obj_gameController.playerCharmBonus == 6 {
+		charmName = "Ench. Talisman (+6)"
+	}
+	else {
+		charmName = ""
+	}
+
+	if obj_gameController.playerArmorBonus == 1 {
+		armorName = "Cuirass (+1)"
+	}
+	else if obj_gameController.playerArmorBonus == 2 {
+		armorName = "Chainmail (+2)"
+	}
+	else if obj_gameController.playerArmorBonus == 3 {
+		armorName = "Plate Armor (+3)"
+	}
+	else if obj_gameController.playerArmorBonus == 4 {
+		armorName = "Ench. Cuirass (+4)"
+	}
+	else if obj_gameController.playerArmorBonus == 5 {
+		armorName = "Ench. Mail (+5)"
+	}
+	else if obj_gameController.playerArmorBonus == 6 {
+		armorName = "Ench. Plate (+6)"
+	}
+	else {
+		armorName = ""
+	}
+
+	if obj_gameController.playerBootBonus == 1 {
+		bootsName = "Turnsole Shoes (+1)"
+	}
+	else if obj_gameController.playerBootBonus == 2 {
+		bootsName = "Short Boots (+2)"
+	}
+	else if obj_gameController.playerBootBonus == 3 {
+		bootsName = "Warrior Boots (+3)"
+	}
+	else if obj_gameController.playerBootBonus == 4 {
+		bootsName = "Ench. Turnsoles (+4)"
+	}
+	else if obj_gameController.playerBootBonus == 5 {
+		bootsName = "Ench. Boots (+5)"
+	}
+	else if obj_gameController.playerBootBonus == 6 {
+		bootsName = "Ench. Sabatons (+6)"
+	}
+	else {
+		bootsName = ""
+	}
+
+
+	if obj_gameController.playerWeaponStat == 1 {
 		if obj_gameController.playerWeaponBonus == 1 {
-		weaponName = "Tome (+1 Intelligence)"
+			weaponName = "Dagger (+1)"
+		}
+		else if obj_gameController.playerWeaponBonus == 2 {
+			weaponName = "Sword (+2)"
+		}
+		else if obj_gameController.playerWeaponBonus == 3 {
+			weaponName = "Greataxe (+3)"
+		}
+		else if obj_gameController.playerWeaponBonus == 4 {
+			weaponName = "Ench. Dagger (+4)"
+		}
+		else if obj_gameController.playerWeaponBonus == 5 {
+			weaponName = "Ench. Sword (+5)"
+		}
+		else if obj_gameController.playerWeaponBonus == 6 {
+			weaponName = "Ench. Axe (+6)"
+		}
 	}
-	else if obj_gameController.playerWeaponBonus == 2 {
-		weaponName = "Wand (+2 Intelligence)"
+	else if obj_gameController.playerWeaponStat == 2 {
+			if obj_gameController.playerWeaponBonus == 1 {
+			weaponName = "Tome (+1)"
+		}
+		else if obj_gameController.playerWeaponBonus == 2 {
+			weaponName = "Wand (+2)"
+		}
+		else if obj_gameController.playerWeaponBonus == 3 {
+			weaponName = "Staff (+3)"
+		}
+		else if obj_gameController.playerWeaponBonus == 4 {
+			weaponName = "Ench. Tome (+4)"
+		}
+		else if obj_gameController.playerWeaponBonus == 5 {
+			weaponName = "Ench. Wand (+5)"
+		}
+		else if obj_gameController.playerWeaponBonus == 6 {
+			weaponName = "Ench. Staff (+6)"
+		}
 	}
-	else if obj_gameController.playerWeaponBonus == 3 {
-		weaponName = "Staff (+3 Intelligence)"
+	else if obj_gameController.playerWeaponStat == 3 {
+			if obj_gameController.playerWeaponBonus == 1 {
+			weaponName = "Flute (+1)"
+		}
+		else if obj_gameController.playerWeaponBonus == 2 {
+			weaponName = "Drum (+2)"
+		}
+		else if obj_gameController.playerWeaponBonus == 3 {
+			weaponName = "Harp (+3)"
+		}
+		else if obj_gameController.playerWeaponBonus == 4 {
+			weaponName = "Ench. Flute (+4)"
+		}
+		else if obj_gameController.playerWeaponBonus == 4 {
+			weaponName = "Ench. Lute (+4)"
+		}
+		else if obj_gameController.playerWeaponBonus == 4 {
+			weaponName = "Ench. Harp (+4)"
+		}
 	}
-	else if obj_gameController.playerWeaponBonus == 4 {
-		weaponName = "Enchanted Tome (+4 Intelligence)"
+	else {
+		weaponName = ""
 	}
-}
-else if obj_gameController.playerWeaponStat == 3 {
-		if obj_gameController.playerWeaponBonus == 1 {
-		weaponName = "Flute (+1 Compassion)"
-	}
-	else if obj_gameController.playerWeaponBonus == 2 {
-		weaponName = "Drum (+2 Compassion)"
-	}
-	else if obj_gameController.playerWeaponBonus == 3 {
-		weaponName = "Harp (+3 Compassion)"
-	}
-	else if obj_gameController.playerWeaponBonus == 4 {
-		weaponName = "Enchanted Flute (+4 Compassion)"
-	}
-}
-else {
-	weaponName = ""
-}
 	
-	draw_set_color(c_ltgray)
-	draw_rectangle(1675,300,1920,690,false)
 	draw_set_color(c_dkgray)
-	draw_rectangle(1675,300,1920,690,true)
+	draw_roundrect_ext(1675,300,1920,690,5,5,false)
+	draw_set_color(c_ltgray)
+	draw_rectangle(1680,305,1915,685,false)
 	
-	draw_set_font(fnt_debug)
 	draw_set_color(c_maroon)
 	draw_set_halign(fa_left)
+	draw_set_valign(fa_top)
 	
-	drawLine = 300
+	drawLine = 310
 	
+	draw_set_font(fnt_plain)
+	draw_text(drawColumn,drawLine,"Charm:")
+	drawLine += 25
+	draw_set_font(fnt_plainSmall)
+	draw_text(drawColumn,drawLine, string(charmName))
+	drawLine += 17
+	draw_text(drawColumn,drawLine,"Vitality: " + string(obj_gameController.playerVitalityTotal))
+	drawLine += 30
+	
+	draw_set_font(fnt_plain)
+	draw_text(drawColumn,drawLine,"Armor:")
+	drawLine += 25
+	draw_set_font(fnt_plainSmall)
+	draw_text(drawColumn,drawLine, string(armorName))
+	drawLine += 17
+	draw_text(drawColumn,drawLine,"Endurance: " + string(obj_gameController.playerEnduranceTotal))
+	drawLine += 30
+	
+	draw_set_font(fnt_plain)
+	draw_text(drawColumn,drawLine,"Boots:")
+	drawLine += 25
+	draw_set_font(fnt_plainSmall)
+	draw_text(drawColumn,drawLine, string(bootsName))
+	drawLine += 17
+	draw_text(drawColumn,drawLine,"Agility: " + string(obj_gameController.playerAgilityTotal))
+	drawLine += 30
+	
+	draw_set_font(fnt_plain)
+	draw_text(drawColumn,drawLine,"Weapon:")
+	drawLine += 25
+	draw_set_font(fnt_plainSmall)
+	draw_text(drawColumn,drawLine, string(weaponName))
+	drawLine += 17
+	if obj_gameController.playerWeaponStat == 1 {
+		draw_text(drawColumn,drawLine,"Strength: " + string(obj_gameController.playerStrengthTotal))
+		drawLine += 30
+	}
+	else if obj_gameController.playerWeaponStat == 2 {
+		draw_text(drawColumn,drawLine,"Intelligence: " + string(obj_gameController.playerIntelligenceTotal))
+		drawLine += 30
+	}
+	else if obj_gameController.playerWeaponStat == 3 {
+		draw_text(drawColumn,drawLine,"Compassion: " + string(obj_gameController.playerCompassionTotal))
+		drawLine += 30
+	}
+	
+	if obj_gameController.playerWeaponStat == 1 {
+		draw_text(drawColumn,drawLine,"Intelligence: " + string(obj_gameController.playerIntelligenceTotal))
+		drawLine += 30
+		draw_text(drawColumn,drawLine,"Compassion: " + string(obj_gameController.playerCompassionTotal))
+		drawLine += 30
+	}
+	else if obj_gameController.playerWeaponStat == 2 {
+		draw_text(drawColumn,drawLine,"Strength: " + string(obj_gameController.playerStrengthTotal))
+		drawLine += 30
+		draw_text(drawColumn,drawLine,"Compassion: " + string(obj_gameController.playerCompassionTotal))
+		drawLine += 30
+	}
+	else if obj_gameController.playerWeaponStat == 3 {
+		draw_text(drawColumn,drawLine,"Strength: " + string(obj_gameController.playerStrengthTotal))
+		drawLine += 30
+		draw_text(drawColumn,drawLine,"Intelligence: " + string(obj_gameController.playerIntelligenceTotal))
+		drawLine += 30
+	}
+	
+	/*
 	draw_text(drawColumn, drawLine, "Base Vitality; " + string(obj_gameController.playerVitalityBase))
 	drawLine += 15
 	draw_text(drawColumn, drawLine, "Base Endurance; " + string(obj_gameController.playerEnduranceBase))
@@ -457,7 +559,7 @@ else {
 	drawLine += 15
 	draw_text(drawColumn, drawLine, "Compassion; " + string(obj_gameController.playerCompassionTotal))
 	drawLine += 30
-	
+	*/
 }
 
 if dicePanel == true {

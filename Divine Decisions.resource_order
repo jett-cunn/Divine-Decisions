@@ -29,6 +29,7 @@
     {"name":"obj_heathBarPlayer","order":18,"path":"objects/obj_heathBarPlayer/obj_heathBarPlayer.yy",},
     {"name":"spr_forestBackground","order":10,"path":"sprites/spr_forestBackground/spr_forestBackground.yy",},
     {"name":"spr_buttonMiddleLit","order":27,"path":"sprites/spr_buttonMiddleLit/spr_buttonMiddleLit.yy",},
+    {"name":"fnt_plainSmall","order":6,"path":"fonts/fnt_plainSmall/fnt_plainSmall.yy",},
     {"name":"spr_diceAnim","order":40,"path":"sprites/spr_diceAnim/spr_diceAnim.yy",},
     {"name":"spr_pathSelection","order":9,"path":"sprites/spr_pathSelection/spr_pathSelection.yy",},
     {"name":"spr_healthBarPlayer","order":11,"path":"sprites/spr_healthBarPlayer/spr_healthBarPlayer.yy",},
