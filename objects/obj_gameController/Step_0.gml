@@ -240,6 +240,11 @@ if gameState == 006 {
 		playerWeaponStat = 3;
 		
 		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
+		playerEnduranceTotal = playerEnduranceBase + playerArmorBonus;
+		playerAgilityTotal = playerAgilityBase + playerBootBonus;
+		playerStrengthTotal = playerStrengthBase;
+		playerIntelligenceTotal = playerIntelligenceBase;
+		playerCompassionTotal = playerCompassionBase + playerWeaponBonus;
 		playerMaxHealth = (2 * playerVitalityTotal) + 2;
 		playerCurrentHealth = playerMaxHealth;
 		playerName = "Mercy"
@@ -282,6 +287,11 @@ if gameState == 007 {
 		playerWeaponStat = 2;
 		
 		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
+		playerEnduranceTotal = playerEnduranceBase + playerArmorBonus;
+		playerAgilityTotal = playerAgilityBase + playerBootBonus;
+		playerStrengthTotal = playerStrengthBase;
+		playerIntelligenceTotal = playerIntelligenceBase + playerWeaponBonus;
+		playerCompassionTotal = playerCompassionBase;
 		playerMaxHealth = (2 * playerVitalityTotal) + 2;
 		playerCurrentHealth = playerMaxHealth;
 		playerName = "Wisdom"
@@ -324,6 +334,11 @@ if gameState == 008 {
 		playerWeaponStat = 1;
 		
 		playerVitalityTotal = playerVitalityBase + playerCharmBonus;
+		playerEnduranceTotal = playerEnduranceBase + playerArmorBonus;
+		playerAgilityTotal = playerAgilityBase + playerBootBonus;
+		playerStrengthTotal = playerStrengthBase;
+		playerIntelligenceTotal = playerIntelligenceBase + playerWeaponBonus;
+		playerCompassionTotal = playerCompassionBase;
 		playerMaxHealth = (2 * playerVitalityTotal) + 2;
 		playerCurrentHealth = playerMaxHealth;
 		playerName = "Valor"
@@ -351,7 +366,7 @@ if gameState == 009 {
 if gameState == 100 { //Waiting for controller reset
 	
 	//Transition to selection screen
-	
+	alarm[11] = 1
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
 		gameState = 101;
 	}
@@ -563,27 +578,7 @@ if gameState == 130 { //Setup
 	
 	
 	//Calculate player stats
-	playerVitalityTotal = playerVitalityBase + playerCharmBonus;
-	playerEnduranceTotal = playerEnduranceBase + playerArmorBonus;
-	playerAgilityTotal = playerAgilityBase + playerBootBonus;
-	playerStrengthTotal = playerStrengthBase;
-	playerIntelligenceTotal = playerIntelligenceBase;
-	playerCompassionTotal = playerCompassionBase;
-	if playerWeaponStat == 1 {
-		playerStrengthTotal += playerWeaponBonus;
-	}
-	playerIntelligenceTotal = playerIntelligenceBase;
-	if playerWeaponStat == 2 {
-		playerIntelligenceTotal += playerWeaponBonus;
-	}
-	playerCompassionTotal = playerCompassionBase;
-	if playerWeaponStat == 3 {
-		playerCompassionTotal += playerWeaponBonus;
-	}
-	
-	playerMaxHealth = (2 * playerVitalityTotal) + 2;
-	
-	playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100;
+	alarm[11] = 1
 	
 	//Set enemy stats
 	
@@ -902,27 +897,7 @@ if gameState == 153 { //Waiting for restart
 if gameState == 160 { //Setup
 	
 	//Calculate player stats
-	playerVitalityTotal = playerVitalityBase + playerCharmBonus + playerVitalityEffect;
-	playerEnduranceTotal = playerEnduranceBase + playerArmorBonus + playerEnduranceEffect;
-	playerAgilityTotal = playerAgilityBase + playerBootBonus + playerAgilityEffect;
-	playerStrengthTotal = playerStrengthBase + playerStrengthEffect;
-	playerIntelligenceTotal = playerIntelligenceBase + playerIntelligenceEffect;
-	playerCompassionTotal = playerCompassionBase + playerCompassionEffect;
-	if playerWeaponStat == 1 {
-		playerStrengthTotal += playerWeaponBonus;
-	}
-	playerIntelligenceTotal = playerIntelligenceBase;
-	if playerWeaponStat == 2 {
-		playerIntelligenceTotal += playerWeaponBonus;
-	}
-	playerCompassionTotal = playerCompassionBase;
-	if playerWeaponStat == 3 {
-		playerCompassionTotal += playerWeaponBonus;
-	}
-	
-	playerMaxHealth = (2 * playerVitalityTotal) + 2;
-	
-	playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100;
+	alarm[11] = 1
 	
 	
 	//Set encounter stats
@@ -1268,6 +1243,8 @@ if gameState == 167 { //Failure
 }
 
 if gameState == 180 { //Shrine Setup
+	
+	alarm[11] = 1
 	
 	//Pull encounter data
 	encounterData = encounterDatabase[currentEncounter]	
