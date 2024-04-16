@@ -5,18 +5,57 @@ if currentRoom != lastRoom {
 	
 	audio_stop_all();
 	
-	if room == rm_start || room == rm_reward || room == rm_die {
-		audio_play_sound(snd_bgMenu,1,true,0.5);
+	if room == rm_start {
+		audio_play_sound(snd_bgMainMenu,1,true,0.5);
 	}
 	else if room == rm_character {
-		audio_play_sound(snd_bgChar,1,true,0.5);
+		audio_play_sound(snd_bgCharSelect,1,true,0.5);
 	}
-	else if room == rm_choice || room == rm_challenge || room == rm_shrine {
-		audio_play_sound(snd_bgForest,1,true,0.5);
+	else if room == rm_choice {
+		if obj_gameController.currentArea == 1 {
+			audio_play_sound(snd_bgVillageChoice,1,true,0.5);
+		}
+		else if obj_gameController.currentArea > 1 {
+			audio_play_sound(snd_bgForestChoice,1,true,0.5);
+		}
 	}
 	else if room == rm_fight {
-		audio_play_sound(snd_bgFight,1,true,0.5);
+		if obj_gameController.currentArea == 1 {
+			audio_play_sound(snd_bgVillageCombat,1,true,0.5);
+		}
+		else if obj_gameController.currentArea > 1 {
+			audio_play_sound(snd_bgForestCombat,1,true,0.5);
+		}
 	}
+	else if room == rm_challenge {
+		if obj_gameController.currentArea == 1 {
+			audio_play_sound(snd_bgVillageChoice,1,true,0.5);
+		}
+		else if obj_gameController.currentArea > 1 {
+			audio_play_sound(snd_bgForestChoice,1,true,0.5);
+		}
+	}
+	else if room == rm_shrine {
+		if obj_gameController.currentArea == 1 {
+			audio_play_sound(snd_bgVillageChoice,1,true,0.5);
+		}
+		else if obj_gameController.currentArea > 1 {
+			audio_play_sound(snd_bgForestChoice,1,true,0.5);
+		}
+	}
+	else if room == rm_reward {
+		audio_play_sound(snd_bgWind,1,true,0.5);
+	}
+	else if room == rm_die{
+		audio_play_sound(snd_bgDeath,1,true,0.5);
+	}
+	else if room == rm_pause {
+		//audio_play_sound(snd_bgMenu,1,true,0.5);
+	}
+	
+	
+	
+	
 	
 	
 	if room == rm_character {
