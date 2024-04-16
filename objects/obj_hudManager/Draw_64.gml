@@ -509,57 +509,7 @@ if inventory == true {
 		drawLine += 30
 	}
 	
-	/*
-	draw_text(drawColumn, drawLine, "Base Vitality; " + string(obj_gameController.playerVitalityBase))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Base Endurance; " + string(obj_gameController.playerEnduranceBase))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Base Agility; " + string(obj_gameController.playerAgilityBase))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Base Strength; " + string(obj_gameController.playerStrengthBase))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Base Intelligence; " + string(obj_gameController.playerIntelligenceBase))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Base Compassion; " + string(obj_gameController.playerCompassionBase))
-	drawLine += 30
 	
-	draw_text(drawColumn, drawLine, "Charm; " + charmName)
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Armor; " + armorName)
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Boots; " + bootsName)
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Weapon; " + weaponName)
-	drawLine += 30
-	
-	draw_text(drawColumn, drawLine, "Vitality Bonus; " + string(obj_gameController.playerVitalityEffect))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Endurance Bonus; " + string(obj_gameController.playerEnduranceEffect))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Agility Bonus; " + string(obj_gameController.playerAgilityEffect))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Strength Bonus; " + string(obj_gameController.playerStrengthEffect))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Intelligence Bonus; " + string(obj_gameController.playerIntelligenceEffect))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Compassion Bonus; " + string(obj_gameController.playerCompassionEffect))
-	drawLine += 30
-	
-	draw_text(drawColumn, drawLine, "Total Stats;")
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Vitality; " + string(obj_gameController.playerVitalityTotal))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Endurance; " + string(obj_gameController.playerEnduranceTotal))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Agility; " + string(obj_gameController.playerAgilityTotal))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Strength; " + string(obj_gameController.playerStrengthTotal))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Intelligence; " + string(obj_gameController.playerIntelligenceTotal))
-	drawLine += 15
-	draw_text(drawColumn, drawLine, "Compassion; " + string(obj_gameController.playerCompassionTotal))
-	drawLine += 30
-	*/
 }
 
 if dicePanel == true {
