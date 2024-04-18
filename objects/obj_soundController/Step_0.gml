@@ -44,13 +44,16 @@ if currentRoom != lastRoom {
 		}
 	}
 	else if room == rm_reward {
-		audio_play_sound(snd_bgWind,1,true,0.5);
+		audio_play_sound(snd_bgMenu,1,true,0.5);
 	}
 	else if room == rm_die{
 		audio_play_sound(snd_bgDeath,1,true,0.5);
 	}
 	else if room == rm_pause {
-		//audio_play_sound(snd_bgMenu,1,true,0.5);
+		audio_play_sound(snd_bgWind,1,true,0.5);
+	}
+	else if room == rm_tutorial {
+		audio_play_sound(snd_bgWind,1,true,0.5);
 	}
 	
 	

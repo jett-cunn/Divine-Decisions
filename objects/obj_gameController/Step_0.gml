@@ -93,24 +93,140 @@ else {
 
 timerPercentage = (alarm[2] / 600) * 100
 
-//Character Creation
+//Main Menu
 
 if gameState == 000 { //Start screen
 	
 	
-	if buttonLeft + buttonRight == 1 {
-		
+	if buttonLeft + buttonMiddle + buttonRight == 1 {
+	
 		if buttonLeft == 1 { // Endless Mode
 			storyActive = 0;
+			audio_play_sound(snd_fxStartShout,10,false)
+			gameState = 001;
+		}
+		else if buttonMiddle == 1 { //Tutorial
+			audio_play_sound(snd_fxButtonSelect,10,false)
+			gameState = -12
+			room_goto(rm_tutorial)
 		}
 		else if buttonRight == 1 { // Story Mode
 			storyActive = 1;
-		}
-		audio_play_sound(snd_fxStartShout,10,false)
-		gameState = 001;
+			audio_play_sound(snd_fxStartShout,10,false)
+			gameState = 001;
+		}		
 	}
 }
 
+//Tutorial
+if gameState == -12 {
+	if buttonLeft + buttonRight + buttonMiddle == 0 { //Waiting for controller reset
+		gameState = -1
+	}
+}
+
+if gameState == -1 {
+	if buttonLeft + buttonMiddle + buttonRight == 0 {
+		gameState = -2
+	}
+}
+
+if gameState == -2 {
+	if buttonMiddle + buttonRight == 1 {
+		if buttonMiddle == 1 {
+			gameState = -11
+		}
+		else if buttonRight == 1 {
+			gameState = -3
+		}
+	}
+}
+
+if gameState == -3 {
+	if buttonLeft + buttonMiddle + buttonRight == 0 {
+		gameState = -4
+	}
+}
+
+if gameState == -4 {
+	if buttonLeft + buttonMiddle + buttonRight == 1 {
+		if buttonLeft == 1 {
+			gameState += 3
+		}
+		else if buttonMiddle == 1 {
+			gameState = -11
+		}
+		else if buttonRight == 1 {
+			gameState -= 1
+		}
+	}
+}
+
+if gameState == -5 {
+	if buttonLeft + buttonMiddle + buttonRight == 0 {
+		gameState = -6
+	}
+}
+
+if gameState == -6 {
+	if buttonLeft + buttonMiddle + buttonRight == 1 {
+		if buttonLeft == 1 {
+			gameState += 3
+		}
+		else if buttonMiddle == 1 {
+			gameState = -11
+		}
+		else if buttonRight == 1 {
+			gameState -= 1
+		}
+	}
+}
+
+if gameState == -7 {
+	if buttonLeft + buttonMiddle + buttonRight == 0 {
+		gameState = -8
+	}
+}
+
+if gameState == -8 {
+	if buttonLeft + buttonMiddle + buttonRight == 1 {
+		if buttonLeft == 1 {
+			gameState += 3
+		}
+		else if buttonMiddle == 1 {
+			gameState = -11
+		}
+		else if buttonRight == 1 {
+			gameState -= 1
+		}
+	}
+}
+
+if gameState == -9 {
+	if buttonLeft + buttonMiddle + buttonRight == 0 {
+		gameState = -10
+	}
+}
+
+if gameState == -10 {
+	if buttonLeft + buttonMiddle == 1 {
+		if buttonLeft == 1 {
+			gameState += 3
+		}
+		else if buttonMiddle == 1 {
+			gameState = -11
+		}
+	}
+}
+
+if gameState == -11 { //Waiting for controller reset
+	if buttonLeft + buttonMiddle + buttonRight == 0 {
+		gameState = 000
+		room_goto(rm_start)
+	}
+}
+
+//Character Creation
 if gameState == 001 { //Waiting for controller reset
 	
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {

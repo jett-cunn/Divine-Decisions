@@ -200,3 +200,24 @@ else if room == rm_pause {
 	die2 = false
 	die3 = false
 }
+else if room = rm_tutorial {
+	buttonBar = false
+	button1 = false
+	button2 = false
+	button3 = false
+	influence = false
+	timer = false
+	progressBar = false
+	playerHealth = false
+	enemyHealth = false
+	text1 = false
+	text2 = false
+	text3 = false
+	enemy = false
+	player = false
+	inventory = false
+	dicePanel = false
+	die1 = false
+	die2 = false
+	die3 = false
+}

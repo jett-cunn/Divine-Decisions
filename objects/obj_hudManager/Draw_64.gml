@@ -691,9 +691,9 @@ if room == rm_pause {
 	draw_set_valign(fa_middle)
 	draw_set_font(fnt_plain)
 	draw_set_color(c_yellow)
-	draw_text(960,510,"Press Left to restart Endless Mode")
-	draw_text(960,540,"Press Middle to restart Story Mode")
-	draw_text(960,570,"Press Right to continue the game")
+	draw_text(960,510,"Select Left to restart Endless Mode")
+	draw_text(960,540,"Select Middle to restart Story Mode")
+	draw_text(960,570,"Select Right to continue the game")
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_top)
 }
@@ -703,14 +703,75 @@ if room == rm_start {
 	draw_set_valign(fa_middle)
 	draw_set_font(fnt_plain)
 	draw_set_color(c_white)
-	draw_text(480,700,"Press Left to begin Endless Mode")
-	draw_text(room_width-480,700,"Press Right to begin Story Mode")
+	draw_text(480,700,"Select Left to begin Endless Mode")
+	draw_text(room_width-480,700,"Select Right to begin Story Mode")
+	draw_text(960,800,"Select Middle for Tutorial")
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_top)
 }
+
+if room == rm_tutorial {
+	draw_set_halign(fa_center)
+	draw_set_valign(fa_middle)
+	draw_set_font(fnt_plain)
+	draw_set_color(c_white)
+	if obj_gameController.gameState <= -3 {
+		draw_text(480,900,"Select Left to go back")
+	}
+	if obj_gameController.gameState >= -8 {
+		draw_text(1440,900,"Select Right to go forward")
+	}
+	draw_text(960,900,"Select Middle to return Home")
+	
+	draw_set_font(fnt_gothicLarge)
+	draw_set_color(c_yellow)
+	
+	
+	if obj_gameController.gameState == -2 {
+		draw_text(960,200,"Introduction")
+		draw_set_font(fnt_plain)
+		draw_set_color(c_white)
+		draw_text_ext(960, 540, "Greetings, Challenger! In this world, you take on the role of an omnipotent puppet-master deity, tasked with safely guiding your chosen champion along the path to defeating a world-ending calamity in this formerly peaceful land.", -1, 500)
+	}
+	else if obj_gameController.gameState == -4 {
+		draw_text(960,200,"Controls")
+		draw_set_font(fnt_plain)
+		draw_set_color(c_white)
+		draw_text_ext(480, 540, "When using a Statue to control your champion, raise the left arm to select the left option. Raise the right arm to select the right option. Press the middle button to select the middle option. To skip the timer, press the Skip button. To pause the game, press the Skip button for three seconds.", -1, 500)
+		draw_text_ext(1440, 540, "When using a Keyboard to control your champion, press the left arrow to select the left option. Press the right arrow to select the right option. Press the down arrow to select the middle option. To skip the timer, press the spacebar. To pause the game, press the escape key.", -1, 500)
+	}
+	else if obj_gameController.gameState == -6 {
+		draw_text(960,200,"Gameplay")
+		draw_set_font(fnt_plain)
+		draw_set_color(c_white)
+		
+		draw_text_ext(960, 540, "After you choose your champion, you must guide them down a path that leads to victory. You will be able to see what awaits them down each of the three paths they may take, and should you choose to, you may directly affect their decisions. Doing so will cost you, though, and you may only take command of your champion's agency a limited number of times. The rest of their choices are theirs alone, so you must be cautious where you intervene. You may regain your Divine Influence through the faith of your Champion, however, when they are able to pray at a Shrine or Temple.", -1, 700)
+	}
+	else if obj_gameController.gameState == -8 {
+		draw_text(960,200,"Statistics")
+		draw_set_font(fnt_plain)
+		draw_set_color(c_white)
+		draw_text_ext(480, 540, "Your champion's capabilities are measured through six statistics; Vitality, Endurance, Agility, Strength, Intelligence, and Compassion. The first three reflect their ability to survive the challenges in front of them, while the second three describe their ability to act on the world in front of them.", -1, 400)
+		draw_text_ext(960, 540, "Vitality affects your champion's maximum health, while Endurance represents their ability to resist damage. Agility is your champion's speed and ability to escape from danger. Strength, Intelligence, and Compassion are used to face the challenges your champion encounters, as well as to use various kinds of weapons in combat.", -1, 400)
+		draw_text_ext(1440, 540, "Every challenge for your champion to overcome is ultimately a test of fate--a roll of the dice, if you will. As each of your champion's statistics increases, so does the size of their die, and with it, the greater the heights they can achieve. Be careful not to guide your champion down a path that they are poorly-equipped to handle.", -1, 400)
+	}
+	else if obj_gameController.gameState == -10 {
+		draw_text(960,200,"Combat")
+		draw_set_font(fnt_plain)
+		draw_set_color(c_white)
+		draw_text_ext(480, 540, "When battling, you may choose between three different options; Attacking, Defending, or Fleeing. When Attacking, your champion pits their Strength, Intelligence, or Compassion against their foe's Defense, depending on which type of weapon they currently have equipped. If your offense overwhelms their defense, your champion will deal damage to their opponent equal to their attack minus their opponent's defense.", -1, 400)
+		draw_text_ext(960, 540, "When Defending, your champion skips the chance to deal damage in exchange for greatly increasing their own defensive ability. When the enemy facing your champion rolls to attack, you will not only subtract the champion's Endurance roll from the damage, but an additional attack roll of their own. While it is still possible for your champion to be injured in this way, it is far less likely than if you had not chosen to guard.", -1, 400)
+		draw_text_ext(1440, 540, "When Fleeing, your champion contests their Agility against their opponent's corresponding speed roll. If your champion succeeds, they will escape from the battle and move along, but they will not receive any rewards for their victory. If they fail to outmatch their opponent, however, the fight will continue and their enemy will be able to strike your champion without the opportunity to guard or retaliate.", -1, 400)
+
+	}
+	
+	draw_set_halign(fa_left)
+	draw_set_valign(fa_top)
+}
+
 if room == rm_choice {
 	obj_influenceCounter.y = 941
 }
-else if room != rm_start{
+else if room != rm_start && room != rm_tutorial{
 	obj_influenceCounter.y = 768
 }
