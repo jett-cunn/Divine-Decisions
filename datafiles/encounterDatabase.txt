@@ -34,9 +34,10 @@
 034.1.7.0.The ancient dragon of darkness awaits your challenge
 
 
+Encounter Key
 COMBAT; (ID 0; encounter number) (ID 1; type) (ID 2; enemy) (ID 3; reward) (ID 4; text)
 CHALLENGE; (ID 0; encounter number) (ID 1; type) (ID 2; option1) (ID 3; stat1) (ID 4; dc1) (ID 5; option2) (ID 6; stat2) (ID 7; dc2) (ID 8; option3) (ID 9; stat3) (ID 10; dc3) (ID 11; reward range) (ID 12; reward type) (ID 13; penalty range) (ID 14; penalty type) (ID 15; text)
 -Challenge Stats; 1 = Compassion, 2 = Intelligence, 3 = Strength
 -Reward Type; 1 = Item, 2 = Health, 3 = Influence, 4 = Vitality, 5 = Endurance, 6 = Agility, 7 = Strength, 8 = Intelligence, 9 = Compassion
 -Penalty Type; 1 = Health, 2 = Influence, 3 = Vitality, 4 = Endurance, 5 = Agility, 6 = Strength, 7 = Intelligence, 8 = Compassion
-SHRINE; (ID 0; encounter number) (ID 1; type) (ID 2; reward) (ID 3; text) 
+SHRINE; (ID 0; encounter number) (ID 1; type) (ID 2; reward value) (ID 3; text) 

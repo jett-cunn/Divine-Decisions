@@ -737,7 +737,7 @@ if room == rm_tutorial {
 		draw_text(960,200,"Controls")
 		draw_set_font(fnt_plain)
 		draw_set_color(c_white)
-		draw_text_ext(480, 540, "When using a Statue to control your champion, raise the left arm to select the left option. Raise the right arm to select the right option. Press the middle button to select the middle option. To skip the timer, press the Skip button. To pause the game, press the Skip button for three seconds.", -1, 500)
+		draw_text_ext(480, 540, "When using a Statue to control your champion, raise the left arm to select the left option. Raise the right arm to select the right option. Press the middle button to select the middle option. To skip the timer, press and release the Skip button. To pause the game, press the Skip button for at least one second, then release.", -1, 500)
 		draw_text_ext(1440, 540, "When using a Keyboard to control your champion, press the left arrow to select the left option. Press the right arrow to select the right option. Press the down arrow to select the middle option. To skip the timer, press the spacebar. To pause the game, press the escape key.", -1, 500)
 	}
 	else if obj_gameController.gameState == -6 {

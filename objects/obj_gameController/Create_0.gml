@@ -33,6 +33,8 @@ gamePaused = false
 pausedRoom = rm_start
 pauseMenuOption = 0
 
+pauseButtonTimer = 0
+
 buttonLeftTextA = "";
 buttonLeftTextB = "";
 buttonLeftTextC = "";
