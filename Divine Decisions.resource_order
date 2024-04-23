@@ -4,6 +4,7 @@
     {"name":"spr_selectValor","order":5,"path":"sprites/spr_selectValor/spr_selectValor.yy",},
     {"name":"rm_reward","order":5,"path":"rooms/rm_reward/rm_reward.yy",},
     {"name":"spr_influenceCounter","order":39,"path":"sprites/spr_influenceCounter/spr_influenceCounter.yy",},
+    {"name":"rm_vid","order":10,"path":"rooms/rm_vid/rm_vid.yy",},
     {"name":"spr_buttonPanel","order":25,"path":"sprites/spr_buttonPanel/spr_buttonPanel.yy",},
     {"name":"obj_buttonRight","order":11,"path":"objects/obj_buttonRight/obj_buttonRight.yy",},
     {"name":"fnt_debug","order":1,"path":"fonts/fnt_debug/fnt_debug.yy",},

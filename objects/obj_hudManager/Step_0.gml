@@ -2,25 +2,34 @@
 // You can write your code in this editor
 
 if room == rm_character {
-	buttonBar = true
-	button1 = true
-	button2 = true
-	button3 = true
-	influence = false
-	timer = false
-	progressBar = true
-	playerHealth = false
-	enemyHealth = false
-	text1 = false
-	text2 = false
-	text3 = false
-	enemy = false
-	player = false
-	inventory = false
-	dicePanel = false
-	die1 = false
-	die2 = false
-	die3 = false
+	if obj_gameController.displayVideo == true {
+		buttonBar = false
+		button1 = false
+		button2 = false
+		button3 = false
+		progressBar = false
+	}
+	else {
+		buttonBar = true
+		button1 = true
+		button2 = true
+		button3 = true
+		progressBar = true
+	}
+		influence = false
+		timer = false
+		playerHealth = false
+		enemyHealth = false
+		text1 = false
+		text2 = false
+		text3 = false
+		enemy = false
+		player = false
+		inventory = false
+		dicePanel = false
+		die1 = false
+		die2 = false
+		die3 = false
 }
 else if room == rm_choice {
 	buttonBar = false
@@ -221,3 +230,5 @@ else if room = rm_tutorial {
 	die2 = false
 	die3 = false
 }
+
+gameProgress = clamp(score,0,obj_gameController.winTotal)

@@ -8,6 +8,8 @@ else {
 	visible = true;
 }
 
-
+if obj_gameController.displayVideo == true {
+	visible = false
+}
 
 

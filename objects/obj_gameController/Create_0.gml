@@ -9,6 +9,9 @@ gameState = 0;
 
 storyActive = 0;
 
+openingPlayed = false
+displayVideo = false
+displayVideoPast = false
 winTotal = 15;
 
 buttonLeft = 0;
@@ -112,6 +115,7 @@ playerCompassionTotal = 0;
 //Changing Values
 playerMaxHealth = 0;
 playerCurrentHealth = 0;
+playerDisplayedHealth = 0;
 playerHealthPercentage = 0;
 
 playerActionChoice = 0;
@@ -147,6 +151,7 @@ enemyDefense = 0;
 enemySpeed = 0;
 
 enemyCurrentHealth = 0;
+enemyDisplayedHealth = 0;
 enemyHealthPercentage = 0;
 
 enemyAttackRoll = 0;

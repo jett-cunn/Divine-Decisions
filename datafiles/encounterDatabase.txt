@@ -1,37 +1,37 @@
-001.1.1.0.A crazed citizen roves through the wreckage, pillaging and looting from their neighbors
-002.1.1.1.An opportunistic looter runs into the street, carrying their ill-gotten gains 
-003.1.2.1.A snivelling goblin cowers in the shadows
-004.1.2.2.A sneering goblin stands over their victim, clutching a stolen trinket
-005.1.4.1.A marauding bandit brandishes their sword, a glint of treasure shining from their belt
-006.1.4.2.A lowlife marauder turns to flee, a sack of loot on their back
-007.1.5.2.A conniving cultist leaps from an alley, eager to claim another prize
-008.1.5.3.A scheming cultist readies their blade, daring you to challenge them for their stolen loot
-009.2.Calm the horde of villagers before you and ease their panic.1.8.Slip around the outskirts of the mob and move along.2.4.Force your way through the trampling horde.3.10.1-2.1.2-5.1.An unruly crowd of frenzied villagers stampedes toward you in a panic
-010.2.Guide the villager to a safe shelter.1.6.Sneak through the alleys and avoid the chaos.2.6.Knock them out and move along.3.6.1-3.1.1-2.1.A confused town guard stumbles toward you, lost in a daze
-011.2.Guide the villager to a safe shelter.1.6.Sneak through the alleys and avoid the chaos.2.6.Knock them out and move along.3.6.2-6.2.1-2.1.A dazed villager wanders through the streets, a sack of supplies on their back
-012.2.Dig through the rubble for injured victims.1.4.Navigate around the ruins to continue on your path.2.6.Climb directly across the wreckage.3.8.0-0.0.5-8.1.The quaking earth has collapsed a building across the road before you
-013.2.Convince nearby villagers to help you across the chasm.1.10.Construct a makeshift causeway from the wreckage.2.8.Leap across the fallen bridge.3.6.0-0.0.1-8.1.The bridge ahead of you has burned down, collapsing into the depths below
-014.2.Convince nearby villagers to help you across the chasm.1.10.Construct a makeshift causeway from the wreckage.2.8.Leap across the fallen bridge.3.6.0-0.0.1-1.5.The bridge ahead of you has burned down, collapsing into the depths below
-015.3.1.A small shrine stands before you, somehow untouched by the chaos surrounding you
-016.3.2.An ornate shrine sits to the side of the road, pure and untainted by blood or by fire
+001.1.1.0.A crazed citizen is looting houses
+002.1.1.1.A looter flees with stolen trinkets 
+003.1.2.1.A goblin blocks your path
+004.1.2.2.A goblin gloats over a stolen trophy
+005.1.4.1.A bandit points their sword at you with treasure in their pockets
+006.1.4.2.A bandit flees carrying loot on their back
+007.1.5.2.A cultist ambushes you, ready to take another life
+008.1.5.3.A cultist carrying loot hunts for its next victim
+009.2.Calm the horde of villagers.1.8.Avoid the mob and move along.2.4.Force through the trampling horde.3.10.1-2.1.2-5.1.A crowd of panicking villagers charges at you
+010.2.Reassure the guard and leave.1.6.Sneak through the alleys and avoid them.2.6.Knock them out and move along.3.6.1-3.1.1-2.1.A confused town guard mistakes you for an enemy
+011.2.Guide the villager to a safe shelter.1.6.Sneak through the alleys and avoid the chaos.2.6.Knock them out and move along.3.6.2-6.2.1-2.1.A dazed villager wanders through with a bag of supplies
+012.2.Dig through the rubble for injured victims.1.4.Navigate around the rubble.2.6.Climb directly across the wreckage.3.8.0-0.0.5-8.1.A collapsed building from the earthquake blocks your path
+013.2.Convince nearby villagers to help you across the chasm.1.10.Construct a makeshift causeway from the wreckage.2.8.Leap across the fallen bridge.3.6.0-0.0.1-8.1.The bridge ahead of you has burned down
+014.2.Convince nearby villagers to help you across the chasm.1.10.Construct a makeshift causeway from the wreckage.2.8.Leap across the fallen bridge.3.6.0-0.0.1-1.5.The bridge ahead of you has burned down
+015.3.1.A small, untouched shrine stands before you
+016.3.2.A pure, ornate shrine sits to the side of the road
 
 
 
-020.1.3.3.A ravenous wolf lurks in the trees, hoping to ambush another unfortunate adventurer
-021.1.3.4.A fearsome wolf stalks through the shadows, intent on adding another victim to its list
-022.1.4.4.A roving bandit creeps through the woods, hauling a sack of treasures back to camp
-023.1.4.5.A bandit enforcer calls out in challenge, eager to claim your trophies as their own
-024.1.5.5.A dark cultist flees from the village, dragging their loot behind them
-025.1.5.6.A fanatical zealot charges from the trees, desperate to claim another prize for their master
-026.1.6.6.A terrifying bandit captain blocks the road, surrounded by the spoils of war
-027.2.Carefully weave your way through the brambles.1.10.Cut away the vines to clear the path.2.8.Burn down the entire thicket.3.6.3-4.1.4-6.1.A thicket of thorns chokes the pathway
-028.2.Let the current carry you down the river.1.12.Search downstream for a natural bridge.2.6.Fight the current and swim across.3.8.1-2.5.1-2.7.Raging rapids churn the river, sweeping away the bridge
-029.2.Carefully cross an old tree trunk.1.8.Fashion a bridge from vines and branches.2.6.Leap across the chasm.3.10.4-5.1.8-10.1.A treacherous ravine splits the earth before you
-030.3.2.A quiet temple hides in the trees, overgrown with vines and moss
-031.3.3.A beautiful temple stands in an open clearing, the sun shining down upon it
+020.1.3.3.A wolf lurks in the trees waiting to ambush you
+021.1.3.4.A hungry wolf stalks you through the shadows
+022.1.4.4.A bandit is hauling a sack of treasures back to camp
+023.1.4.5.A bandit enforcer stares at you menacingly
+024.1.5.5.A dark cultist flees with loot behind them
+025.1.5.6.A fanatical zealot looks for their next target
+026.1.6.6.A bandit captain blocks your path with piles of loot
+027.2.Carefully weave your way through.1.10.Cut away the vines.2.8.Burn down the entire thicket.3.6.3-4.1.4-6.1.A bunch of thorns block your way
+028.2.Let the current carry you down the river.1.12.Search downstream for a natural bridge.2.6.Fight the current and swim across.3.8.1-2.5.1-2.7.Raging rapids destroy the bridge
+029.2.Carefully cross an old tree trunk.1.8.Fashion a bridge from vines and branches.2.6.Leap across the chasm.3.10.4-5.1.8-10.1.A ravine splits the earth before you
+030.3.2.A quiet temple hides in the trees
+031.3.3.A beautiful temple stands in an open clearing
 
 
-034.1.7.0.The ancient dragon of darkness awaits your challenge
+034.1.7.0.The Ancient Dragon of Darkness awaits your challenge
 
 
 Encounter Key

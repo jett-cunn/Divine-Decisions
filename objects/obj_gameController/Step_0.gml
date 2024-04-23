@@ -67,7 +67,7 @@ if gamePaused == true {
 		if pauseMenuOption == 1 {
 			gameState = 001
 			divineInfluence = maxInfluence
-			alarm[2] = 600
+			alarm[2] = 750
 			room_goto(rm_start)
 			gamePaused = false
 			storyActive = false
@@ -76,7 +76,7 @@ if gamePaused == true {
 		else if pauseMenuOption == 2 {
 			gameState = 001
 			divineInfluence = maxInfluence
-			alarm[2] = 600
+			alarm[2] = 750
 			room_goto(rm_start)
 			gamePaused = false
 			storyActive = true
@@ -91,7 +91,17 @@ if gamePaused == true {
 }
 else {
 
-timerPercentage = (alarm[2] / 600) * 100
+timerPercentage = (alarm[2] / 750) * 100
+
+
+//Reset Run
+
+if gameState == -40 {
+	if buttonLeft + buttonMiddle + buttonRight < 1 {
+		gameState = 000
+	}
+}
+
 
 //Main Menu
 
@@ -113,8 +123,24 @@ if gameState == 000 { //Start screen
 		else if buttonRight == 1 { // Story Mode
 			storyActive = 1;
 			audio_play_sound(snd_fxStartShout,10,false)
-			gameState = 001;
+			if openingPlayed == false {
+				gameState = -20
+			}
+			else {
+				gameState = 001;
+			}
 		}		
+	}
+}
+
+//Opening Cutscene
+if gameState == -20 {
+	video_open("vid_StoryOpening.mp4")
+	video_enable_loop(false)
+	openingPlayed = true
+	room_goto(rm_vid)
+	if displayVideo = false {
+		gameState = 001
 	}
 }
 
@@ -228,13 +254,15 @@ if gameState == -11 { //Waiting for controller reset
 
 //Character Creation
 if gameState == 001 { //Waiting for controller reset
-	
-	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
-		gameState = 002;
-		
-		room_goto(rm_character);
+	if displayVideo == false {
+		if (buttonLeft + buttonMiddle + buttonRight) == 0 {
+			gameState = 002;
+			if storyActive == false {
+				room_goto(rm_character)
+			}
+		}
+		fxStartShout = false
 	}
-	fxStartShout = false
 }
 
 if gameState == 002 { //Character Selection
@@ -473,7 +501,7 @@ if gameState == 009 {
 	audio_play_sound(snd_fxStartGame,10,false)
 	gameState = 100
 	room_goto(rm_choice);
-	alarm[2] = 600
+	alarm[2] = 750
 	
 }
 
@@ -486,6 +514,8 @@ if gameState == 100 { //Waiting for controller reset
 	if (buttonLeft + buttonMiddle + buttonRight) == 0 {
 		gameState = 101;
 	}
+	playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
+	playerDisplayedHealth = playerCurrentHealth
 }
 
 if gameState == 101 { //Choosing encounters
@@ -564,7 +594,7 @@ if gameState == 103 { //Selection
 	
 	
 	if playerWaiting == false {
-		alarm[2] = 600;
+		alarm[2] = 750;
 		playerWaiting = true
 	}
 	
@@ -711,7 +741,7 @@ if gameState == 130 { //Setup
 	object_set_sprite(obj_enemy, enemyStatDatabase[enemyType][4])
 	
 	enemyCurrentHealth = enemyMaxHealth;
-	
+	enemyDisplayedHealth = enemyCurrentHealth
 	enemyHealthPercentage = (enemyCurrentHealth / enemyMaxHealth) * 100;
 	
 	fightTurn1 = true;
@@ -749,7 +779,7 @@ if gameState == 132 { //Waiting for controller input (Player Action)
 	
 	
 	if playerWaiting == false {
-		alarm[2] = 600;
+		alarm[2] = 750;
 		playerWaiting = true;
 	}
 	
@@ -877,8 +907,6 @@ if gameState == 135 { //Attack
 		
 		enemyCurrentHealth -= playerDamageValue;
 		
-		enemyHealthPercentage = (enemyCurrentHealth / enemyMaxHealth) * 100;
-		
 		if enemyCurrentHealth <= 0 {
 			gameState = 151;
 		}
@@ -925,8 +953,6 @@ if gameState == 136 { //Enemy Turn
 		
 		playerCurrentHealth -= enemyDamageRoll;
 		
-		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100;
-		
 		if playerCurrentHealth <= 0 {
 			gameState = 152;
 		}
@@ -965,8 +991,8 @@ if gameState == 151 { //Victory
 			score += 1
 			
 			if storyActive == 1 {
-				if score == winTotal {
-					gameState = 001
+				if score > winTotal {
+					gameState = 000
 					divineInfluence = maxInfluence
 					room_goto(rm_start)
 				}
@@ -1003,7 +1029,9 @@ if gameState == 153 { //Waiting for restart
 	if buttonLeft + buttonMiddle + buttonRight > 0 {
 		
 		
-		gameState = 001;
+		gameState = -40;
+		room_goto(rm_start);
+		score = 0
 		divineInfluence = maxInfluence;
 	}
 }
@@ -1075,7 +1103,7 @@ if gameState == 161 { //Waiting for controller reset
 if gameState == 162 { //Waiting for controller input (Player Action)
 	
 	if playerWaiting == false {
-		alarm[2] = 600;
+		alarm[2] = 750;
 		playerWaiting = true;
 	}
 	
@@ -1237,7 +1265,6 @@ if gameState == 166 { //Success
 		else if challengeRewardType = 2 { //health
 			playerCurrentHealth += irandom_range(encounterValueMin,encounterValueMax)
 			playerCurrentHealth = clamp(0, playerMaxHealth, playerCurrentHealth)
-			playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 		}
 		else if challengeRewardType = 3 { //influence
 			divineInfluence += irandom_range(encounterValueMin,encounterValueMax)
@@ -1271,7 +1298,7 @@ if gameState == 166 { //Success
 		score += 1;
 		
 		if storyActive == 1{
-			if score == winTotal{
+			if score > winTotal{
 				gameState = 001;
 				divineInfluence = maxInfluence;
 				room_goto(rm_start);
@@ -1296,7 +1323,6 @@ if gameState == 167 { //Failure
 		
 		if challengeFailType = 1 { //health
 			playerCurrentHealth -= irandom_range(challengeFailCostMin,challengeFailCostMax)
-			playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 			
 			if playerCurrentHealth <= 0 {
 				gameState = 153
@@ -1339,7 +1365,7 @@ if gameState == 167 { //Failure
 			score += 1;
 		
 			if storyActive == 1{
-				if score == winTotal{
+				if score > winTotal{
 					gameState = 001;
 					divineInfluence = maxInfluence;
 					room_goto(rm_start);
@@ -1478,7 +1504,7 @@ if gameState == 181 { //Waiting for controller reset
 
 if gameState == 182 { //Controller reset, waiting for player input
 	if playerWaiting == false {
-		alarm[2] = 600;
+		alarm[2] = 750;
 		playerWaiting = true;
 	}
 	
@@ -1553,7 +1579,7 @@ if gameState == 183 { //Left prize selected
 		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 	}
 	else if reward1 == 2 {
-		divineInfluence += encounterValue*3
+		divineInfluence += encounterValue*3 + 1
 		divineInfluence = clamp(divineInfluence, 0, maxInfluence)
 	}
 	else if reward1 == 3 {
@@ -1591,7 +1617,7 @@ if gameState == 184 { //Middle prize selected
 		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 	}
 	else if reward2 == 2 {
-		divineInfluence += encounterValue*3
+		divineInfluence += encounterValue*3 + 1
 		divineInfluence = clamp(divineInfluence, 0, maxInfluence)
 	}
 	else if reward2 == 3 {
@@ -1629,7 +1655,7 @@ if gameState == 185 { //Right prize selected
 		playerHealthPercentage = (playerCurrentHealth / playerMaxHealth) * 100
 	}
 	else if reward3 == 2 {
-		divineInfluence += encounterValue*3
+		divineInfluence += encounterValue*3 + 1
 		divineInfluence = clamp(divineInfluence, 0, maxInfluence)
 	}
 	else if reward3 == 3 {
@@ -1665,7 +1691,7 @@ if gameState == 186 { //Return to selection
 		score += 1;
 		
 		if storyActive == 1{
-			if score == winTotal{
+			if score > winTotal{
 				gameState = 001;
 				divineInfluence = maxInfluence;
 				room_goto(rm_start);
@@ -1720,7 +1746,7 @@ if gameState == 192 { //Selection
 	
 	
 	if playerWaiting == false {
-		alarm[2] = 600;
+		alarm[2] = 750;
 		playerWaiting = true;
 	}
 	
@@ -1793,7 +1819,7 @@ if gameState == 193 { //Leave item
 		score += 1;
 		
 		if storyActive == 1{
-			if score == winTotal{
+			if score > winTotal{
 				gameState = 001;
 				divineInfluence = maxInfluence;
 				room_goto(rm_start);
@@ -1849,7 +1875,7 @@ if gameState == 194 { //Take item
 	score += 1;
 		
 		if storyActive == 1{
-			if score == winTotal{
+			if score > winTotal{
 				gameState = 001;
 				divineInfluence = maxInfluence;
 				room_goto(rm_start);

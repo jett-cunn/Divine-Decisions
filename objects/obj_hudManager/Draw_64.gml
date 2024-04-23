@@ -31,7 +31,7 @@ if progressBar == true {
 	
 	draw_line_width(barStart,40,barEnd,40,15)
 	draw_set_color(c_green)
-	draw_line_width(barStart,40,(barStart+(zoneSize*score)),40,15)
+	draw_line_width(barStart,40,(barStart+(zoneSize*gameProgress)),40,15)
 	
 	for (var i = 0; i <= maxScore; i += 1) {
 		
@@ -223,7 +223,7 @@ if playerHealth == true {
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_color(c_green);
-	draw_text(pHealthBarX+25,pHealthBarY+95, string(obj_gameController.playerCurrentHealth) + " / " + string(obj_gameController.playerMaxHealth))
+	draw_text(pHealthBarX+25,pHealthBarY+95, string(obj_gameController.playerDisplayedHealth) + " / " + string(obj_gameController.playerMaxHealth))
 	
 	draw_set_color(c_black);
 	draw_text(pHealthBarX+10,pHealthBarY+10, "Champion of " + obj_gameController.playerName)
@@ -244,7 +244,7 @@ if enemyHealth == true {
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_color(c_red);
-	draw_text(eHealthBarX+25,eHealthBarY+95, string(obj_gameController.enemyCurrentHealth) + " / " + string(obj_gameController.enemyMaxHealth))
+	draw_text(eHealthBarX+25,eHealthBarY+95, string(obj_gameController.enemyDisplayedHealth) + " / " + string(obj_gameController.enemyMaxHealth))
 	
 	if obj_gameController.enemyType == 1 {
 		enemyName = "Crazed Villager"
@@ -565,6 +565,9 @@ if dicePanel == true {
 				draw_text(960,725,"-")
 				draw_text(960,765,"= " + string(obj_gameController.playerDamageValue) + " Damage Dealt")
 				
+				obj_gameController.enemyHealthPercentage = (obj_gameController.enemyCurrentHealth / obj_gameController.enemyMaxHealth) * 100
+				obj_gameController.enemyDisplayedHealth = clamp(obj_gameController.enemyCurrentHealth,0,obj_gameController.enemyMaxHealth)
+				
 			}
 			draw_set_halign(fa_left)
 			draw_set_valign(fa_top)
@@ -589,6 +592,8 @@ if dicePanel == true {
 				draw_set_color(c_black)
 				draw_text(960,725,"-")
 				draw_text(960,765,"= " + string(obj_gameController.enemyDamageRoll) + " Damage Taken")
+				obj_gameController.playerHealthPercentage = (obj_gameController.playerCurrentHealth / obj_gameController.playerMaxHealth) * 100;
+				obj_gameController.playerDisplayedHealth = clamp(obj_gameController.playerCurrentHealth,0,obj_gameController.playerMaxHealth)
 				
 			}
 			draw_set_halign(fa_left)
@@ -619,6 +624,8 @@ if dicePanel == true {
 				draw_text(912,725,"-")
 				draw_text(1008,725,"-")
 				draw_text(960,765,"= " + string(obj_gameController.enemyDamageRoll) + " Damage Taken")
+				obj_gameController.playerHealthPercentage = (obj_gameController.playerCurrentHealth / obj_gameController.playerMaxHealth) * 100;
+				obj_gameController.playerDisplayedHealth = clamp(obj_gameController.playerCurrentHealth,0,obj_gameController.playerMaxHealth)
 				
 			}
 			draw_set_halign(fa_left)
@@ -673,10 +680,14 @@ if dicePanel == true {
 				if obj_gameController.playerChallengeRoll >= obj_gameController.challengeSelectedDC {
 					draw_set_color(c_lime)
 					draw_text(960,765,"Success")
+					obj_gameController.playerHealthPercentage = (obj_gameController.playerCurrentHealth / obj_gameController.playerMaxHealth) * 100;
+					obj_gameController.playerDisplayedHealth = clamp(obj_gameController.playerCurrentHealth,0,obj_gameController.playerMaxHealth)
 				}
 				else {
 					draw_set_color(c_maroon)
 					draw_text(960,765,"Failure")
+					obj_gameController.playerHealthPercentage = (obj_gameController.playerCurrentHealth / obj_gameController.playerMaxHealth) * 100;
+					obj_gameController.playerDisplayedHealth = clamp(obj_gameController.playerCurrentHealth,0,obj_gameController.playerMaxHealth)
 				}
 			}
 			draw_set_halign(fa_left)
@@ -698,7 +709,7 @@ if room == rm_pause {
 	draw_set_valign(fa_top)
 }
 
-if room == rm_start {
+if room == rm_start && obj_gameController.displayVideo == false {
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_middle)
 	draw_set_font(fnt_plain)
@@ -772,6 +783,6 @@ if room == rm_tutorial {
 if room == rm_choice {
 	obj_influenceCounter.y = 941
 }
-else if room != rm_start && room != rm_tutorial{
+else if room != rm_start && room != rm_tutorial && room != rm_vid{
 	obj_influenceCounter.y = 768
 }
