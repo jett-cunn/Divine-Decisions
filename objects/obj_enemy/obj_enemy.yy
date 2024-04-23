@@ -31,10 +31,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_enemyGoblin",
-    "path": "sprites/spr_enemyGoblin/spr_enemyGoblin.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }
