@@ -123,12 +123,12 @@ if gameState == 000 { //Start screen
 		else if buttonRight == 1 { // Story Mode
 			storyActive = 1;
 			audio_play_sound(snd_fxStartShout,10,false)
-			if openingPlayed == false {
+			//if openingPlayed == false {
 				gameState = -20
-			}
-			else {
-				gameState = 001;
-			}
+			//}
+			//else {
+			//	gameState = 001;
+			//}
 		}		
 	}
 }
